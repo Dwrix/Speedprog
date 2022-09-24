@@ -7,8 +7,11 @@
 }
 body{
 	font-family: montserrat;
-	background: url("") no-repeat;
+	background: url(../img/fondo.jpg) no-repeat;
 }
+
+
+/*Estilo HCabecera/Menu*/
 nav{
 	background: #241508c5;
 	height: 80px;
@@ -57,145 +60,51 @@ a.active,a:hover{
 	display: none;
 }
 
+/*-------------Form-Login---------------------------------------------*/
 
-
-
-
-
-/*-----SLIDER----------------*/
-div ul ol{
-	list-style: none;
-}
-
-.slideshow{
-	width: 30%;
-	position: relative;
+.form{
+	width: 20%;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: rgba(161, 86, 12, 0.329);
+    padding: 20px;
 }
 
-.slider li ul{
-	width: 100%;
-}
-
-.slider li{
-	overflow: hidden;
-	width: 100%;
-}
-
-
-.slider img{
-	width: 100%;
+.fa {
+	margin-left: 40%;
 	
 }
 
-
-.slider .caption{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	padding: 15px 50px;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	text-align: center;
-	color: #fff;
-	z-index: 1;
-}
-
-.slider .caption p{
-	margin-top: 10px;
-	font-size: 20px;
+input[type="email"], input[type="password"]{
+    width: 100%;
+    height: 35px;
+    padding-left: 30px;
+    margin-top: 10px;
+    border: 0px;
+	border-radius: 10px; 
 	font-family: monospace;
 }
-
-.paginacion{
-	position: absolute;
-	top: 102%;
-	width: 100%;
-
-	display: flex;
-	justify-content: center;
+input[type="submit"]{
+    width: 40%;
+    height: 35px;
+	margin-top: 15px;
+	margin-left: 80px;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 20px; 
 }
 
-.paginacion li{
-	font-size: 15px;
-	margin: 2px 5px;
-	color: #858585;
-	cursor: pointer;
-}
-
-.izq, .der{
-	position: absolute;
-	top: 0;
-	height: 100%;
-
-	display: flex;
-	align-items: center;
-
-	color: #fff;
-	font-size: 20px;
-	cursor: pointer;
-	z-index: 2;
-}
-
-.izq{
-	left: 10px;
-}
-
-.der{
-	right: 10px;
-}
+input[type="submit"]:hover{
+    background-color: silver;
+    color: whitesmoke;
+    cursor: pointer;   
+} 
 
 
-
-
-/*estilo tarjetas*/
-
-.target-group{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-	margin: 70px 0;
-	padding: 0 70px;
-}
-
-.tarjeta{
-	background: linear-gradient(45deg,#241508c5,#da5b06e7) ;
-	color: rgba(255, 255, 255, 0.753);
-	font-size: 30px;
-	height: 80px;
-	border-radius: 5px;
-	display: flex;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-	align-items: center;
-	padding: 15px;
-}
-
-
-#zzz{
-	background: linear-gradient(120deg,#241508c5,#da5b06e7) ;
-	color: rgba(255, 255, 255, 0.932);
-	font-size: 30px;
-	height: 100px;
-	border-radius: 5px;
-	display: flex;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.8);
-	align-items: center;
-	padding: 15px;
-}
-
-.tarjeta h3{
-	margin-left: 10px;
-	font-size: 18px;
-}
-
-
+/*responsive-*/
 
 @media (max-width: 1024px){
 	.form{
@@ -203,7 +112,6 @@ div ul ol{
 	}
 }
 
-/*------------------------Responsive----------------------------------*/
 @media (max-width: 952px) {
 	label.logo{
 		font-size: 30px;
@@ -242,70 +150,17 @@ div ul ol{
 	#check:checked ~ ul{
 		left: 0;
 	}
-}
-
-@media (max-width: 768px){
-	.slideshow{
-		width: 100%;
-	}
-	.slider .caption p{
-		font-size: 10px;
-	}
-	.target-group{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 10px;
-		margin: 30px 0;
-		padding: 0 30px;
-		margin-left: -20px;
-	}
-
-}
-
-@media (max-width: 425px){
-	.slideshow{
-		width: 100%;
-	}
-
-	.target-group{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 10px;
-		margin: 30px 0;
-		padding: 0 30px;
-		margin-left: -20px;
-	}
-}
-
-
-@media (max-width: 360px){
-	.slideshow{
-		width: 100%;
-	}
-
-	.target-group{
-		
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 10px;
-		margin: 30px 0;
-		padding: 0 30px;
-		margin-left: -25px;
-	}
-
-}
-
-
-@media (min-width: 768px){
-	.slideshow{
+	.form{
 		width: 50%;
 	}
-		
 }
 
-
-
-/*------------------------Footer----------------------------------*/
+@media (max-width: 540px){
+	.form{
+		width: 80%;
+	}
+}
+/*Estilo Footer*/
 footer{
     width: 100%;
     background: #202020;
@@ -314,13 +169,12 @@ footer{
 
 .container-footer-all{
     width: 100%;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     padding: 40px;
 }
 .container-body{
     display: flex;
-	margin-top: -50px;
     justify-content: space-between;
 }
 .colum1{
@@ -333,7 +187,7 @@ footer{
 .colum1 p{
     font-size: 14px;
     color: #C7C7C7;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .colum2{
     max-width: 400px;
@@ -384,7 +238,7 @@ footer{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    padding: 20px;
 }
 .copyright{
     margin: auto;
@@ -402,4 +256,4 @@ footer{
         margin-top: 40px;
     }
 }
-/*------------------------Footer----------------------------------*/
+/*----------------------------------------------------------*/

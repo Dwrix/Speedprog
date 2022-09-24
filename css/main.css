@@ -197,6 +197,12 @@ div ul ol{
 
 
 
+@media (max-width: 1024px){
+	.form{
+		width: 50%;
+	}
+}
+
 /*------------------------Responsive----------------------------------*/
 @media (max-width: 952px) {
 	label.logo{
@@ -308,12 +314,13 @@ footer{
 
 .container-footer-all{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     padding: 40px;
 }
 .container-body{
     display: flex;
+	margin-top: -50px;
     justify-content: space-between;
 }
 .colum1{
@@ -326,7 +333,7 @@ footer{
 .colum1 p{
     font-size: 14px;
     color: #C7C7C7;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .colum2{
     max-width: 400px;
@@ -377,7 +384,7 @@ footer{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 50px;
 }
 .copyright{
     margin: auto;
