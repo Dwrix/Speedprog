@@ -13,15 +13,23 @@ body{
 	height: 100vh;
 }
 
+.nav-cab{
+	background: #241508c5;
+	height: 80px;
+	width: 100%;
+	position: static;
+
+	
+}
+
 .login-box{
 
 	width: 320px;
-	height: 420px;
+	height: 480px;
 	background: #0c0000e0;
 	color: #fff;
-	top: 50%;
-	left: 50%;
-	position: absolute;
+	margin-left: 50%;
+	margin-top: 250px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 70px 30px;
@@ -33,9 +41,8 @@ body{
 
 	width: 100px;
 	height: 100px;
-	position: absolute;
-	top: -50px;
-	left: calc(50% - 50px);
+	margin-left: 80px;
+	
 }
 
 .login-box h1{

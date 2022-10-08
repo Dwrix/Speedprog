@@ -9,10 +9,12 @@ body{
 	font-family: montserrat;
 	background: url("") no-repeat;
 }
-nav{
+
+.nav-cab{
 	background: #241508c5;
 	height: 80px;
 	width: 100%;
+	position: static;
 
 	
 }
