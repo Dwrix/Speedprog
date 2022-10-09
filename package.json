@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "mariadb": "^3.0.1",
+    "nodemon": "^2.0.20"
+  },
+  "name": "speedprog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tw1ZTER/Speedprog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tw1ZTER/Speedprog/issues"
+  },
+  "homepage": "https://github.com/tw1ZTER/Speedprog#readme"
+}
