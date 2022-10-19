@@ -47,7 +47,7 @@
     <?php 
     while ($reg = mysqli_fetch_array($registros)){
         ?>
-            <option><?php echo $reg['id_especialidad'] ?></option>
+            <option><?php echo $reg['especialidad'] ?></option>
     <?php }
     
     ?>
@@ -62,7 +62,7 @@
     <?php 
     while ($reg2 = mysqli_fetch_array($registros2)){
         ?>
-            <option><?php echo $reg2['id_metodo_de_pago'] ?></option>
+            <option><?php echo $reg2['metodo_de_pago'] ?></option>
     <?php }
     
     ?>
