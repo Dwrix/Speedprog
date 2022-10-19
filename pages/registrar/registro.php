@@ -30,14 +30,22 @@
     <section class="registro-box">
         <div class="form">
             <span class="fa fa-user fa-5x"></span>
-            <form method="POST" action="">
-                <input type="text" id="rut" name="rut" placeholder="Ingrese rut" required><br> 
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre" required><br> 
+            <?php
+                    if(isset($_GET['msg'])=='passNoValid'){
+                        echo 'Ambas Contraseñas deben ser iguales';
+                    }else if(isset($_GET['msgerror'])=='errorRegistro'){
+                        echo 'Lo siento, no se pudo crear tu cuenta';
+                    }
+                ?> 
+            <form method="POST" action="registrocuenta.php">
+                <input type="text" id="rut" name="rut1" placeholder="11137458" required><br> 
+                <input type="text" id="nombre" name="nom1" placeholder="Ingrese nombre" required><br> 
                 <input type="date" id="date" name="date" placeholder="Fecha nacimiento" required><br> 
-                <input type="text" id="rut" name="rut" placeholder="Dirección" required><br> 
-                <input type="email" id="email" name="email" placeholder="Ingrese Correo" required><br> 
-                <input type="password" id="pass" name="pass" placeholder="Ingrese Contraseña" required><br>
-                <input type="submit" value="Registrarse"><br><br>
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br> 
+                <input type="email" id="mail" name="correo" placeholder="Ingrese Correo" required><br> 
+                <input type="password" id="pass" name="pass1" placeholder="Ingrese Contraseña" required><br>
+                <input type="password" id="passConfirm" name="passCon1" placeholder="Repita la Contraseña" required><br>
+                <input class="btn-form" id="submitLogin" type="submit" value="Registrar"><a href="../login/loginIndex.php"></a><br><br>
                 <a href="#">¿Ya tienes cuenta?</a><br><br>
                 
             </form>
