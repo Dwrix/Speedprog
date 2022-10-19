@@ -320,7 +320,6 @@ footer{
 }
 .container-body{
     display: flex;
-	margin-top: -50px;
     justify-content: space-between;
 }
 .colum1{
@@ -403,3 +402,12 @@ footer{
     }
 }
 /*------------------------Footer----------------------------------*/
+
+#descripcion1{
+	margin: 1px;
+	padding: 1px;
+	width: 350px;
+	height: 150px;
+	resize: none;
+}
+

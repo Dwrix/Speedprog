@@ -10,7 +10,7 @@
     <script src="/js/Slider.js"></script>
 
     <title>SpeedProg</title>
-
+</head>
 <body>
     <nav class="nav-cab">
         <input type="checkbox" id="check">
@@ -28,9 +28,54 @@
     </nav>
 
     <section>
-<div>
+
+    <form method="POST" action="agregar.php">
+    <?php
+    $conexion = mysqli_connect("localhost:3306","root","root","speedprogasesorias") or die("Problemas con la conexion");
+    $sql = "SELECT * FROM especialidad";
+    $sql2 = "SELECT * FROM metodo_de_pago";
+    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    ?>
     SOLICITAR TUTOR
-</div>
+    <div>
+        Titulo  <input type="text" id="titulo1" name="titulo1">
+    </div>
+    
+    <div>
+    Seleccionar lenguaje <select id="especialidades" name="especialidades1">
+    <?php 
+    while ($reg = mysqli_fetch_array($registros)){
+        ?>
+            <option><?php echo $reg['id_especialidad'] ?></option>
+    <?php }
+    
+    ?>
+    </select>
+    </div>
+    Descripcion
+    <div>
+         <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" ></textarea>
+    </div>
+    <div>
+        Metodo de Pago <select id="metododepago1" name="metododepago1">
+    <?php 
+    while ($reg2 = mysqli_fetch_array($registros2)){
+        ?>
+            <option><?php echo $reg2['id_metodo_de_pago'] ?></option>
+    <?php }
+    
+    ?>
+    </select>
+    <?php 
+    mysqli_close($conexion);
+    ?>
+    </div>
+   <div>
+    <input type="submit" value="Ingresar">
+    </div>
+    </form>
+
     </section>
     <footer>
         <div class="container-footer-all">
@@ -87,6 +132,6 @@
 
 
 
-</body>
+    </body>
 
 </html>
