@@ -35,7 +35,7 @@
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     ?>
-    DETALLE SOLICITUD
+    SOLICITUDES DISPONIBLES
     
     
     <!-- <form action="../detalle-solicitud/detalle-solicitud.php"> -->
