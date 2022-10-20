@@ -12,23 +12,26 @@
     <title>SpeedProg</title>
 
 <body>
-    <nav class="nav-cab">
+<nav id="nav-cab">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo">SpeedProg Asesorias</label>
-
+        <label class="logo"><a href="../../main.html" >Abogados United</a><?php 
+        if(isset($user)){echo " Bienvenido ". $user->getNombre();
+        }else{
+            require('../login/login.php');
+            echo " Bienvenido ". $user->getNombre();
+        } 
+         ?></label>
+       
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
-            <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
+            <li><a href="../login/logout.php">Salir</a></li>
         </ul>
     </nav>
 
     <section>
-<div>
+
 PERFIL CLIENTE
     </section>
     <footer>

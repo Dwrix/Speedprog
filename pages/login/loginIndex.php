@@ -28,26 +28,38 @@
     </nav>
 
     <section>
-    <div class="login-box">
-    <div class= "fa fa-user">
-
-        <h1>Login</h1>
-
-        <form>
-
-            <label for="username">username</label>
-            <input type="text" placeholder="Ingrese usuario">
-
-            <label for="password">password</label>
-            <input type="password" placeholder="Ingrese contraseña">
-
-            <input type="submit" value="log in">
-            <a href="/pages/registrar/registrar.html">¿Tienes cuenta?</a>
-        </form>
-
-
-    </div>
+        <div class="form">
+            <span class="fa fa-user fa-5x"></span>
+            <form method="POST" action="login.php">
+            <?php   
+            $status = session_status();
+            if($status == PHP_SESSION_NONE){
+                //There is no active session
+                session_start();
+                if(isset($_SESSION['user'])){ 
+                    header('location: ../perfil-cliente/perfil-cliente.php');
+                }
+            }
+            if(isset($_GET['msg'])=='registroOk'){
+                echo 'Registro exitoso, Ingresa con tus datos';
+            }
+            ?>
+                <?php
+                    if(isset($errorLogin)){
+                        echo $errorLogin;
+                    }
+                ?>
+                <input type="email" id="mail" name="correo" placeholder="Ingrese Email" required><br> 
+                <input type="password" id="pass" name="password" placeholder="Ingrese Contraseña" required><br>
+                <input type="submit" value="Ingresar"><br><br>
+                <a href="#">¿Olvidaste la Contraseña?</a><br><br>
+                <span>No estás registrado?</span><a href="registro.php"> Crear Cuenta</a>
+            </form>
+        </div>
     </section>
+
+
+
     <footer>
         <div class="container-footer-all">
             <div class="container-body">
