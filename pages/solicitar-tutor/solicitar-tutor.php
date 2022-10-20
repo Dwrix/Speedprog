@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/css/solicitar-tutor.css">
+    <link rel="stylesheet" href="../../css/solicitar-tutor.css">
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/Slider.js"></script>
 
@@ -83,23 +83,23 @@
                 <div class="colum2">
                     <h1>Redes Sociales</h1>
                     <div class="row">
-                        <a href="https://www.facebook.com/"><img src="/img/fbicon.png"></a>
+                        <a href="https://www.facebook.com/"><img src="../..//img/fbicon.png"></a>
                         <label>Siguenos en Facebook</label>
                     </div>
                     <div class="row">
-                        <a href="https://twitter.com/?lang=es"><img src="/img/twittericon.png"></a>
+                        <a href="https://twitter.com/?lang=es"><img src="../..//img/twittericon.png"></a>
                         <label>Siguenos en Twitter</label>
                     </div>
                     <div class="row">
-                        <a href="https://www.instagram.com/?hl=es-la"><img src="/img/igicon.png"></a>
+                        <a href="https://www.instagram.com/?hl=es-la"><img src="../..//img/igicon.png"></a>
                         <label>Siguenos en Instagram</label>
                     </div>
                     <div class="row">
-                        <a href="https://myaccount.google.com/?tab=kk"><img src="/img/gmailicon.png"></a>
+                        <a href="https://myaccount.google.com/?tab=kk"><img src="../..//img/gmailicon.png"></a>
                         <label>Siguenos en Google+</label>
                     </div>
                     <div class="row">
-                        <a href="https://www.pinterest.cl/"><img src="/img/pinteresticon.png"></a>
+                        <a href="https://www.pinterest.cl/"><img src="../../img/pinteresticon.png"></a>
                         <label>Siguenos en Pinterest</label>
                     </div>
                 </div>
