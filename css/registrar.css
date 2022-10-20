@@ -190,7 +190,6 @@ footer{
 }
 .container-body{
     display: flex;
-	margin-top: -50px;
     justify-content: space-between;
 }
 .colum1{
