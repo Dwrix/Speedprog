@@ -7,10 +7,13 @@
 }
 body{
 	font-family: montserrat;
-	background: url("") no-repeat;
+	background: url(../img/fondo.jpg) no-repeat center top;
+	background-size: cover;
+	font-family: sans-serif;
+	
 }
 nav{
-	background: #241508c5;
+	background: #362c2ca6;
 	height: 80px;
 	width: 100%;
 
@@ -41,7 +44,7 @@ nav ul li a{
 	text-transform: uppercase;
 }
 a.active,a:hover{
-	background: #da5b06e7;
+	background: gray;
 	transition: .5s;
 }
 .checkbtn{
@@ -58,22 +61,105 @@ a.active,a:hover{
 }
 
 
+/*------------------------box registro----------------------------------*/
+
+.user-box{
+	width: 100px;
+	height: 100px;
+	margin-left: 90px;
+}
 .registro-box{
-	width: 250px;
-	height: 400px;
-	position: static;
-	margin-top: 20px;
-	margin-left: 200px;
-	background-color: grey;
+	width: 320px;
+	height: 600px;
+	background: #0c0000e0;
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 320px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
 }
 
+.registro-box h1{
+
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	display: block;
+
+
+}
+
+.registro-box label{
+	
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+.registro-box input{
+	
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+
+.registro-box input[type="email"],
+.registro-box input[type="text"],
+.registro-box input[type="password"]{
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+.registro-box input[type="submit"]{
+
+	border: none;
+	outline: none;
+	height: 40px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+
+}
+
+.registro-box a {
+
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+
+}
+
+.registro-box a:hover {
+
+	color: #fff;
+}
+
+/*------------------------fin box registro----------------------------------*/
+
+
+
+/*------------------------Responsive----------------------------------*/
 @media (max-width: 1024px){
 	.form{
 		width: 50%;
 	}
 }
 
-/*------------------------Responsive----------------------------------*/
+
 @media (max-width: 952px) {
 	label.logo{
 		font-size: 30px;

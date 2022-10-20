@@ -20,16 +20,18 @@
         <label class="logo">SpeedProg Asesorias</label>
 
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
+            <li><a class="active" href="../../main.html">Home</a></li>
+            <li><a href="loginindex.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
 
-    <section>
+    <section class= "login-box">
         <div class="form">
-            <span class="fa fa-user fa-5x"></span>
+            <section class="user-box">
+                 <span class="fa fa-user fa-5x"></span>
+            </section>
             <form method="POST" action="login.php">
             <?php   
             $status = session_status();
@@ -53,7 +55,7 @@
                 <input type="password" id="pass" name="password" placeholder="Ingrese Contraseña" required><br>
                 <input type="submit" value="Ingresar"><br><br>
                 <a href="#">¿Olvidaste la Contraseña?</a><br><br>
-                <span>No estás registrado?</span><a href="registro.php"> Crear Cuenta</a>
+                <span>No estás registrado?</span><a href="../registrar/registro.php"> Crear Cuenta</a>
             </form>
         </div>
     </section>
