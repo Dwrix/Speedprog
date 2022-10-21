@@ -31,7 +31,13 @@
 
     <form method="POST" action="agregar.php">
     <?php
-    $conexion = mysqli_connect("localhost:3306","root","root","speedprogasesorias") or die("Problemas con la conexion");
+    //Requerir datos de conexion
+    require("../../php/conexionBD.php");
+    //variable de conexion 
+    $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
+    //validar conexion a base de datos, seleccionar db
+    mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
+    
     $sql = "SELECT * FROM especialidad";
     $sql2 = "SELECT * FROM metodo_de_pago";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));

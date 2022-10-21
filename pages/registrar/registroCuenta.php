@@ -7,6 +7,7 @@ $nom = $_POST["nom1"];
 $date = $_POST["date"];
 $dir = $_POST["direccion"];
 $mail = $_POST["correo"];
+$idpais = $_POST["pais"];
 $pas = $_POST["pass1"];
 $passCon = $_POST["passCon1"];
 
@@ -22,8 +23,6 @@ if($pas===$passCon){
     //validar conexion a base de datos, seleccionar db
     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
 
- 
-    $idpais = 1; //??
     $tipousuario = 2;
     $balance = 1; //??
 
