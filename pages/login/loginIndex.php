@@ -20,12 +20,13 @@
         <label class="logo">SpeedProg Asesorias</label>
 
         <ul>
-            <li><a class="active" href="../../main.html">Home</a></li>
+            <li><a class="active" href="../../index.php">Home</a></li>
             <li><a href="loginindex.php">Ingresar / Perfil</a></li>
             <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
+
 
     <section class= "login-box">
         <div class="form">

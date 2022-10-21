@@ -20,18 +20,24 @@
         <label class="logo">SpeedProg Asesorias</label>
 
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
+            <li><a class="active" href="../../index.php">Home</a></li>
+            <li><a href="../perfil-cliente/Perfil-cliente.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
 
-    <section>
-<div>
-    BALANCE TUTOR
-</div>
-    </section>
+    <nav class="hd2">
+        <a href="../../index.php">Home</a> |
+        <a href="../perfil-cliente/Perfil-cliente.php">Perfil</a> |
+        <a href="#">Servicio</a> |
+        <a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> |
+        <a href="../postulacion-tutor/postulacion-tutor.php">Postular Tutor</a> |
+        <a href="../somos/somos.html">Somos Speedprog</a> |
+    </nav>
+
+    <span>HISTORIAL SOLICITUDES TUTOR</span>
+
     <footer>
         <div class="container-footer-all">
             <div class="container-body">
@@ -70,7 +76,7 @@
                     </div>
                     <div class="row2">
                         <img src="/img/mailicon.png">
-                        <label>info@abogadosunited.cl</label>
+                        <label>info@speedprog.cl</label>
                     </div>
                 </div>
             </div>

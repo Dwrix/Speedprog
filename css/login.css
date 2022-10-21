@@ -18,7 +18,6 @@ body{
 	height: 80px;
 	width: 100%;
 	position: static;
-
 	
 }
 /*------------------------box login----------------------------------*/
@@ -115,9 +114,8 @@ nav{
 	background: #241508c5;
 	height: 80px;
 	width: 100%;
-
-	
 }
+
 label.logo{
 	color: white;
 	font-size: 35px;

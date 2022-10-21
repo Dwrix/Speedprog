@@ -20,15 +20,35 @@
         <label class="logo">SpeedProg Asesorias</label>
 
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
+            <li><a class="active" href="../../index.php">Home</a></li>
+            <li><a href="../login/loginindex.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
 
-    <section>
+    <nav class="hd2">
+        <a href="../../index.php">Home</a> |
+        <a href="../perfil-cliente/Perfil-cliente.php">Perfil</a> |
+        <a href="#">Servicio</a> |
+        <a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> |
+        <a href="../postulacion-tutor/postulacion-tutor.php">Postular Tutor</a> |
+        <a href="../somos/somos.html">Somos Speedprog</a> |
+    </nav>
+    <br><br>
 
+
+    <?php 
+        include_once '../login/login.php';
+        if(isset($user)){
+            echo " Bienvenido ". $user->getNombre();
+        }   
+    ?>
+    </label>
+        <ul>
+            <li><a href="../login/logout.php">Cerrar sesion</a></li>
+        </ul>
+    <br><br>    
     <form method="POST" action="agregar.php">
     <?php
      require("../../php/conexionBD.php");
