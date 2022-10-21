@@ -12,31 +12,40 @@
     <title>SpeedProg</title>
 
 <body>
-<nav id="nav-cab">
+<nav class="nav-cab">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo"><a href="../../main.html" >Abogados United</a><?php 
-        if(isset($user)){
-            echo " Bienvenido ". $user->getNombre();
-            $tipo = $user->getTipo();
-        }else{
-            require('../login/login.php');
-            
-            
-        } 
-         ?></label>
-       
+        <label class="logo">SpeedProg Asesorias</label>
+
         <ul>
-            <li><a href="../login/logout.php">Salir</a></li>
+            <li><a class="active" href="../../index.php">Home</a></li>
+            <li><a href="../login/loginindex.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
+            <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
 
-    <section>
+    <nav class="hd2">
+        <a href="../../index.php">Home</a> |
+        <a href="../perfil-cliente/Perfil-cliente.php">Perfil</a> |
+        <a href="#">Servicio</a> |
+        <a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> |
+        <a href="../postulacion-tutor/postulacion-tutor.php">Postular Tutor</a> |
+        <a href="../somos/somos.html">Somos Speedprog</a> |
+    </nav>
 
-PERFIL CLIENTE
-    </section>
+    <?php 
+        if(isset($user)){
+            echo " Bienvenido ". $user->getNombre();
+        }   
+         ?></label>
+        <ul>
+            <li><a href="../login/logout.php">Cerrar sesion</a></li>
+        </ul>
+    <section> PERFIL CLIENTE  </section>
+
     <footer>
         <div class="container-footer-all">
             <div class="container-body">

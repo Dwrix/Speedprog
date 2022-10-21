@@ -44,9 +44,9 @@ if(isset($_GET['error_mensaje'])){
         } 
          ?> </label>
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
+            <li><a class="active" href="../../index.php">Home</a></li>
+            <li><a href="../perfil-cliente/Perfil-cliente.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>

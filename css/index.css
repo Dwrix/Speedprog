@@ -7,14 +7,16 @@
 }
 body{
 	font-family: montserrat;
-	background: url("") no-repeat;
+	
+	background-size: cover;
+	font-family: sans-serif;
+	height: 100%;
 }
 
 .nav-cab{
 	background: #241508c5;
 	height: 80px;
 	width: 100%;
-	position: static;
 
 	
 }
@@ -43,7 +45,7 @@ nav ul li a{
 	text-transform: uppercase;
 }
 a.active,a:hover{
-	background: #da5b06e7;
+	background: gray;
 	transition: .5s;
 }
 .checkbtn{
@@ -59,6 +61,7 @@ a.active,a:hover{
 	display: none;
 }
 
+/*-----menubody----------------*/
 
 
 

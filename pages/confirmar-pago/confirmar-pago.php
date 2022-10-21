@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/css/calification-tutor.css">
+    <link rel="stylesheet" href="/css/balance-tutor.css">
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/Slider.js"></script>
 
@@ -20,18 +20,24 @@
         <label class="logo">SpeedProg Asesorias</label>
 
         <ul>
-            <li><a class="active" href="/main.html">Home</a></li>
-            <li><a href="/pages/login/login.html">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="/pages/solicitar-tutor/solicitar-tutor.html">Solicitar Tutor</a> </li>
+            <li><a class="active" href="../../index.php">Home</a></li>
+            <li><a href="../perfil-cliente/Perfil-cliente.php">Ingresar / Perfil</a></li>
+            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
             <li><a href="/pages/somos/somos.html">Quienes Somos</a></li>
         </ul>
     </nav>
 
-    <section>
-<div>
-    CALIFICACION TUTOR
-</div>
-    </section>
+    <nav class="hd2">
+        <a href="../../index.php">Home</a> |
+        <a href="../perfil-cliente/Perfil-cliente.php">Perfil</a> |
+        <a href="#">Servicio</a> |
+        <a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> |
+        <a href="../postulacion-tutor/postulacion-tutor.php">Postular Tutor</a> |
+        <a href="../somos/somos.html">Somos Speedprog</a> |
+    </nav>
+
+    <span>CONFIRMAR PAGO</span>
+
     <footer>
         <div class="container-footer-all">
             <div class="container-body">
@@ -70,7 +76,7 @@
                     </div>
                     <div class="row2">
                         <img src="/img/mailicon.png">
-                        <label>info@abogadosunited.cl</label>
+                        <label>info@speedprog.cl</label>
                     </div>
                 </div>
             </div>
