@@ -45,6 +45,18 @@
                 <input type="date" id="date" name="date" placeholder="Fecha nacimiento" required><br> 
                 <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br> 
                 <input type="email" id="mail" name="correo" placeholder="Ingrese Correo" required><br> 
+                <select name="pais" required>
+                    <option value="">Seleccionar Pais</option>
+                    <?php
+                    include '../../php/conexionBD.php';
+                    $consulta = "SELECT * FROM pais";
+                    $ejecutar = mysqli_query($conexion,$consulta) or die($conexion);
+                    ?>
+                    <?php foreach ($ejecutar as $opciones):?>
+                    <option value="<?php echo $opciones['id_pais']?>"><?php echo $opciones['pais'] ?></option>
+                    <?php endforeach ?>
+                    <?php  mysqli_close($conexion); ?>
+                </select>
                 <input type="password" id="pass" name="pass1" placeholder="Ingrese Contraseña" required><br>
                 <input type="password" id="passConfirm" name="passCon1" placeholder="Repita la Contraseña" required><br>
                 <input class="btn-form" id="submitLogin" type="submit" value="Registrar"><a href="../login/loginIndex.php"></a><br><br>

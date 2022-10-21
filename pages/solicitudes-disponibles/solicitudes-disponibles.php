@@ -30,8 +30,13 @@
     <section>
 <div>
     <?php 
+    //Requerir datos de conexion
+    require("../../php/conexionBD.php");
+    //variable de conexion 
+    $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
+    //validar conexion a base de datos, seleccionar db
+    mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
     
-    $conexion = mysqli_connect("localhost:3306","root","root","speedprogasesorias") or die("Problemas con la conexion");
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     ?>

@@ -1,6 +1,11 @@
 <?php
 
-$conexion = mysqli_connect("localhost:3306","root","root","speedprogasesorias") or die("Problemas con la conexion");
+//Requerir datos de conexion
+require("../../php/conexionBD.php");
+//variable de conexion 
+$conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
+//validar conexion a base de datos, seleccionar db
+mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
 
 $descripcion = mysqli_real_escape_string($conexion, $_POST['descripcion1']);
 $titulo = mysqli_real_escape_string($conexion, $_POST['titulo1']);
