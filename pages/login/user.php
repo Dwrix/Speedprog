@@ -4,6 +4,8 @@ class User {
 
         private $nombre;
         private $correo;
+        private $id_usuario;
+        private $id_tipo_usuario_fk;
 
         public function userExists($email,$pass){
 
@@ -50,7 +52,7 @@ class User {
             mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
             //mysqli_set_charset($conexion,"utf-8");
 
-            $consulta = "SELECT nombre, fecha_nacimiento, correo FROM usuario WHERE correo=?";
+            $consulta = "SELECT nombre, fecha_nacimiento, correo, id_usuario, id_tipo_usuario_fk FROM usuario WHERE correo=?";
             $resultado = mysqli_prepare($conexion,$consulta);
             if(!$resultado){
                 echo "error de consulta ", mysqli_error($conexion);
@@ -62,12 +64,16 @@ class User {
                 echo "Error en la consulta";
             }
 
-            $sentencia = mysqli_stmt_bind_result($resultado,$a,$b,$c);
+            $sentencia = mysqli_stmt_bind_result($resultado,$a,$b,$c,$id,$esp);
 
             while(mysqli_stmt_fetch($resultado)){
 
+                
                 $this->nombre = $a.' '.$b;
                 $this->correo = $c;
+                $this->id_usuario=$id;
+                $this->id_tipo_usuario_fk = $esp;
+                
         
 
             }
@@ -77,6 +83,14 @@ class User {
 
         public function getNombre(){
             return $this->nombre;
+        }
+
+        public function getTipo(){
+            return $this->id_tipo_usuario_fk;
+        }
+
+        public function getIdUsuario(){
+            return $this->id_usuario;
         }
 
 

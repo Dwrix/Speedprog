@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/css/perfil-cliente.css">
+    <link rel="stylesheet" href="../../css/perfil-cliente.css">
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/Slider.js"></script>
 
@@ -18,10 +18,13 @@
             <i class="fa fa-bars"></i>
         </label>
         <label class="logo"><a href="../../main.html" >Abogados United</a><?php 
-        if(isset($user)){echo " Bienvenido ". $user->getNombre();
+        if(isset($user)){
+            echo " Bienvenido ". $user->getNombre();
+            $tipo = $user->getTipo();
         }else{
             require('../login/login.php');
-            echo " Bienvenido ". $user->getNombre();
+            
+            
         } 
          ?></label>
        
