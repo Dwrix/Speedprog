@@ -38,6 +38,7 @@
          exit();
      }
      mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+
     $sql = "SELECT * FROM especialidad";
     $sql2 = "SELECT * FROM metodo_de_pago";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));

@@ -1,5 +1,6 @@
 <?php
 
+
 include_once '../login/login.php';
         if(isset($user)){
             echo " Bienvenido ". $user->getNombre();
@@ -17,6 +18,7 @@ if(mysqli_connect_errno()){
     exit();
 }
 mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+
 
 $descripcion = mysqli_real_escape_string($conexion, $_POST['descripcion1']);
 $titulo = mysqli_real_escape_string($conexion, $_POST['titulo1']);
