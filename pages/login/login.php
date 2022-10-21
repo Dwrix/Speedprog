@@ -20,15 +20,15 @@
         if($user->userExists($correoForm,$passForm)){
             $userSession->setCurrentUser($correoForm);
             $user->setUser($correoForm);
-            include_once '../perfil-cliente/perfil-cliente.php';
+            header("Location: ../perfil-cliente/perfil-cliente.php"); 
 
         }else{
             $errorLogin = "user o pass incorrecto";
-            include_once 'loginIndex.php';
+            header("Location: login/loginIndex.php"); 
         }
 
     }else{
-        include_once 'loginIndex.php';
+        header("Location: login/loginIndex.php"); 
     }
 
 ?>

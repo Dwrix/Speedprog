@@ -69,7 +69,7 @@ class User {
             while(mysqli_stmt_fetch($resultado)){
 
                 
-                $this->nombre = $a.' '.$b;
+                $this->nombre = $a;
                 $this->correo = $c;
                 $this->id_usuario=$id;
                 $this->id_tipo_usuario_fk = $esp;
