@@ -24,11 +24,11 @@
 
         }else{
             $errorLogin = "user o pass incorrecto";
-            header("Location: login/loginIndex.php"); 
+            header("Location: loginIndex.php"); 
         }
 
     }else{
-        header("Location: login/loginIndex.php"); 
+        header("Location: loginIndex.php"); 
     }
 
 ?>

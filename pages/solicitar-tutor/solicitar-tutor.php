@@ -12,8 +12,8 @@
     <title>SpeedProg</title>
 </head>
 <body>
-
-    <?php 
+    
+<?php 
     include_once '../estructura/header.php';
     ?>
 
