@@ -9,7 +9,7 @@
     if(isset($_SESSION['user'])){
         
         $user->setUser($userSession->getCurrentUser());
-        include_once '../perfil-cliente/perfil-cliente.php';
+        //include_once '../perfil-cliente/perfil-cliente.php';
 
     }else if(isset($_POST['correo']) && isset($_POST['password'])){
         $correoForm = $_POST['correo'];

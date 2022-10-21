@@ -31,7 +31,13 @@
 
     <form method="POST" action="agregar.php">
     <?php
-    $conexion = mysqli_connect("localhost:3306","root","root","speedprogasesorias") or die("Problemas con la conexion");
+     require("../../php/conexionBD.php");
+     $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
+     if(mysqli_connect_errno()){
+         echo "fallo la conexion";
+         exit();
+     }
+     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
     $sql = "SELECT * FROM especialidad";
     $sql2 = "SELECT * FROM metodo_de_pago";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -57,6 +63,7 @@
     <div>
          <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" ></textarea>
     </div>
+    <div>Valor: $1.000 CLP</div>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">
     <?php 
