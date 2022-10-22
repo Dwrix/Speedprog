@@ -62,8 +62,9 @@ if(isset($_GET['error_mensaje'])){
     }
     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
 
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
-    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    
+
+    
     ?>
     SOLICITUDES DISPONIBLES
     
@@ -81,6 +82,27 @@ if(isset($_GET['error_mensaje'])){
         <td>Detalles</td>   
     </tr>
     <?php 
+//Verificar el lenguaje y caracteres de lenguajes especiales
+$buscar;
+if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar"){
+    if($_GET['especialidades1']==='C%23'){
+        $buscar="C#";
+    }else if($_GET['especialidades1']==='C%2B%2B'){
+        $buscar="C++";
+    }else if($_GET['especialidades1']==='Bash%2FShell'){
+        $buscar="Bash/Shell";
+    }
+    $buscar = $_GET['especialidades1'];
+
+    $sqlIdTipo = "SELECT id_especialidad FROM especialidad WHERE especialidad= '$buscar'";
+    $registrosIdTipo = mysqli_query($conexion, $sqlIdTipo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    $regIdTipo = mysqli_fetch_row($registrosIdTipo); 
+    $datoTipo = $regIdTipo[0];
+
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_especialidad_fk = '$datoTipo'";
+    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    
+    
     while ($reg = mysqli_fetch_array($registros)){
         $dato = $reg['id_especialidad_fk'];
 
@@ -89,6 +111,39 @@ if(isset($_GET['error_mensaje'])){
     <td style="display:none;"><?php echo $reg['id_solicitud'] ?></td>  
     <td><?php echo $reg['titulo'] ?></td>
     <?php 
+
+
+        $sql2 = "SELECT especialidad FROM especialidad WHERE id_especialidad = $dato";
+        $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $reg2 = mysqli_fetch_row($registros2);
+
+
+
+    ?>
+    <td><?php echo $reg2[0] ?></td>
+    <td><?php echo $reg['descripcion'] ?></td>
+    <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
+    
+    <?php }
+
+
+
+}else if(!isset($_GET['especialidades1']) || $_GET['especialidades1'] == 'Seleccionar'  ){
+
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
+    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
+
+    while ($reg = mysqli_fetch_array($registros)){
+        $dato = $reg['id_especialidad_fk'];
+
+        ?>
+    <tr>
+    <td style="display:none;"><?php echo $reg['id_solicitud'] ?></td>  
+    <td><?php echo $reg['titulo'] ?></td>
+    <?php 
+
+
         $sql2 = "SELECT especialidad FROM especialidad WHERE id_especialidad = $dato";
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
@@ -100,10 +155,46 @@ if(isset($_GET['error_mensaje'])){
     <td><?php echo $reg['descripcion'] ?></td>
     <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     <?php }
+    }
+?>
+
+
+    </table>
+
+
+
+    
+    
+   
+    <br>
+    Filtro de Lenguaje
+    <br>
+    <br>
+    <div>
+
+        <form method="GET" action="solicitudes-disponibles.php">
+
+        Seleccionar lenguaje <select id="especialidades" name="especialidades1">
+    <?php 
+        $sqlBB = "SELECT * FROM especialidad";
+        $registrosBB = mysqli_query($conexion, $sqlBB) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+   ?> <option>Seleccionar</option> <?php
+    while ($regBB = mysqli_fetch_array($registrosBB)){
+        ?>
+            <option><?php echo $regBB['especialidad'] ?></option>
+    <?php }
     mysqli_close($conexion);
     ?>
-    </table>
-    
+    <a href="test.php?id=javascript:document.getElementById('especialidades').value">
+        <input type="submit" value="Busqueda">
+        </form>
+        <form method="GET" action="solicitudes-disponibles.php">
+            <input type="submit" value ="Eliminar busqueda">
+        </form>
+
+    </div>
+
+
     
 </div>
     </section>

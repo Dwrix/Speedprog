@@ -24,10 +24,9 @@ if($pas===$passCon){
     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
 
     $tipousuario = 2;
-    $balance = 1; //??
 
-    $sql = "INSERT INTO usuario (rut, nombre, fecha_nacimiento, direccion, password, correo, id_pais_fk, id_tipo_usuario_fk, id_balance_fk ) VALUES 
-    ('$rut', '$nom', '$date', '$dir', '$pas', '$mail', '$idpais', '$tipousuario', '$balance')";
+    $sql = "INSERT INTO usuario (rut, nombre, fecha_nacimiento, direccion, password, correo, id_pais_fk, id_tipo_usuario_fk) VALUES 
+    ('$rut', '$nom', '$date', '$dir', '$pas', '$mail', '$idpais', '$tipousuario')";
 
     if($conexion->query($sql) === TRUE){
         echo "Se registro correctamente";
