@@ -13,9 +13,29 @@
 </head>
 <body>
     
-<?php 
-    include_once '../estructura/header.php';
-    ?>
+<nav class="nav-cab">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo">SpeedProg Asesorias</label>
+        <?php 
+        if(isset($user)){
+            include_once '../login/login.php';
+            $tipo = $user->getTipo();
+            echo $user->getNombre();
+            if($tipo == 2){
+                header("Location: ../login/loginIndex.php?error_mensaje=0");
+            }
+        }else{
+            header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
+
+        include_once '../estructura/listaNav.php';
+        ?>
+
+        
+    </nav>
 
     <br><br>    
     <form method="POST" action="agregar.php">

@@ -4,47 +4,48 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
     <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
     <title>SpeedProg</title>
 
 <body>
-<?php
-if(isset($_GET['error_mensaje'])){
-    echo '<script type="text/javascript">
-       window.onload = function () { alert("Error, tutor no poose la especialidad requerida"); } 
-</script>'; 
-}
-
-?> 
-    <nav class="nav-cab">
+<nav class="nav-cab">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo">SpeedProg Asesorias<?php 
-        include_once '../login/login.php';
+        <label class="logo">SpeedProg Asesorias</label>
+        <?php 
+        
         if(isset($user)){
-            echo " Bienvenido ". $user->getNombre();
+            include_once '../login/login.php';
             $tipo = $user->getTipo();
-            $idusuario = $user->getIdUsuario();
-            if($tipo=='3' || $tipo=='4'){
-            }else{
-                header("Location: ../login/login.php");  
+            echo $user->getNombre();
+            if($tipo == 2){
+                header("Location: ../login/loginIndex.php?error_mensaje=0");
             }
         }else{
-            header("Location: ../login/login.php");
-        } 
-         ?> </label>
-        <ul>
-            <li><a class="active" href="../../index.php">Home</a></li>
-            <li><a href="../perfil-cliente/Perfil-cliente.php">Ingresar / Perfil</a></li>
-            <li id="sectionmenu"><a href="../solicitar-tutor/solicitar-tutor.php">Solicitar Tutor</a> </li>
-            <li><a href="../somos/somos.php">Quienes Somos</a></li>
-        </ul>
+            header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
+
+        include_once '../estructura/listaNav.php';
+        ?>
+
+        
     </nav>
+    <?php
+if(isset($_GET['error_mensaje'])){
+    if('error_mensaje'==0){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, no tiene los permisos para ver esta pagina"); } 
+        </script>';
+    }
+     
+}
+
+?> 
+   
 
     <section>
 <div>
