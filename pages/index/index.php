@@ -20,27 +20,33 @@
         </label>
         <label class="logo">SpeedProg Asesorias</label>
         <?php 
-         if(isset($user)){
-            include_once '../login/login.php';
-            $tipo = $user->getTipo();
-            echo $user->getNombre();
-            if($tipo == 2){
-                
-            }
+        if(!isset($_SESSION)){
+            session_start();
+        };
+        if(isset($_SESSION['user'])){
+            $mail = $_SESSION['user'];
+            include_once '../login/verificacion.php';
         }else{
-            
+            $userName = '';   
+            $tipo = '';
         }
+        echo " ".$userName;   
         include_once '../estructura/listaNav.php';
-        
+        if($tipo == 2){
+            //header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
         ?>
-
         
     </nav>
     <?php
 if(isset($_GET['error_mensaje'])){
-    if('error_mensaje'==0){
+    if($_GET['error_mensaje']==='0'){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, no tiene los permisos para ver esta pagina"); } 
+        </script>';
+    }else if($_GET['error_mensaje']==='1'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, solicitud no seleccionada"); } 
         </script>';
     }
      

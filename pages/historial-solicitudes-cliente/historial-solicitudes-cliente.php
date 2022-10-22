@@ -17,13 +17,26 @@
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
         </label>
-        <label class="logo">SpeedProg Asesorias</label><?php 
-        
-        if(isset($user)){
-            include_once '../login/login.php';
-            echo $user->getNombre();
+        <label class="logo">SpeedProg Asesorias</label>
+        <?php 
+        if(!isset($_SESSION)){
+            session_start();
+        };
+        if(isset($_SESSION['user'])){
+            $mail = $_SESSION['user'];
+            include_once '../login/verificacion.php';
+        }else{
+            header("Location: ../login/loginIndex.php?error_mensaje=0");
+            $userName = '';   
+            $tipo = '';
         }
-    ?>
+        echo $userName;   
+        include_once '../estructura/listaNav.php';
+        if($tipo == 2){
+            //header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
+        
+        ?>
 
         <ul>
             <li><a class="active" href="../../index.php">Home</a></li>
