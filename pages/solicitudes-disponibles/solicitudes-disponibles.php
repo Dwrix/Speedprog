@@ -24,14 +24,14 @@
             $mail = $_SESSION['user'];
             include_once '../login/verificacion.php';
         }else{
-            header("Location: ../login/loginIndex.php?error_mensaje=0");
+            header("Location: ../index/index.php?error_mensaje=0");
             $userName = '';   
             $tipo = '';
         }
         echo " ".$userName;   
         include_once '../estructura/listaNav.php';
         if($tipo == 2){
-            header("Location: ../login/loginIndex.php?error_mensaje=0");
+            header("Location: ../index/index.php?error_mensaje=0");
         }
         ?>
 
