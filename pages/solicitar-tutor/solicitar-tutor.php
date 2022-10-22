@@ -13,9 +13,33 @@
 </head>
 <body>
     
-<?php 
-    include_once '../estructura/header.php';
-    ?>
+<nav class="nav-cab">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo">SpeedProg Asesorias</label>
+        <?php 
+        if(!isset($_SESSION)){
+            session_start();
+        };
+        if(isset($_SESSION['user'])){
+            $mail = $_SESSION['user'];
+            include_once '../login/verificacion.php';
+        }else{
+            header("Location: ../login/loginIndex.php?error_mensaje=0");
+            $userName = '';   
+            $tipo = '';
+        }
+        echo $userName;   
+        include_once '../estructura/listaNav.php';
+        if($tipo == 2){
+            //header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
+        
+        ?>
+        
+    </nav>
 
     <br><br>    
     <form method="POST" action="agregar.php">

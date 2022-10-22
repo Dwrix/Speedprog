@@ -9,7 +9,7 @@
     if(isset($_SESSION['user'])){
         
         $user->setUser($userSession->getCurrentUser());
-
+        //header("Location: ../index/index.php"); 
 
     }else if(isset($_POST['correo']) && isset($_POST['password'])){
         $correoForm = $_POST['correo'];
@@ -20,7 +20,7 @@
         if($user->userExists($correoForm,$passForm)){
             $userSession->setCurrentUser($correoForm);
             $user->setUser($correoForm);
-            header("Location: ../perfil-cliente/perfil-cliente.php"); 
+            header("Location: ../index/index.php"); 
 
         }else{
             $errorLogin = "user o pass incorrecto";
