@@ -42,7 +42,7 @@
     </nav>
 
     <br><br>    
-    <form method="POST" action="agregar.php">
+    <form method="POST" action="agregar.php?permiso=1">
     <?php
      require("../../php/conexionBD.php");
      $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
