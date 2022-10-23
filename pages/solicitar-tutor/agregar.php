@@ -61,7 +61,7 @@ else
 $sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, costo_servicio, boleta_pago, metodo_de_pago_fk, id_usuario_fk ) VALUES
 ('$date', '5000', 'informacion de boleta de ejemplo', '$regM[0]', '$userId')";
 if($conexion->query($sqlDetalle) === TRUE){
-    echo "Record Added Sucessfully";
+    header("Location: ../index/index.php?mensaje_exito=0");
    }
    else
    {
