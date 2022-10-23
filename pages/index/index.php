@@ -49,8 +49,13 @@ if(isset($_GET['error_mensaje'])){
         window.onload = function () { alert("Error, solicitud no seleccionada"); } 
         </script>';
     }
-     
+    
+}else if(isset($_GET['mensaje_exito'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Solicitud ingresada exitosamente"); } 
+    </script>';
 }
+
 
 ?> 
 

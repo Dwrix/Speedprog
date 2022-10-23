@@ -42,15 +42,30 @@
     <section>
 <div>
 <?php 
-        $sqlTest5 = "SELECT * FROM solicitud WHERE id_solicitud='$idSolicitud'";
-        if(isset($sqlTest5)){
+        $idSolicitud = $_REQUEST['id_solicitud'];
+
+        if(!isset($idSolicitud)){
             header("Location: ../index/index.php?error_mensaje=1");
             // Intentar entrar por medios alternativos o directamente
-        }else{
-            
         }
+        $idSolicitud = $_REQUEST['id_solicitud'] or die("Error al ingresar a la pagina");
+   
+        $sqlTest5 = "SELECT * FROM solicitud WHERE id_solicitud='$idSolicitud'";
+        
         $registros5 = mysqli_query($conexion, $sqlTest5) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg5 = mysqli_fetch_row($registros5);
+
+        $sqlTest0 = "SELECT id_especialidad_fk FROM solicitud WHERE id_solicitud='$idSolicitud'";
+        $registros = mysqli_query($conexion, $sqlTest0) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $regIdEspecialidad = mysqli_fetch_row($registros) or die("Problemas en la seleccion.");
+        $sql = "SELECT * FROM usuario_especialidad WHERE id_especialidad_fk ='$regIdEspecialidad[0]' AND id_usuario_fk='$userId'";
+        $registros2 = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        if ($registros2->num_rows === 0 && $tipo=='3'){
+                    
+            header("Location: ../solicitudes-disponibles/solicitudes-disponibles.php?error_mensaje=0");
+        }else{
+            $regIdEspecialidad2 = mysqli_fetch_row($registros2);
+        }
         ?>
    
 
@@ -80,7 +95,7 @@
     
 
     </table>
-        
+        <a href="../solicitudes-disponibles/solicitudes-disponibles.php">BOTON Volver</a>
 
 
 </div>
