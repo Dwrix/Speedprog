@@ -1,5 +1,11 @@
 <?php
 
+
+if(!isset($_GET['permiso'])){
+    header("Location: ../index/index.php?error_mensaje=0");
+}
+
+
 //obtener valores dedsde formulario
 
 $rut = $_POST["rut1"];
@@ -37,7 +43,7 @@ if($pas===$passCon){
     {
         echo "Error" . $sql . "<br/>" . $conexion->error;
         mysqli_close($conexion);
-        header('location: ../pages/registrar/registro.php?msgerror='.'errorRegistro');
+        header('location: ../registrar/registro.php?msgerror='.'errorRegistro');
     }
  
 

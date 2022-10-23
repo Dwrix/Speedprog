@@ -1,4 +1,9 @@
 <?php 
+
+if(!isset($_GET['permiso'])){
+    header("Location: ../index/index.php?error_mensaje=0");
+}
+
         if(!isset($_SESSION)){
             session_start();
         };

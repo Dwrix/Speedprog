@@ -60,6 +60,9 @@
         $regIdEspecialidad = mysqli_fetch_row($registros) or die("Problemas en la seleccion.");
         $sql = "SELECT * FROM usuario_especialidad WHERE id_especialidad_fk ='$regIdEspecialidad[0]' AND id_usuario_fk='$userId'";
         $registros2 = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $sqlEsp = "SELECT especialidad FROM especialidad WHERE id_especialidad='$reg5[11]'";
+        $regEsp = mysqli_query($conexion, $sqlEsp) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $reg6 = mysqli_fetch_row($regEsp);
         if ($registros2->num_rows === 0 && $tipo=='3'){
                     
             header("Location: ../solicitudes-disponibles/solicitudes-disponibles.php?error_mensaje=0");
@@ -90,11 +93,31 @@
         </tr>
         <tr>
             <td>Especialidad</td>
-            <td><?php echo $reg5[11]?></td>
+            <td><?php echo $reg6[0]?></td>
         </tr>
     
 
     </table>
+
+<?php
+
+if($tipo == 3){
+?>
+<form method="POST" action="agregar-detalle-solicitud.php?permiso=1">
+<?php 
+    echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+    echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+    echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+?>
+<input type="submit" value="Aceptar solicitud">
+</form>
+<?php
+}
+?>
+
+
+
         <a href="../solicitudes-disponibles/solicitudes-disponibles.php">BOTON Volver</a>
 
 
