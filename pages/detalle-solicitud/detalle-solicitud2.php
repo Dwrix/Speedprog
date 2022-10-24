@@ -55,9 +55,7 @@
         $registros5 = mysqli_query($conexion, $sqlTest5) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg5 = mysqli_fetch_row($registros5);
 
-        if($reg5[6]==='2'){
-            header("Location: ../index/index.php?error_mensaje=2");
-        }
+        
         
 
 
@@ -107,19 +105,48 @@
 
 <?php
 
-if($tipo == 3){
+if($tipo == 3 || $tipo == 2){
 ?>
-<form method="POST" action="agregar-detalle-solicitud.php?permiso=1">
+<form method="POST" action="../discord/discord.php?permiso=1">
 <?php 
     echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
     echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
-<input type="submit" value="Aceptar solicitud">
+<input type="submit" value="Ir a Discord">
 </form>
+
 <?php
 }
+if($tipo == 3){
+    ?>
+    <form method="POST" action="finalizar-solicitud.php?permiso=1">
+    <?php 
+        echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+        echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+        echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+        echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+    ?>
+    <input type="submit" value="Finalizar solicitud">
+    </form>
+    
+    <?php
+    }
+    if($tipo == 2){
+        ?>
+        <form method="POST" action="cancelar-solicitud.php?permiso=1">
+        <?php 
+            echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+            echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+            echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+            echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+        ?>
+        <input type="submit" value="Cancelar solicitud">
+        </form>
+        
+        <?php
+        }
 ?>
 
 

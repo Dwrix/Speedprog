@@ -48,6 +48,18 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, solicitud no seleccionada"); } 
         </script>';
+    }else if($_GET['error_mensaje']==='2'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, solicitud ya ha sido tomada"); } 
+        </script>';
+    }else if($_GET['error_mensaje']==='3'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Usuario no poose solicitudes activas"); } 
+        </script>';
+    }else if($_GET['error_mensaje']==='4'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Tutor no poose solicitudes activas"); } 
+        </script>';
     }
     
 }else if(isset($_GET['mensaje_exito'])){
