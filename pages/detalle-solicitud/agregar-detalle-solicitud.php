@@ -61,8 +61,21 @@ $sqlUpdate1 = "UPDATE solicitud SET fecha_atencion = '$date', estado_solicitud_f
 WHERE id_solicitud='$idSolicitud1'";
 $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
+// Modificar tutor en detalle_pago en $idSolicitud1 con $idTutor1
 
-//Redireccionar a Mis solicitudes (poner mensaje) -> En mis solicitudes seleccionar una en proceso y esa redirecciona a Discord
+/*
+- Modificar balance de tutor
+- Selecionar todos los datos desde Balance, utilizando una busqueda desde usuario mediante $idTutor1 y buscando la id_balance_fk
+- Con la ID de balance conseguida
+- Sumar $1000 al monto_bruto_total
+- Con el nuevo monto_bruto_total, conseguir el porcentaje_comision
+- Utilizando el porcentaje de comision, sacar el valor multiplicandolo por el monto_bruto_total y guardarlo en comision_total
+- Restar el comision_total a monto_bruto_total y guardarlo en neto_total
+- Dejar pago_transferencia_tutor y deuda_actual tal como esta, ya que se modificar con la tabla remuneracion
+
+*/
+
+
 
 header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=1");
 

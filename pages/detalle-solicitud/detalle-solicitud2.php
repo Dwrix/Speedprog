@@ -107,28 +107,28 @@
 
 if($tipo == 3 || $tipo == 2){
 ?>
-<form method="POST" action="../discord/discord.php?permiso=1">
+<form method="POST" action="../chat/chat.php?permiso=1">
 <?php 
     echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
     echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
-<input type="submit" value="Ir a Discord">
+<input type="submit" value="Ver chat">
 </form>
 
 <?php
 }
 if($tipo == 3){
     ?>
-    <form method="POST" action="finalizar-solicitud.php?permiso=1">
+    <form method="POST" action="procesar-solicitud.php?permiso=1">
     <?php 
         echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
         echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
         echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
         echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
     ?>
-    <input type="submit" value="Finalizar solicitud">
+    <input type="submit" value="Procesar solicitud">
     </form>
     
     <?php

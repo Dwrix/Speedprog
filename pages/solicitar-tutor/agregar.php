@@ -36,6 +36,8 @@ if(mysqli_connect_errno()){
 mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
 
 
+
+
 $descripcion = mysqli_real_escape_string($conexion, $_POST['descripcion1']);
 $titulo = mysqli_real_escape_string($conexion, $_POST['titulo1']);
 $especialidad = mysqli_real_escape_string($conexion, $_POST['especialidades1']);
@@ -62,16 +64,27 @@ else
 {
  echo "Error" . $sql1 . "<br/>" . $conexion->error;
 }
+$lastIdSolicitud = mysqli_insert_id($conexion);
 
-$sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, costo_servicio, boleta_pago, metodo_de_pago_fk, id_usuario_fk ) VALUES
-('$date', '5000', 'informacion de boleta de ejemplo', '$regM[0]', '$userId')";
+
+$sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, costo_servicio, boleta_pago, metodo_de_pago_fk, id_usuario_fk, id_solicitud_fk ) VALUES
+('$date', '1000', 'informacion de boleta de ejemplo', '$regM[0]', '$userId', '$lastIdSolicitud')";
 if($conexion->query($sqlDetalle) === TRUE){
-    header("Location: ../index/index.php?mensaje_exito=0");
+    
    }
    else
    {
     echo "Error" . $sqlDetalle . "<br/>" . $conexion->error;
    }
+
+   $media = $_POST['media'];
+   foreach($media AS $key => $value){
+       //$value es el contenido a agregar
+       $sqlMedia = "INSERT INTO media (link, id_solicitud_fk, id_usuario_fk) VALUES ('$value', '$lastIdSolicitud', '$userId')";
+       $conexion->query($sqlMedia);  
+   }
+   header("Location: ../index/index.php?mensaje_exito=0");
+
 
 mysqli_close($conexion);
 
