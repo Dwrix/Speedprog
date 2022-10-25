@@ -4,10 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-
+    
     <link rel="stylesheet" href="../../css/solicitar-tutor.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
+    <script>
+        $(document).ready(function(e){
+            //Variables
+            var html = '<div><input type="text" id="childmedia" rows="1" cols="50" name="media[]" /><a href="#" id="eliminar"> x</a></div>';
+            var maxRows = 5;
+            var x = 1;
+            //Agregar Rows
+            $("#add").click(function(e){
+                if(x<=maxRows){
+                    $("#contenedor").append(html);
+                    x++;
+                } 
+            });
+            //Eliminar Rows
+            $("#contenedor").on('click','#eliminar', function(e){
+                $(this).parent('div').remove();
+                x--;
+            });
+        });
+    </script>
+
 
     <title>SpeedProg</title>
 </head>
@@ -40,7 +61,7 @@
         ?>
         
     </nav>
-
+    
     <br><br>    
     <form method="POST" action="agregar.php?permiso=1">
     <?php
@@ -77,6 +98,16 @@
     <div>
          <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" ></textarea>
     </div>
+
+<div>
+Link Imagen/Video 
+    </div>
+    <div id="contenedor">
+    <input type="text" id="media" rows="1" cols="50" name="media[]" />
+        <a href="#" id="add">+</a>
+    </div>
+        
+
     <div>Valor: $1.000 CLP</div>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">
@@ -96,7 +127,6 @@
     <input type="submit" value="Ingresar">
     </div>
     </form>
-
     </section>
     
     <?php 
