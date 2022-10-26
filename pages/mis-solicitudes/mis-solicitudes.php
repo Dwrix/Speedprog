@@ -35,11 +35,14 @@
             //header("Location: ../login/loginIndex.php?error_mensaje=0");
         }
 
-        if($_GET['exito']==='1'){
-            echo '<script type="text/javascript">
-            window.onload = function () { alert("Solicitud aceptada exitosamente"); } 
-            </script>';
+        if(isset($_GET['exito'])){
+            if($_GET['exito']==='1'){
+                echo '<script type="text/javascript">
+                window.onload = function () { alert("Solicitud aceptada exitosamente"); } 
+                </script>';
+            }
         }
+        
 
 
         
@@ -51,25 +54,28 @@
 
 
 
-    <table border="1" width="700" align="center">
-    <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>   
-        <td>Detalles</td>   
-    </tr>
+    
     <?php 
 //Verificar el lenguaje y caracteres de lenguajes especiales
 $buscar;
 if($tipo=='2'){
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2' AND id_usuario_fk = '$userId'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2' OR estado_solicitud_fk = '1' AND id_usuario_fk = '$userId'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     if ($registros->num_rows === 0){
         header("Location: ../index/index.php?error_mensaje=3");
     }
-
+    ?>
+    <table border="1" width="700" align="center">
+    <tr>
+        <td style="display:none;">ID</td>
+        <td>Titulo</td>
+        <td>Especialidad</td>
+        <td>Descripcion</td>
+        <td>Tutor</td>   
+        <td>Detalles</td>   
+    </tr>
+    <?php
     while ($reg = mysqli_fetch_array($registros)){   
         ?>
     <tr>
@@ -82,11 +88,28 @@ if($tipo=='2'){
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
 
+        $buscarTutor = $reg['id_tutor_fk'];
+        if(isset($buscarTutor)){
+            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regTut = mysqli_fetch_row($registrosTut);
+        }
+        
+        
+        
 
 
     ?>
     <td><?php echo $reg2[0] ?></td>
+    
     <td><?php echo $reg['descripcion'] ?></td>
+    <td><?php if(isset($buscarTutor)){
+echo $regTut[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
     <td><a href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     
     <?php }
@@ -100,7 +123,16 @@ if($tipo=='2'){
     if ($registros->num_rows === 0){
         header("Location: ../index/index.php?error_mensaje=4");
     }
-
+    ?>
+    <table border="1" width="700" align="center">
+    <tr>
+        <td style="display:none;">ID</td>
+        <td>Titulo</td>
+        <td>Especialidad</td>
+        <td>Descripcion</td>   
+        <td>Detalles</td>   
+    </tr>
+    <?php
 
     while ($reg = mysqli_fetch_array($registros)){   
         ?>
@@ -126,7 +158,17 @@ if($tipo=='2'){
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
-    
+    ?>
+    <table border="1" width="700" align="center">
+    <tr>
+        <td style="display:none;">ID</td>
+        <td>Titulo</td>
+        <td>Especialidad</td>
+        <td>Descripcion</td>
+        <td>Tutor</td>   
+        <td>Detalles</td>   
+    </tr>
+    <?php
 
 
     while ($reg = mysqli_fetch_array($registros)){   
@@ -141,11 +183,24 @@ if($tipo=='2'){
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
 
-
+        $buscarTutor = $reg['id_tutor_fk'];
+        if(isset($buscarTutor)){
+            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regTut = mysqli_fetch_row($registrosTut);
+        }
 
     ?>
     <td><?php echo $reg2[0] ?></td>
+    <?php ?>
     <td><?php echo $reg['descripcion'] ?></td>
+    <td><?php if(isset($buscarTutor)){
+echo $regTut[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
     <td><a href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     
     <?php }

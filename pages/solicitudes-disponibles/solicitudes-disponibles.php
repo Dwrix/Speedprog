@@ -98,8 +98,7 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
     $registrosIdTipo = mysqli_query($conexion, $sqlIdTipo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $regIdTipo = mysqli_fetch_row($registrosIdTipo); 
     $datoTipo = $regIdTipo[0];
-
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_especialidad_fk = '$datoTipo'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_especialidad_fk = '$datoTipo' AND id_usuario_fk != '$userId'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     
     
@@ -131,6 +130,7 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
 }else if(!isset($_GET['especialidades1']) || $_GET['especialidades1'] == 'Seleccionar'  ){
 
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_usuario_fk != '$userId'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
 

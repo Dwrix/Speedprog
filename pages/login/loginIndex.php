@@ -37,7 +37,18 @@
         ?>
         
     </nav>
+<?php 
+if(isset($_GET['error_mensaje'])){
+    if($_GET['error_mensaje']==='0'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, debe iniciar sesion"); } 
+        </script>';
+    }
+}
 
+?>
+
+    
     <section class= "login-box">
         <div class="form">
             <section class="user-box">

@@ -60,11 +60,19 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Tutor no poose solicitudes activas"); } 
         </script>';
+    }else if($_GET['error_mensaje']==='5'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, un usuario administrador no puede realizar una solicitud"); } 
+        </script>';
     }
     
 }else if(isset($_GET['mensaje_exito'])){
     echo '<script type="text/javascript">
     window.onload = function () { alert("Solicitud ingresada exitosamente"); } 
+    </script>';
+}else if(isset($_GET['cierre'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Sesion cerrada exitosamente"); } 
     </script>';
 }
 
