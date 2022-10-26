@@ -63,6 +63,13 @@ $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la
 
 // Modificar tutor en detalle_pago en $idSolicitud1 con $idTutor1
 
+$sqlGetIdDetalle = "SELECT id_detalle_pago_fk FROM solicitud WHERE id_solicitud='$idSolicitud1'";
+$registros26 = mysqli_query($conexion, $sqlGetIdDetalle) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+$regDet = mysqli_fetch_row($registros26);
+
+$sqlDetallePago = "UPDATE detalle_pago SET id_tutor_fk='$idTutor1' WHERE id_fecha_pago='$regDet[0]'";
+$registros55a = mysqli_query($conexion, $sqlDetallePago) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
 /*
 - Modificar balance de tutor
 - Selecionar todos los datos desde Balance, utilizando una busqueda desde usuario mediante $idTutor1 y buscando la id_balance_fk
