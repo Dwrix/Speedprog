@@ -80,11 +80,11 @@
     ?>
     SOLICITAR TUTOR
     <div>
-        Titulo  <input type="text" id="titulo1" name="titulo1">
+        Titulo del problema  <input type="text" id="titulo1" name="titulo1" required>
     </div>
     
     <div>
-    Seleccionar lenguaje <select id="especialidades" name="especialidades1">
+    Seleccionar lenguaje de programacion <select id="especialidades" name="especialidades1">
     <?php 
     while ($reg = mysqli_fetch_array($registros)){
         ?>
@@ -94,20 +94,22 @@
     ?>
     </select>
     </div>
-    Descripcion
+    Descripcion del problema
     <div>
-         <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" ></textarea>
+         <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" required></textarea>
     </div>
 
 <div>
-Link Imagen/Video 
+Subir Imagen (opcional)
     </div>
     <div id="contenedor">
     <input type="text" id="media" rows="1" cols="50" name="media[]" />
         <a href="#" id="add">+</a>
     </div>
-        
-
+    <div>
+        Link de video (opcional)  
+    </div>   
+    <input type="text" id="video1" name="video1">
     <div>Valor: $1.000 CLP</div>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">

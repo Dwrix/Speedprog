@@ -41,6 +41,7 @@ if($tipo == '4'){
     $titulo = mysqli_real_escape_string($conexion, $_POST['titulo1']);
     $especialidad = mysqli_real_escape_string($conexion, $_POST['especialidades1']);
     $metodoDePago = mysqli_real_escape_string($conexion, $_POST['metododepago1']);
+    $linkVideo = mysqli_real_escape_string($conexion, $_POST['video1']);
     
     $sqlMetodoDePagoID = "SELECT id_metodo_de_pago FROM metodo_de_pago WHERE metodo_de_pago='$metodoDePago'";
     $registroMetodo = mysqli_query($conexion, $sqlMetodoDePagoID) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -64,16 +65,26 @@ if($tipo == '4'){
     id_usuario_fk, id_especialidad_fk ) VALUES ('$titulo',
     '$descripcion', '$date', '$estadodesolicitud','$idDetalle', '$userId', '$reg[0]')";
     //$regg2 = mysqli_query($conexion, $sql1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-    
-if($conexion->query($sql1) === TRUE){
+    $regxd = mysqli_query($conexion, $sql1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $lastIdSolicitud = mysqli_insert_id($conexion);
+
     $media = $_POST['media'];
-       foreach($media AS $key => $value){
-           //$value es el contenido a agregar
-           $sqlMedia = "INSERT INTO media (link, id_solicitud_fk, id_usuario_fk) VALUES ('$value', '$lastIdSolicitud', '$userId')";
-           $conexion->query($sqlMedia);  
-       }
+    if($media[0]==''){
+        echo "nulo";
+    }else{
+        foreach($media AS $key => $value){
+            //$value es el contenido a agregar
+            $sqlMedia = "INSERT INTO media (index_imagen, id_solicitud_fk, id_usuario_fk) VALUES ('$value', '$lastIdSolicitud', '$userId')";
+            $conexion->query($sqlMedia);  
+        }
+    }
+       
+
+if($linkVideo!=''){
+    $sqlMediaVideo = "INSERT INTO media (link_video, id_solicitud_fk, id_usuario_fk) VALUES ('$linkVideo', '$lastIdSolicitud', '$userId')";
+    $regxdxd = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 }
+
     
     
     

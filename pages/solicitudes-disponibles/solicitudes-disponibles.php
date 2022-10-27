@@ -43,6 +43,7 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, no tiene los permisos para ver esta pagina"); } 
         </script>';
+        
     }
      
 }
@@ -78,7 +79,9 @@ if(isset($_GET['error_mensaje'])){
         <td style="display:none;">ID</td>
         <td>Titulo</td>
         <td>Especialidad</td>
-        <td>Descripcion</td>   
+        <td>Descripcion</td>  
+        <td>Usuario</td>
+        <td>Tutor</td>   
         <td>Detalles</td>   
     </tr>
     <?php 
@@ -98,7 +101,7 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
     $registrosIdTipo = mysqli_query($conexion, $sqlIdTipo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $regIdTipo = mysqli_fetch_row($registrosIdTipo); 
     $datoTipo = $regIdTipo[0];
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_especialidad_fk = '$datoTipo' AND id_usuario_fk != '$userId'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_especialidad_fk = '$datoTipo'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     
     
@@ -116,12 +119,39 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
 
-
+        $buscarTutor = $reg['id_tutor_fk'];
+        if(isset($buscarTutor)){
+            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regTut = mysqli_fetch_row($registrosTut);
+        }
+        $buscarUsuario = $reg['id_usuario_fk'];
+        if(isset($buscarUsuario)){
+            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regUsuario1 = mysqli_fetch_row($registrosUsuario);
+        }
 
     ?>
     <td><?php echo $reg2[0] ?></td>
     <td><?php echo $reg['descripcion'] ?></td>
-    <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
+    <td><?php if(isset($buscarUsuario)){
+echo $regUsuario1[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
+    <td><?php if(isset($buscarTutor)){
+echo $regTut[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
+    <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
+    echo $reg['id_solicitud']
+    ?>"> Ver detalles </td>
     
     <?php }
 
@@ -130,7 +160,7 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
 }else if(!isset($_GET['especialidades1']) || $_GET['especialidades1'] == 'Seleccionar'  ){
 
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1'";
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '1' AND id_usuario_fk != '$userId'";
+
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
 
@@ -147,13 +177,40 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
         $sql2 = "SELECT especialidad FROM especialidad WHERE id_especialidad = $dato";
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
+        $buscarTutor = $reg['id_tutor_fk'];
+        if(isset($buscarTutor)){
+            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regTut = mysqli_fetch_row($registrosTut);
+        }
+        $buscarUsuario = $reg['id_usuario_fk'];
+        if(isset($buscarUsuario)){
+            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regUsuario1 = mysqli_fetch_row($registrosUsuario);
+        }
 
 
 
     ?>
     <td><?php echo $reg2[0] ?></td>
     <td><?php echo $reg['descripcion'] ?></td>
-    <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
+    <td><?php if(isset($buscarUsuario)){
+echo $regUsuario1[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
+    <td><?php if(isset($buscarTutor)){
+echo $regTut[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?><td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
+    echo $reg['id_solicitud']
+    ?>"> Ver detalles </td>
     <?php }
     }
 ?>
