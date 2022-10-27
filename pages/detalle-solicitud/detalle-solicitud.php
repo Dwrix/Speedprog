@@ -157,7 +157,17 @@ if($tipo == 3){
 if($userId!=$reg5[8]){
     echo "<input type='submit' value='Aceptar solicitud'>";
 }
+}else if($tipo == 4){
 ?>
+<form method="POST" action="cancelar-solicitud.php?permiso=1">
+<?php 
+    echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+    echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+    echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+?>
+<input type='submit' value='Cancelar solicitud'>
+
 
 
 </form>

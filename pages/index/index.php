@@ -79,6 +79,10 @@ if(isset($_GET['error_mensaje'])){
     echo '<script type="text/javascript">
     window.onload = function () { alert("Sesion cerrada exitosamente"); } 
     </script>';
+}else if(isset($_GET['cancelar_solicitud'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Solicitud cancelada exitosamente"); } 
+    </script>';
 }
 
 

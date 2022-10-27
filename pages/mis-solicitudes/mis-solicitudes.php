@@ -59,7 +59,7 @@
 //Verificar el lenguaje y caracteres de lenguajes especiales
 $buscar;
 if($tipo=='2'){
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2' OR estado_solicitud_fk = '1' AND id_usuario_fk = '$userId'";
+    $sql = "SELECT * FROM solicitud WHERE (estado_solicitud_fk = '2' OR estado_solicitud_fk = '1' OR estado_solicitud_fk = '3') AND id_usuario_fk = '$userId'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     if ($registros->num_rows === 0){
@@ -130,7 +130,7 @@ echo "Sin determinar";
 
 
 }else if($tipo=='3'){
-    $sql = "SELECT * FROM solicitud WHERE (estado_solicitud_fk = '2' OR estado_solicitud_fk = '1') AND (id_tutor_fk = '$userId' OR id_usuario_fk = '$userId')";
+    $sql = "SELECT * FROM solicitud WHERE (estado_solicitud_fk = '2' OR estado_solicitud_fk = '1' OR estado_solicitud_fk = '3') AND (id_tutor_fk = '$userId' OR id_usuario_fk = '$userId')";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     if ($registros->num_rows === 0){
@@ -198,7 +198,7 @@ echo "Sin determinar";
     
     <?php }
 }else if($tipo=='4'){
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '2' OR estado_solicitud_fk = '3'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     ?>
