@@ -85,25 +85,18 @@ $neto_total = $regBalance[4];
 $pago_transferencia_tutor = $regBalance[5];
 $deuda_actual = $regBalance[6];
 
-$monto_bruto_total += 1000;
-$comision_total = ($monto_bruto_total*$porcentaje_comision)/100;
-$neto_total = $monto_bruto_total - $comision_total;
+$monto_bruto_total += 1000; //Ingreso del reciente pago
+$comision_total = ($monto_bruto_total*$porcentaje_comision)/100; //Determinar cuanto dinero es de la empresa
+$neto_total = $monto_bruto_total - $comision_total; // Determinar cuanto dinero es del tutor
+$deuda_actual = $neto_total - $pago_transferencia_tutor; // Actualizar la deuda
+//Actualizar el balance
 
 
-/*
-- Modificar balance de tutor
-- Selecionar todos los datos desde Balance, utilizando una busqueda desde usuario mediante $idTutor1 y buscando la id_balance_fk
-- Con la ID de balance conseguida
-- Sumar $1000 al monto_bruto_total
-- Con el nuevo monto_bruto_total, conseguir el porcentaje_comision
-- Utilizando el porcentaje de comision, sacar el valor multiplicandolo por el monto_bruto_total y guardarlo en comision_total
-- Restar el comision_total a monto_bruto_total y guardarlo en neto_total
-- Dejar pago_transferencia_tutor y deuda_actual tal como esta, ya que se modificar con la tabla remuneracion
-
-*/
+$sqlUpdateBalance = "UPDATE balance SET monto_bruto_total='$monto_bruto_total', comision_total='$comision_total', 
+neto_total='$neto_total', deuda_actual='$deuda_actual' WHERE id_balance = '$regIDBalance[0]'";
+$registrosBalanceUpdate = mysqli_query($conexion, $sqlUpdateBalance) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
 
 
-
-//header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=1");
+header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=1");
 
 ?>

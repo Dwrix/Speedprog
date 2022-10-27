@@ -19,6 +19,7 @@
         </label>
         <label class="logo">SpeedProg Asesorias</label>
         <?php 
+        //Este detalle de solicitud es utilizado exclusivamente desde la seleccion de una solicitud disponible hecha por un tutor
         if(!isset($_SESSION)){
             session_start();
         };
@@ -47,6 +48,8 @@
         if(!isset($idSolicitud)){
             header("Location: ../index/index.php?error_mensaje=1");
             // Intentar entrar por medios alternativos o directamente
+        }else if($idSolicitud=='errorTutor1'){
+            header("Location: ../index/index.php?error_mensaje=6");
         }
         $idSolicitud = $_REQUEST['id_solicitud'] or die("Error al ingresar a la pagina");
    
@@ -75,6 +78,21 @@
         }else{
             $regIdEspecialidad2 = mysqli_fetch_row($registros2);
         }
+        $buscarTutor = $reg5[9];
+        if(isset($buscarTutor)){
+            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regTut = mysqli_fetch_row($registrosTut);
+        }
+        $buscarUsuario = $reg5[8];
+        if(isset($buscarUsuario)){
+            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+            $regUsuario1 = mysqli_fetch_row($registrosUsuario);
+        }
+
+
+
         ?>
    
 
@@ -92,6 +110,26 @@
         <tr>
             <td>Descripcion</td>
             <td><?php echo $reg5[2]?></td>
+        </tr>
+        <tr>
+            <td>Usuario</td>
+            <td><?php if(isset($buscarUsuario)){
+echo $regUsuario1[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
+        </tr>
+        <tr>
+            <td>Tutor</td>
+            <td><?php if(isset($buscarTutor)){
+echo $regTut[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
         </tr>
         <tr>
             <td>Fecha de Ingreso</td>
@@ -115,8 +153,13 @@ if($tipo == 3){
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
     echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+?><?php 
+if($userId!=$reg5[8]){
+    echo "<input type='submit' value='Aceptar solicitud'>";
+}
 ?>
-<input type="submit" value="Aceptar solicitud">
+
+
 </form>
 <?php
 }

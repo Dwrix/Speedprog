@@ -44,6 +44,7 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, no tiene los permisos para ver esta pagina"); } 
         </script>';
+        
     }else if($_GET['error_mensaje']==='1'){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, solicitud no seleccionada"); } 
@@ -64,6 +65,10 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, un usuario administrador no puede realizar una solicitud"); } 
         </script>';
+    }else if($_GET['error_mensaje']==='6'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, no puedes seleccionar una solicitud hecha por ti mismo"); } 
+        </script>';
     }
     
 }else if(isset($_GET['mensaje_exito'])){
@@ -75,6 +80,7 @@ if(isset($_GET['error_mensaje'])){
     window.onload = function () { alert("Sesion cerrada exitosamente"); } 
     </script>';
 }
+
 
 
 ?> 
