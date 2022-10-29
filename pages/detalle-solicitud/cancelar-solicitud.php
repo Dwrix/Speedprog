@@ -38,7 +38,7 @@ mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos");
 
 $idSolicitud1 = $_REQUEST["idSolicitud1"];
 $idUsuario1 = $_REQUEST["idUsuario1"];
-$idTutor1 = $_REQUEST["idTutor1"];
+//$idTutor1 = $_REQUEST["idTutor1"];
 $idEspecialidad1 = $_REQUEST["idEspecialidad1"];
 $date = date('y-m-d h:i:s');
 

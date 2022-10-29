@@ -90,7 +90,12 @@
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
-
+        $buscarEstado = $reg5[6];
+        if(isset($buscarEstado)){
+            $sqlEstado = "SELECT estado_solicitud FROM estado_solicitud WHERE id_estado_solicitud = $buscarEstado";
+            $registroEstados1 = mysqli_query($conexion, $sqlEstado) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $regEstado = mysqli_fetch_row($registroEstados1);
+        }
 
 
         ?>
@@ -111,6 +116,17 @@
             <td>Descripcion</td>
             <td><?php echo $reg5[2]?></td>
         </tr>
+        <tr>
+        <td>Estado de la solicitud</td>
+        
+        <td><?php if(isset($buscarEstado)){
+echo $regEstado[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
+    </tr>
         <tr>
             <td>Usuario</td>
             <td><?php if(isset($buscarUsuario)){
@@ -151,7 +167,7 @@ if($tipo == 3){
 <?php 
     echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
-    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>";
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?><?php 
 if($userId!=$reg5[8]){
@@ -163,7 +179,11 @@ if($userId!=$reg5[8]){
 <?php 
     echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
-    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$userId'>"; //id tutor 
+    if(isset($reg5[9])){
+        echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+    }else{
+        echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+    }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
 <input type='submit' value='Cancelar solicitud'>
