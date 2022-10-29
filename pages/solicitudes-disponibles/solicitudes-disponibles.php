@@ -7,6 +7,8 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
     <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <title>SpeedProg</title>
 
 <body>
