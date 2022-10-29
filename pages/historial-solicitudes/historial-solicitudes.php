@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../../css/historial-solicitudes-clientes.css">
+    <link rel="stylesheet" href="../../css/historial-solicitudes.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -60,6 +60,7 @@ if($tipo=='2'){
         <td>Titulo</td>
         <td>Especialidad</td>
         <td>Descripcion</td>
+        <td>Estado de la Solicitud</td>
         <td>Usuario</td>
         <td>Tutor</td>   
         <td>Detalles</td>   
@@ -90,13 +91,26 @@ if($tipo=='2'){
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
         
-        
+        //Buscar estado de una solicitud
+        $buscarEstado = $reg['estado_solicitud_fk'];
+        if(isset($buscarEstado)){
+            $sqlEstado = "SELECT estado_solicitud FROM estado_solicitud WHERE id_estado_solicitud = $buscarEstado";
+            $registroEstados1 = mysqli_query($conexion, $sqlEstado) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $regEstado = mysqli_fetch_row($registroEstados1);
+        }
 
 
     ?>
     <td><?php echo $reg2[0] ?></td>
     
     <td><?php echo $reg['descripcion'] ?></td>
+    <td><?php if(isset($buscarEstado)){
+echo $regEstado[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
     <td><?php if(isset($buscarUsuario)){
 echo $regUsuario1[0];
     }else{
@@ -131,6 +145,7 @@ echo "Sin determinar";
         <td>Titulo</td>
         <td>Especialidad</td>
         <td>Descripcion</td>   
+        <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
         <td>Tutor</td>   
         <td>Detalles</td>   
@@ -161,10 +176,24 @@ echo "Sin determinar";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
+        //Buscar estado de una solicitud
+        $buscarEstado = $reg['estado_solicitud_fk'];
+        if(isset($buscarEstado)){
+            $sqlEstado = "SELECT estado_solicitud FROM estado_solicitud WHERE id_estado_solicitud = $buscarEstado";
+            $registroEstados1 = mysqli_query($conexion, $sqlEstado) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $regEstado = mysqli_fetch_row($registroEstados1);
+        }
 
     ?>
     <td><?php echo $reg2[0] ?></td>
     <td><?php echo $reg['descripcion'] ?></td>
+    <td><?php if(isset($buscarEstado)){
+echo $regEstado[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
     <td><?php if(isset($buscarUsuario)){
 echo $regUsuario1[0];
     }else{
@@ -196,6 +225,7 @@ echo "Sin determinar";
         <td>Titulo</td>
         <td>Especialidad</td>
         <td>Descripcion</td>
+        <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
         <td>Tutor</td>   
         <td>Detalles</td>   
@@ -227,11 +257,25 @@ echo "Sin determinar";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
+        //Buscar estado de una solicitud
+        $buscarEstado = $reg['estado_solicitud_fk'];
+        if(isset($buscarEstado)){
+            $sqlEstado = "SELECT estado_solicitud FROM estado_solicitud WHERE id_estado_solicitud = $buscarEstado";
+            $registroEstados1 = mysqli_query($conexion, $sqlEstado) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $regEstado = mysqli_fetch_row($registroEstados1);
+        }
 
     ?>
     <td><?php echo $reg2[0] ?></td>
     <?php ?>
     <td><?php echo $reg['descripcion'] ?></td>
+    <td><?php if(isset($buscarEstado)){
+echo $regEstado[0];
+    }else{
+echo "Sin determinar";
+    }
+    
+    ?></td>
     <td><?php if(isset($buscarUsuario)){
 echo $regUsuario1[0];
     }else{
@@ -254,7 +298,6 @@ echo "Sin determinar";
 
 
     </table>
-
 
 
 
