@@ -1,0 +1,18 @@
+
+.lista-fuera{
+margin-left:50%;
+font-size: 20px;
+
+
+}
+#Home,#home.active{
+color: white;
+background: gray;
+transition: .5s;
+
+}
+#QS{
+padding-left: 10px;
+color: white;
+
+}

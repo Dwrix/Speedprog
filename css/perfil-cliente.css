@@ -7,14 +7,14 @@
 }
 body{
 	font-family: montserrat;
-	
+	background: url(../img/fondo.jpg) no-repeat center top;
 	background-size: cover;
-	font-family: sans-serif;
-	height: 100%;
+	color: white;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .nav-cab{
-	background: #241508c5;
+	background: linear-gradient(50deg,black,#504f4f6e);
 	height: 80px;
 	width: 100%;
 
@@ -39,8 +39,8 @@ nav ul li {
 }
 nav ul li a{
 	color: white;
-	font-size: 17px;
-	padding: 7px 13px;
+	font-size: 12px;
+	padding: 5px;
 	border-radius: 3px;
 	text-transform: uppercase;
 }
@@ -63,167 +63,39 @@ a.active,a:hover{
 
 
 
-
-
-
-/*-----SLIDER----------------*/
-div ul ol{
-	list-style: none;
-}
-
-.slideshow{
-	width: 30%;
-	position: relative;
-	margin: auto;
-	margin-top: 20px;
-}
-
-.slider li ul{
-	width: 100%;
-}
-
-.slider li{
-	overflow: hidden;
-	width: 100%;
-}
-
-
-.slider img{
-	width: 100%;
+/*-----nav fuera del menu----------------*/
+.lista-fuera{
+	margin-left:45%;
+	font-size: 20px;
+	
 	
 }
-
-
-.slider .caption{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	padding: 15px 50px;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	text-align: center;
-	color: #fff;
-	z-index: 1;
+#Home,#home.active{
+	color: white;
+	background: gray;
+	transition: .5s;
+	
 }
-
-.slider .caption p{
-	margin-top: 10px;
-	font-size: 20px;
-	font-family: monospace;
+#QS{
+	padding-left: 10px;
+	color: white;
+	
 }
-
-.paginacion{
-	position: absolute;
-	top: 102%;
-	width: 100%;
-
-	display: flex;
-	justify-content: center;
-}
-
-.paginacion li{
-	font-size: 15px;
-	margin: 2px 5px;
-	color: #858585;
-	cursor: pointer;
-}
-
-.izq, .der{
-	position: absolute;
-	top: 0;
-	height: 100%;
-
-	display: flex;
-	align-items: center;
-
-	color: #fff;
-	font-size: 20px;
-	cursor: pointer;
-	z-index: 2;
-}
-
-.izq{
-	left: 10px;
-}
-
-.der{
-	right: 10px;
-}
+/*-----nav fuera del menu----------------*/
 
 
 
 
-/*estilo tarjetas*/
-
-.target-group{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-	margin: 70px 0;
-	padding: 0 70px;
-}
-
-.tarjeta{
-	background: linear-gradient(45deg,#241508c5,#da5b06e7) ;
-	color: rgba(255, 255, 255, 0.753);
-	font-size: 30px;
-	height: 80px;
-	border-radius: 5px;
-	display: flex;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-	align-items: center;
-	padding: 15px;
-}
-
-
-#zzz{
-	background: linear-gradient(120deg,#241508c5,#da5b06e7) ;
-	color: rgba(255, 255, 255, 0.932);
-	font-size: 30px;
-	height: 100px;
-	border-radius: 5px;
-	display: flex;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.8);
-	align-items: center;
-	padding: 15px;
-}
-
-.tarjeta h3{
-	margin-left: 10px;
-	font-size: 18px;
-}
-
-
-
-@media (max-width: 1024px){
-	.form{
-		width: 50%;
-	}
-}
 
 /*------------------------Responsive----------------------------------*/
-@media (max-width: 952px) {
-	label.logo{
-		font-size: 30px;
-		padding-left: 50px;
-	}
-	nav ul li a{
-		font-size: 16px;
-	}
-}
-@media (max-width: 858px) {
+
+@media (max-width: 2000px) {
 	.checkbtn{
 		display: block;
 	}
 	nav ul{
 		position: fixed;
-		width: 70%;
+		width: 30%;
 		height: 100%;
 		background: #0c0000e0;
 		top: 80px;

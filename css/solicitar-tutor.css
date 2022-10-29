@@ -7,14 +7,14 @@
 }
 body{
 	font-family: montserrat;
-	
+	background: url(../img/fondo.jpg) no-repeat center top;
 	background-size: cover;
-	font-family: sans-serif;
-	height: 100%;
+	color: white;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .nav-cab{
-	background: #241508c5;
+	background: linear-gradient(50deg,black,#504f4f6e);
 	height: 80px;
 	width: 100%;
 
@@ -39,8 +39,8 @@ nav ul li {
 }
 nav ul li a{
 	color: white;
-	font-size: 17px;
-	padding: 7px 13px;
+	font-size: 12px;
+	padding: 5px;
 	border-radius: 3px;
 	text-transform: uppercase;
 }
@@ -63,29 +63,39 @@ a.active,a:hover{
 
 
 
-@media (max-width: 1024px){
-	.form{
-		width: 50%;
-	}
+/*-----nav fuera del menu----------------*/
+.lista-fuera{
+	margin-left:45%;
+	font-size: 20px;
+	
+	
 }
+#Home,#home.active{
+	color: white;
+	background: gray;
+	transition: .5s;
+	
+}
+#QS{
+	padding-left: 10px;
+	color: white;
+	
+}
+/*-----nav fuera del menu----------------*/
+
+
+
+
 
 /*------------------------Responsive----------------------------------*/
-@media (max-width: 952px) {
-	label.logo{
-		font-size: 30px;
-		padding-left: 50px;
-	}
-	nav ul li a{
-		font-size: 16px;
-	}
-}
-@media (max-width: 858px) {
+
+@media (max-width: 2000px) {
 	.checkbtn{
 		display: block;
 	}
 	nav ul{
 		position: fixed;
-		width: 70%;
+		width: 30%;
 		height: 100%;
 		background: #0c0000e0;
 		top: 80px;
@@ -186,6 +196,7 @@ footer{
 }
 .container-body{
     display: flex;
+
     justify-content: space-between;
 }
 .colum1{

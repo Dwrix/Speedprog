@@ -57,7 +57,7 @@
                 <input type="text" id="nombre" name="nom1" placeholder="Ingrese nombre" required><br> 
                 <input type="date" id="date" name="date" placeholder="Fecha nacimiento" required><br> 
                 <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br> 
-                <input type="email" id="mail" name="correo" placeholder="Ingrese Correo" required><br> 
+                <input type="email" id="mail" name="correo" placeholder="Ingrese Correo Electronico" required><br> 
                 <select name="pais" required>
                     <option value="">Seleccionar Pais</option>
                     <?php
