@@ -11,7 +11,7 @@ $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName) or die(mysql_err
 $dbHost = 'localhost:3306';
 $dbName = 'speedprogasesorias';
 $dbUser = 'root';
-$dbPassword = '';
+$dbPassword = 'root';
 $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName) or die(mysql_error());
 
 ?>
