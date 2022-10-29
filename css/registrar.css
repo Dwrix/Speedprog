@@ -9,11 +9,11 @@ body{
 	font-family: montserrat;
 	background: url(../img/fondo.jpg) no-repeat center top;
 	background-size: cover;
-	font-family: sans-serif;
-	
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-nav{
-	background: #362c2ca6;
+
+.nav-cab{
+	background: linear-gradient(50deg,black,#504f4f6e);
 	height: 80px;
 	width: 100%;
 
@@ -38,8 +38,8 @@ nav ul li {
 }
 nav ul li a{
 	color: white;
-	font-size: 17px;
-	padding: 7px 13px;
+	font-size: 12px;
+	padding: 5px;
 	border-radius: 3px;
 	text-transform: uppercase;
 }
@@ -60,6 +60,13 @@ a.active,a:hover{
 	display: none;
 }
 
+.nav-fuera-lista{
+	margin-left: 40%;
+	color: white;
+	padding: 30px;
+	font-size: 15px;
+}
+
 
 /*------------------------box registro----------------------------------*/
 
@@ -71,7 +78,7 @@ a.active,a:hover{
 .registro-box{
 	width: 320px;
 	height: 600px;
-	background: #0c0000e0;
+	background: rgba(0, 0, 0, 0.733);
 	color: #fff;
 	margin-left: 50%;
 	margin-top: 320px;
@@ -264,7 +271,7 @@ a.active,a:hover{
 /*------------------------Footer----------------------------------*/
 footer{
     width: 100%;
-    background: #202020;
+    background: linear-gradient(50deg,black,#504f4f6e);
     color: white;
 }
 

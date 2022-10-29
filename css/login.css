@@ -9,17 +9,58 @@ body{
 	font-family: montserrat;
 	background: url(../img/fondo.jpg) no-repeat center top;
 	background-size: cover;
-	font-family: sans-serif;
-	height: 100%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .nav-cab{
-	background: #362c2ca6;
+	background: linear-gradient(50deg,black,#504f4f6e);
 	height: 80px;
 	width: 100%;
-	position: static;
+
 	
 }
+label.logo{
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 20px 20px 20px 50px;
+	font-weight: bold;
+}
+nav ul{
+	float: right;
+	margin-right: 20px;
+	z-index: 1000;
+}
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	font-size: 12px;
+	padding: 5px;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+a.active,a:hover{
+	background: gray;
+	transition: .5s;
+}
+.checkbtn{
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check{
+	display: none;
+}
+
+
 /*------------------------box login----------------------------------*/
 .user-box{
 	width: 100px;
@@ -30,7 +71,7 @@ body{
 
 	width: 320px;
 	height: 480px;
-	background: #0c0000e0;
+	background: rgba(0, 0, 0, 0.733);
 	color: #fff;
 	margin-left: 50%;
 	margin-top: 250px;
@@ -122,6 +163,7 @@ label.logo{
 	line-height: 80px;
 	padding: 20px 20px 20px 50px;
 	font-weight: bold;
+	
 }
 nav ul{
 	float: right;
@@ -165,7 +207,7 @@ a.active,a:hover{
 /*------------------------Footer----------------------------------*/
 footer{
     width: 100%;
-    background: #202020;
+    background: black;
     color: white;
 }
 
