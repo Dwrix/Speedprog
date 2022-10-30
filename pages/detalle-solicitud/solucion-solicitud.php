@@ -1,0 +1,1 @@
+Id de media + ID del usuario (tutor) y entregar todas las imagenes y videos + el mensaje del tutor el cual el usuario o tutor puede ver

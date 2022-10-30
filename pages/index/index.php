@@ -87,7 +87,16 @@ if(isset($_GET['error_mensaje'])){
     </script>';
 }
 
-
+if(isset($_GET['abandono'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Solicitud abandonada exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['fin'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Solicitud ha sido finalizada exitosamente"); } 
+    </script>';
+}
 
 ?> 
 

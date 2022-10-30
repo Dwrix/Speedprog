@@ -42,6 +42,10 @@
                 echo '<script type="text/javascript">
                 window.onload = function () { alert("Solicitud aceptada exitosamente"); } 
                 </script>';
+            }else if($_GET['exito']==='2'){
+                echo '<script type="text/javascript">
+                window.onload = function () { alert("Solicitud procesada exitosamente"); } 
+                </script>';
             }
         }else if(isset($_GET['abierta'])){
             if($_GET['exito']==='1'){
