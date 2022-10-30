@@ -176,6 +176,41 @@ if($tipo == 3 || $tipo == 2){
 }
 if($tipo == 3){
     ?>
+    <form method="POST" action="media.php?permiso=1">
+            <?php 
+                echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+                echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+                if(isset($reg5[9])){
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                }else{
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                }
+                echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            ?>
+            <input type='submit' value='Ver media'>
+            </form>
+            <form method="POST" action="<?php 
+    if($estadoSolicitud=='3'){
+        echo "solucion-solicitud.php?permiso=1";
+    }
+    ?>">
+        <?php 
+            echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+            echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+            if(isset($reg5[9])){
+                echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+            }else{
+                echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+            }
+            echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            //echo "<input type='hidden' id='idEstado1' name='idEstado1' value='$estadoSolicitud'>"; //id estado_solicitud
+        ?>
+        <?php 
+        if($estadoSolicitud=='3'){
+            echo "<input type='submit' value='Ver solucion'>";
+        }
+        ?>
+        </form>
     <form method="POST" action="<?php 
     if($estadoSolicitud=='2'){//Estado 2, la consulta fue tomada por un tutor, pero esta en prceso de ser solucionada
         echo "procesar-solicitud.php?permiso=1";//Estado 2 -> 3, la consulta fue solucionada y se procesde a responderla
@@ -203,7 +238,7 @@ if($tipo == 3){
     </form>
     <form method="POST" action="<?php 
     if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
-        echo "cancelar-solicitud.php?permiso=1";
+        echo "abandonar-solicitud.php?permiso=1";
     }
     ?>">
         <?php 
@@ -219,7 +254,7 @@ if($tipo == 3){
         ?>
         <?php 
         if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
-            echo "<input type='submit' value='Cancelar solicitud'>";
+            echo "<input type='submit' value='Abandonar solicitud'>";
         }
         ?>
         
@@ -227,6 +262,45 @@ if($tipo == 3){
     <?php
     }else if($tipo == 2){
         ?>
+        <form method="POST" action="media.php?permiso=1">
+            <?php 
+                echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+                echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+                if(isset($reg5[9])){
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                }else{
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                }
+                echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            ?>
+            <input type='submit' value='Ver media'>
+            </form>
+        <form method="POST" action="<?php 
+    if($estadoSolicitud=='3'){
+        echo "solucion-solicitud.php?permiso=1";
+    }
+    ?>">
+        <?php 
+            echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+            echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+            if(isset($reg5[9])){
+                echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+            }else{
+                echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+            }
+            echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            //echo "<input type='hidden' id='idEstado1' name='idEstado1' value='$estadoSolicitud'>"; //id estado_solicitud
+        ?>
+        <?php 
+        if($estadoSolicitud=='3'){
+            echo "<input type='submit' value='Ver solucion'>";
+        }
+        ?>
+        
+        </form>
+
+
+
         <form method="POST" action="<?php 
     if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
         echo "cancelar-solicitud.php?permiso=1";
@@ -254,6 +328,19 @@ if($tipo == 3){
         <?php
         }else if($tipo == 4){
             ?>
+            <form method="POST" action="media.php?permiso=1">
+            <?php 
+                echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+                echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+                if(isset($reg5[9])){
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                }else{
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                }
+                echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            ?>
+            <input type='submit' value='Ver media (Administrador)'>
+            </form>
             <form method="POST" action="cancelar-solicitud.php?permiso=1">
             <?php 
                 echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
@@ -312,7 +399,7 @@ if($tipo == 3){
 
 
 
-        <a href="../solicitudes-disponibles/solicitudes-disponibles.php">BOTON Volver</a>
+        <a href="../index/index.php">BOTON Volver</a>
 
 
 </div>
