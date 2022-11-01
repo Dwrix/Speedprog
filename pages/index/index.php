@@ -71,6 +71,10 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, no puedes seleccionar una solicitud hecha por ti mismo"); } 
         </script>';
+    }else if($_GET['error_mensaje']==='6'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Usted no tiene historial de solicitud por el momento"); } 
+        </script>';
     }
     
 }else if(isset($_GET['mensaje_exito'])){
@@ -97,7 +101,11 @@ if(isset($_GET['fin'])){
     window.onload = function () { alert("Solicitud ha sido finalizada exitosamente"); } 
     </script>';
 }
-
+if(isset($_GET['calificado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Solicitud ha sido calificada exitosamente"); } 
+    </script>';
+}
 ?> 
 
     <section>
