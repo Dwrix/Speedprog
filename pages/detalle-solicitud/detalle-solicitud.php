@@ -103,7 +103,9 @@
         ?>
    
 
-    DETALLE SOLICITUD<br>
+<section class="detalle-box">
+    <h1>DETALLE SOLICITUD</h1><br>
+
     <table border="1" width="700" align="center">
         <tr>
             <td>Enunciado</td>
@@ -188,7 +190,7 @@ if($userId!=$reg5[8]){
     }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
-<input type='submit' value='Cancelar solicitud'>
+<input id="BtnCancelar" type='submit' value='Cancelar solicitud'>
 
 
 
@@ -199,9 +201,9 @@ if($userId!=$reg5[8]){
 
 
 
-        <a href="../solicitudes-disponibles/solicitudes-disponibles.php">BOTON Volver</a>
+        <a href="../solicitudes-disponibles/solicitudes-disponibles.php">Volver</a>
 
-
+</section>  
 </div>
     </section>
     <?php 
