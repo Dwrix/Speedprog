@@ -251,6 +251,7 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
             <td>Especialidad</td>
             <td>Evaluador</td>
             <td>Resultado</td>
+            <td>Respuesta del evaluador</td>
             </tr>
                 <?php
             while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
@@ -259,6 +260,7 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
                 $idEvaluador = $regPostulacion[3];
                 $estadoPostulacionID = $regPostulacion[4];
                 $especialidadID = $regPostulacion[6];
+                $respuestaEvaluador = $regPostulacion[7];
         
                 $sqlNombreEstadoPostulacion = "SELECT estado_postulacion FROM estado_postulacion_tutor WHERE id_estado_postulacion='$estadoPostulacionID'";
                 $registroNombreEstadoPostulacion = mysqli_query($conexion, $sqlNombreEstadoPostulacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -269,9 +271,15 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
                 //Conseguir ID y nombre del evaluador mediante evaluador_fk el cual consiste de un administrador
                 $sqlEvaluadorPostulacion = "SELECT nombre FROM usuario WHERE id_usuario='$idEvaluador'";
                 $registroEvaluadorPostulacion = mysqli_query($conexion, $sqlEvaluadorPostulacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-                $regEP = mysqli_fetch_row($registroEvaluadorPostulacion);
+                
+                if(mysqli_num_rows($registroEvaluadorPostulacion)>=1){
+                    $regEP = mysqli_fetch_row($registroEvaluadorPostulacion);
             
-                $usuarioPostulacionTutorNombreEvaluador = $regEP[0];
+                    $usuarioPostulacionTutorNombreEvaluador = $regEP[0];
+                }else{
+                    $usuarioPostulacionTutorNombreEvaluador = "Sin asignar";
+                }
+                
         
                 //Especialidad evaluada
                 $sqlxdd = "SELECT especialidad FROM especialidad WHERE id_especialidad='$especialidadID'";
@@ -282,6 +290,7 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
                 echo "<td>".$usuarioPostulacionEspecialidad."</td>";
                 echo "<td>".$usuarioPostulacionTutorNombreEvaluador."</td>";
                 echo "<td>".$usuarioEstadoDePostulacion."</td>";
+                echo "<td>".$respuestaEvaluador."</td>";
                 echo "</tr>";
             }
             ?> </table> <?php
