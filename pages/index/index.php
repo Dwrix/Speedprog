@@ -72,9 +72,13 @@ if(isset($_GET['error_mensaje'])){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Error, no puedes seleccionar una solicitud hecha por ti mismo"); } 
         </script>';
-    }else if($_GET['error_mensaje']==='6'){
+    }else if($_GET['error_mensaje']==='7'){
         echo '<script type="text/javascript">
         window.onload = function () { alert("Usted no tiene historial de solicitud por el momento"); } 
+        </script>';
+    }else if($_GET['error_mensaje']==='8'){
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Un usuario administrador no puede postular a tutor"); } 
         </script>';
     }
     
@@ -112,6 +116,27 @@ if(isset($_GET['modificacion'])){
     window.onload = function () { alert("Perfil ha sido modificado, debe iniciar sesion nuevamente"); } 
     </script>';
 }
+if(isset($_GET['same_especialidad'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Error, usted ya tiene inscrita la especialidad seleccionada a postular"); } 
+    </script>';
+}
+if(isset($_GET['exito_postulacion'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Postulacion ingresada exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['eliminacion'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Usuario eliminado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['same_especialidad_postulacion'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Ya tiene una solicitud en proceso con el lenguaje escojido"); } 
+    </script>';
+}
+
 ?> 
 
     <section>

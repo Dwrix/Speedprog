@@ -60,7 +60,7 @@ if($tipo == '4'){
     
 mysqli_close($conexion);
 
-    header("Location: ../login/logout.php?eliminacion=1");
+    header("Location: ../index/index.php?eliminacion=1");
     
     
     
