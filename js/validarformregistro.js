@@ -84,3 +84,25 @@ $(document).ready(function() {
 
     });
   });
+
+  $('#pass').keyup(function(e) {
+    var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+    if (false == enoughRegex.test($(this).val())) {
+            $('#passstrength').html('La contraseña debe tener más de 6 caracteres.');
+    } else if (strongRegex.test($(this).val())) {
+            //caracter especial, numeros, y mayus
+            $('#passstrength').className = 'ok';
+            $('#passstrength').html('Contraseña Fuerte');
+    } else if (mediumRegex.test($(this).val())) {
+            //numeros, y mayus
+            $('#passstrength').className = 'alert';
+            $('#passstrength').html('Contraseña Media');
+    } else {
+            //solo letras
+            $('#passstrength').className = 'error';
+            $('#passstrength').html('Contraseña Débil');
+    }
+    return true;
+});
