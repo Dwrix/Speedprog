@@ -106,6 +106,11 @@ if(isset($_GET['calificado'])){
     window.onload = function () { alert("Solicitud ha sido calificada exitosamente"); } 
     </script>';
 }
+if(isset($_GET['modificacion'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Perfil ha sido modificado, debe iniciar sesion nuevamente"); } 
+    </script>';
+}
 ?> 
 
     <section>

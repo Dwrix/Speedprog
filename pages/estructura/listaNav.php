@@ -11,7 +11,7 @@
     <?php 
         if(isset($_SESSION['user'])){
 
-            echo "<li><a href='../perfil-cliente/perfil-cliente.php'>Perfil</a></li>";
+            echo "<li><a href='../perfil/perfil.php'>Perfil</a></li>";
             echo "<li><a href='../login/logout.php'>Cerrar sesion</a></li>";
             echo "<li><a href='../mis-solicitudes/mis-solicitudes.php'>Solicitudes Activas</a> </li>";
             echo "<li><a href='../solicitar-tutor/solicitar-tutor.php'>Solicitar Tutor</a> </li>";
