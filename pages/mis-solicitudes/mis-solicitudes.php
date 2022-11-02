@@ -60,7 +60,7 @@
 
         
     </nav>
-    <span>MIS SOLICITUDES ACTIVAS</span>
+    
 
 
 
@@ -76,6 +76,9 @@ if($tipo=='2'){
         header("Location: ../index/index.php?error_mensaje=3");
     }
     ?>
+    
+    <section class="Tabla-solicitudes">
+    <h1>MIS SOLICITUDES ACTIVAS</h1><br>
     <table border="1" width="700" align="center">
     <tr>
         <td style="display:none;">ID</td>
@@ -147,7 +150,7 @@ echo "Sin determinar";
     }
     
     ?></td>
-    <td><a href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
+    <td><a id="verDetalle"href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     
     <?php }
 
@@ -320,7 +323,7 @@ echo "Sin determinar";
 
 
     </table>
-
+</section>
 
 
 

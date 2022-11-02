@@ -14,7 +14,7 @@ $(document).ready(function() {
 
             rut1 :{
                 required: true,
-                regex : /\b[0-9|.]{1,10}\-[K|k|0-9]/,
+               // regex : /\b[0-9|.]{1,10}\-[K|k|0-9]/,
                // minlength : 9,
                 maxlength: 12
             },
@@ -61,8 +61,8 @@ $(document).ready(function() {
             },
             
             rut :{
-                required: "Porfavor coloca tu RUT",
-                maxlength: "Porfavor verifica tu RUT."
+                required: "Porfavor coloca tu Número Identificador",
+                //maxlength: "Porfavor verifica tu RUT."
             },
             direccion :{
                 required: "Coloca tu direccion",
