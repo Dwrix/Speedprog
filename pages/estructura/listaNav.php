@@ -22,6 +22,7 @@
             }
             if($tipo == 4){
                 echo "<li id='sectionmenu'><a href='../panel-administracion/panel-administracion.php'>Pandel de Administracion</a> </li>";
+                echo "<li id='sectionmenu'><a href='../remuneracion/remuneracion.php'>Remuneraciones</a> </li>";
             }
             if($tipo == 3 || $tipo == 4){
                 echo "<li id='sectionmenu'><a href='../solicitudes-disponibles/solicitudes-disponibles.php'>Solicitudes Disponibles</a> </li>";

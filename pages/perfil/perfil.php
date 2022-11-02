@@ -208,6 +208,9 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
             <td><?php echo "$".$usuarioBalanceDeudaActual?></td>
         </tr>
     </table>
+    
+    <a href="../remuneracion/historial-remuneraciones.php?permiso=1"> Ver historial de remuneraciones <a>   
+    </br>
     </br>
         <?php 
         if (mysqli_num_rows($registrosResenas) > 0){
@@ -286,7 +289,34 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
     }
 
 ?>
+</br>
+Zona de Peligro </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
+Literal boton de NUKE que elimina todo rastro de que este usuario alguna vez existio </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+PELIGRO PELIGRO </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+NO APRETAR BOTON -> <a href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Perfil </a> <- NO APRETAR BOTON
         
        
 </div>
