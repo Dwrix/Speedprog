@@ -36,7 +36,7 @@
 </head>
 <body>
     
-<nav class="nav-cab">
+    <nav class="nav-cab">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
@@ -65,54 +65,57 @@
     </nav>
     
     <br><br>    
-    <form method="POST" action="agregar.php?permiso=1">
-    <?php
-     require("../../php/conexionBD.php");
-     $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
-     if(mysqli_connect_errno()){
-         echo "fallo la conexion";
-         exit();
-     }
-     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+    <section class="Solicitar-tutor-box">
+        <form method="POST" action="agregar.php?permiso=1">
+        <?php
+            require("../../php/conexionBD.php");
+            $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
+            if(mysqli_connect_errno()){
+                echo "fallo la conexion";
+                exit();
+            }
+            mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
 
-    $sql = "SELECT * FROM especialidad";
-    $sql2 = "SELECT * FROM metodo_de_pago";
-    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-    $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-    ?>
-    SOLICITAR TUTOR
-    <div>
-        Titulo del problema  <input type="text" id="titulo1" name="titulo1" required>
-    </div>
-    
-    <div>
-    Seleccionar lenguaje de programacion <select id="especialidades" name="especialidades1">
-    <?php 
-    while ($reg = mysqli_fetch_array($registros)){
+            $sql = "SELECT * FROM especialidad";
+            $sql2 = "SELECT * FROM metodo_de_pago";
+            $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         ?>
-            <option><?php echo $reg['especialidad'] ?></option>
-    <?php }
+        <h1>SOLICITAR TUTOR</h1>
+        <div>
+            <div>Titulo del problema</div><br>
+            <input type="text" id="titulo1" name="titulo1" required><br>
+        </div>
     
-    ?>
-    </select>
-    </div>
-    Descripcion del problema
-    <div>
-         <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" required></textarea>
-    </div>
+        <div>
+            <div>Seleccionar lenguaje de programacion</div>
+            <select id="especialidades" name="especialidades1">
+            <?php 
+                while ($reg = mysqli_fetch_array($registros)){
+            ?>
+            <option><?php echo $reg['especialidad'] ?></option>
+            <?php }?>          
+        </select>
+        </div><br>
 
-<div>
-Subir Imagen (opcional)
-    </div>
-    <div id="contenedor">
-    <input type="text" id="media" rows="1" cols="50" name="media[]" />
-        <a href="#" id="add">+</a>
-    </div>
-    <div>
-        Link de video (opcional)  
-    </div>   
+        <div>
+            <span>Descripcion del problema</span><br><br>
+            <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" required></textarea>
+        </div><br>
+
+        <div>
+            Link de imagen (opcional)
+        </div>
+        <div id="contenedor">
+            <input type="text" id="media" rows="1" cols="50" name="media[]" />
+            <a href="#" id="add">+</a>
+        </div>
+
+        <div>
+            Link de video (opcional)  
+        </div>   
     <input type="text" id="video1" name="video1">
-    <div>Valor: $1.000 CLP</div>
+    <div>Valor: $1.000 CLP</div><br>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">
     <?php 
@@ -127,12 +130,12 @@ Subir Imagen (opcional)
     mysqli_close($conexion);
     ?>
     </div>
-   <div>
-    <input type="submit" value="Ingresar">
+   <div><br>
+    <input type="submit" value="Ingresar Solicitud">
     </div>
     </form>
     </section>
-    
+ </section>   
     <?php 
     include_once '../estructura/footer.php';
     ?>

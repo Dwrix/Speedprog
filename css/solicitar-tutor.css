@@ -1,10 +1,101 @@
+.Solicitar-tutor-box{
+	width: 500px;
+	height: 750px;
+	background: rgba(0, 0, 0, 0.562);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 350px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+}
 
+.Solicitar-tutor-box h1{
+	
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	display: block;
+
+
+}
+
+.Solicitar-tutor-box label{
+	
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+.Solicitar-tutor-box input{
+	
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+
+.Solicitar-tutor-box input[type="email"],
+.Solicitar-tutor-box input[type="text"],
+.Solicitar-tutor-box input[type="password"]{
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+.Solicitar-tutor-box input[type="submit"]{
+
+	border: none;
+	outline: none;
+	height: 40px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+
+}
+
+select {
+	color: white;
+	background: rgb(32, 29, 29);
+	border: none;
+	font-size: 14px;
+	height: 30px;
+	padding: 5px;
+	width: 250px;
+ }
+
+.Solicitar-tutor-box a {
+
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+
+}
+
+.Solicitar-tutor-box a:hover {
+
+	color: #fff;
+}
 
 #descripcion1{
+	border-radius: 10px;
 	margin: 1px;
 	padding: 1px;
-	width: 350px;
+	width: 450px;
 	height: 150px;
 	resize: none;
+	color: black;
+	background-color: white;
 }
 

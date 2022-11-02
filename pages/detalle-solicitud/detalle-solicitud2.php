@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../../css/detalle-solicitud.css">
+    <link rel="stylesheet" href="../../css/detalle-solicitud2.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -95,8 +95,8 @@
         }
         ?>
    
-
-    DETALLE SOLICITUD<br>
+    <section class="detalle-box">
+    <h1>DETALLE SOLICITUD</h1><br>
 
     <table border="1" width="700" align="center">
         <tr>
@@ -169,7 +169,7 @@ if($tipo == 3 || $tipo == 2){
     }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
-<input type="submit" value="Ver chat">
+<input id="BtnVerChat"type="submit" value="Ver chat">
 </form>
 
 <?php
@@ -187,7 +187,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Ver media'>
+            <input id="BtnVerMedia" type='submit' value='Ver media'>
             </form>
             <form method="POST" action="<?php 
     if($estadoSolicitud=='3'){
@@ -273,7 +273,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Ver media'>
+            <input id="BtnVerMedia" type='submit' value='Ver media'>
             </form>
         <form method="POST" action="<?php 
     if($estadoSolicitud=='3'){
@@ -319,7 +319,7 @@ if($tipo == 3){
         ?>
         <?php 
         if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
-            echo "<input type='submit' value='Cancelar solicitud'>";
+            echo "<input id='BtnCancelar' type='submit' value='Cancelar solicitud'>";
         }
         ?>
         
@@ -352,7 +352,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Ver media (Administrador)'>
+            <input id="BtnVerMedia" type='submit' value='Ver media (Administrador)'>
             </form>
             <form method="POST" action="cancelar-solicitud.php?permiso=1">
             <?php 
@@ -365,7 +365,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Cancelar solicitud (Administrador)'>
+            <input id='BtnCancelar' type='submit' value='Cancelar solicitud (Administrador)'>
             </form>
             <form method="POST" action="procesar-solicitud.php?permiso=1">
             <?php 
@@ -412,9 +412,9 @@ if($tipo == 3){
 
 
 
-        <a href="../index/index.php">BOTON Volver</a>
+        <a href="../index/index.php">Volver</a>
 
-
+</section>   
 </div>
     </section>
     <?php 
