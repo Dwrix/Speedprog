@@ -146,6 +146,11 @@ if(isset($_GET['postulacion_aceptacion'])){
     window.onload = function () { alert("El postulante ha sido aceptado exitosamente"); } 
     </script>';
 }
+if(isset($_GET['transferencia'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Transferencia realizada exitosamente"); } 
+    </script>';
+}
 ?> 
 
     <section>

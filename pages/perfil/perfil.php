@@ -183,7 +183,7 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
         <table border="1" width="700" align="center">
         <tr>
             <td>Monto Bruto</td>
-            <td><?php echo "$".$usuarioBalanceMontoBruto?></td>
+            <td><?php echo "$".$usuarioBalanceMontoBruto." CLP."?></td>
         </tr>
         <tr>
             <td>Porcentaje de Comision</td>
@@ -191,19 +191,19 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
         </tr>
         <tr>
             <td>Comision Total</td>
-            <td><?php echo "$".$usuarioBalanceComisionTotal?></td>
+            <td><?php echo "$".$usuarioBalanceComisionTotal." CLP."?></td>
         </tr>
         <tr>
             <td>Balance Neto Total</td>
-            <td><?php echo "$".$usuarioBalanceNetoTotal?></td>
+            <td><?php echo "$".$usuarioBalanceNetoTotal." CLP."?></td>
         </tr>
         <tr>
             <td>Monto total pagado al tutor</td>
-            <td><?php echo "$".$usuarioBalancePagoTransferenciaTutor?></td>
+            <td><?php echo "$".$usuarioBalancePagoTransferenciaTutor." CLP."?></td>
         </tr>
         <tr>
             <td>Cuanto se le debe al tutor</td>
-            <td><?php echo "$".$usuarioBalanceDeudaActual?></td>
+            <td><?php echo "$".$usuarioBalanceDeudaActual." CLP."?></td>
         </tr>
     </table>
     

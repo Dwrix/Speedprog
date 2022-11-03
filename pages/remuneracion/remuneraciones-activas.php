@@ -37,23 +37,70 @@
         if($tipo != 4){
             header("Location: ../login/loginIndex.php?error_mensaje=0");
         }
+        if(isset($_GET['error_mensaje'])){
+            echo '<script type="text/javascript">
+            window.onload = function () { alert("No puede transferir una cantidad mayor a la deuda actual del tutor"); } 
+            </script>';
+        }
         
         ?>
 
     </nav>
     <section>
 <div>
-    REMUNERACIONES ACTIVAS
+    REMUNERACIONES PENDIENTES
 </div>
 
-<?php 
-//Buscar ID balance de tutores que tienen deuda_actual > 0
-//Con la ID del balance, buscar los usuarios los cuales esa ID balance corresponde
-//Mostrar en una lista tipo solicitudes disponibles cuales son los tutores y su deuda actual
-//Al final un boton para realizar su correspondiente remuneracion
-//Ese boton redirige a procesar-remuneracion con la ID del balance y usuario
 
+
+
+<table border="1" width="700" align="center">
+    <tr>
+        <td>Tutor</td>
+        <td>Deuda Actual</td>
+        <td>Detalles</td>   
+    </tr>
+    <?php 
+
+
+    //Busqueda de postulaciones en proceso
+    $sql = "SELECT * FROM balance WHERE deuda_actual > '0'";
+    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
+
+    while ($reg = mysqli_fetch_array($registros)){
+        $dato = $reg['id_balance'];
+        $deuda = $reg['deuda_actual'];
+
+        $sqlUsuarioPostulante = "SELECT * FROM usuario WHERE id_balance_fk = $dato";
+        $registrosPostulante = mysqli_query($conexion, $sqlUsuarioPostulante) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+        $regPos = mysqli_fetch_row($registrosPostulante); 
+
+
+        ?>
+    <tr>
+    <td><?php echo $regPos[2] ?></td>   
+    <td><?php echo "$".$deuda." CLP." ?></td>  
+
+
+
+    
+ 
+    
+    <td><a href="detalle-remuneracion.php?id_balance=<?php
+    echo $dato 
+    ?>"> Realizar Pago </td>
+    <?php 
+    }
+    
 ?>
+    </table>
+
+
+
+
+
+
 
 
 
