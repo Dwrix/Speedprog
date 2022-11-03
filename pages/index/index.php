@@ -136,7 +136,16 @@ if(isset($_GET['same_especialidad_postulacion'])){
     window.onload = function () { alert("Ya tiene una solicitud en proceso con el lenguaje escojido"); } 
     </script>';
 }
-
+if(isset($_GET['postulacion_rechazo'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("El postulante ha sido rechazado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['postulacion_aceptacion'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("El postulante ha sido aceptado exitosamente"); } 
+    </script>';
+}
 ?> 
 
     <section>

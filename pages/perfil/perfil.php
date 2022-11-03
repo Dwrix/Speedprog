@@ -169,8 +169,6 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
         <?php 
         while ($regTutorEspecialidad = mysqli_fetch_array($registros2)){
             echo "<tr>";
-            echo "<td>Especialidad</td>";
-            //echo $regTutorEspecialidad['id_especialidad_fk']."</td>";
             $sqlEsp = "SELECT especialidad FROM especialidad WHERE id_especialidad='$regTutorEspecialidad[2]'";
             $registroEsp = mysqli_query($conexion, $sqlEsp) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regEspecialidad = mysqli_fetch_array($registroEsp);

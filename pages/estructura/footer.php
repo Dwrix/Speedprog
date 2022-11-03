@@ -36,7 +36,7 @@
                     </div>
                     <div class="row2">
                         <img src="../../img/mailicon.png">
-                        <label>speedpro@speedprogasesorias.com</label>
+                        <label>speedprog@speedprogasesorias.com</label>
                     </div>
                 </div>
             </div>
