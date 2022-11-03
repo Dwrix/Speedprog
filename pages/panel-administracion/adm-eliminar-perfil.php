@@ -23,22 +23,16 @@ if(!isset($_GET['permiso'])){
 <?php
 
 
-if($tipo == '4'){
-    //header("Location: ../index/index.php?error_mensaje=5");
+if($tipo != '4'){
+    header("Location: ../index/index.php?error_mensaje=5");
 }else{
-    require("../../php/conexionBD.php");
-    $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
-    if(mysqli_connect_errno()){
-        echo "fallo la conexion";
-        exit();
-    }
-    mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+   
     
     
+    $idUsuario = $_GET['id_usuario'];
     
-    $userId;
 
-    $sqlUpdate1 = "UPDATE usuario SET id_tipo_usuario_fk = '6' WHERE id_usuario='$userId'";
+    $sqlUpdate1 = "UPDATE usuario SET id_tipo_usuario_fk = '6' WHERE id_usuario='$idUsuario'";
     $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
 
 
@@ -46,7 +40,7 @@ if($tipo == '4'){
     
 mysqli_close($conexion);
 
-header("Location: ../login/logout.php?eliminacion=1");
+header("Location: ../index/index.php?usuario_eliminado=1");
     
     
     
