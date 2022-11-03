@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../../css/balance-tutor.css">
+    <link rel="stylesheet" href="../../css/calificacion-tutor.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -40,11 +40,13 @@
         ?>
 
 
-<span>CALIFICAR TUTOR</span>
+
 
 
        
-<br><br>    
+<br> 
+    <section class="calificacion-tutor-box"> 
+    <h1>CALIFICAR TUTOR</h1>
     <form method="POST" action="calificar.php?permiso=1">
     <?php
     $idSolicitud = $_GET['id_solicitud'];
@@ -57,10 +59,10 @@
     <input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud?>>
     <div>
         Nombre del tutor:  <?php echo $nombreTutor ?>
-    </div>
+    </div><br>
     
     <div>
-    Calificar tutor <select id="calificacion1" name="calificacion1">
+    Calificar tutor: <select id="calificacion1" name="calificacion1">
     <?php 
     while ($reg = mysqli_fetch_array($registros)){
         ?>
@@ -69,11 +71,11 @@
     
     ?>
     </select>
-    </div>
-    Comentarios de la atencion
-    <div>
+    </div><br>
+    Comentarios de la atención
+    <div><br>
          <textarea id="comentario1" rows="20" cols="50" name="comentario1"></textarea>
-    </div>
+    </div><br>
 
 
     <?php 
@@ -81,7 +83,7 @@
     ?>
     </div>
    <div>
-    <input type="submit" value="Ingresar">
+    <input type="submit" value="Enviar">
     </div>
     </form>
     </section>
