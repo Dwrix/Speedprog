@@ -56,8 +56,15 @@
 
         
     </nav>
-    <span>PANEL ADMINISTRACION</span>
-
+    <section class="Panel-adm-box">
+        <h1>Panel Administrador</h1>
+        <ul>
+            <li id='panel'><a href='../postulacion-tutor/postulaciones-activas.php'>Postulaciones Activas</a> </li>
+            <li id='panel'><a href='../solicitudes-disponibles/solicitudes-disponibles.php'>Solicitudes Disponibles</a> </li>
+            <li id='panel'><a href='../remuneracion/remuneraciones-activas.php'>Remuneraciones Pendientes</a> </li>
+            <li id='panel'><a href='../remuneracion/historial-remuneraciones.php'>Historial Remuneraciones</a> </li>
+        </ul>
+    </section>
 
     <?php 
     include_once '../estructura/footer.php';

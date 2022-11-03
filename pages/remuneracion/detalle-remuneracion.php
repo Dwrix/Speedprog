@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../../css/detalle-postulacion.css">
+    <link rel="stylesheet" href="../../css/detalle-remuneracion.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -45,7 +45,7 @@
         ?>
     </nav>
 
-    <section>
+    <section class="Tabla-detalle-remun">
 <div>
 <?php 
 
@@ -79,7 +79,7 @@
         ?>
    
 
-    DETALLE SOLICITUD</br>
+    <h1>DETALLE REMUNERACIÓN</h1></br>
     <table border="1" width="700" align="center">
         <tr>
             <td>Tutor a pagar</td>
@@ -98,7 +98,7 @@
 <?php 
     echo "<input type='hidden' id='idBalance1' name='idBalance1' value='$idBalance'>"; //id balance
     echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$regPos[0]'>"; //id tutor
-?>
+?></br>
 Metodo de Pago <select id="metodoDePago1" name="metodoDePago1">
     <?php 
     while ($regM = mysqli_fetch_array($registroMetodo)){
@@ -113,15 +113,14 @@ Metodo de Pago <select id="metodoDePago1" name="metodoDePago1">
 
 </br>
 
-<input type='submit' value='Realizar Pago'>
+<input type='submit' value='Realizar Pago'></br></br>
 
 </form>
 
 
 
 
-
-        <a href="postulaciones-activas.php">BOTON Volver</a>
+<a id="Volver" href="remuneraciones-activas.php"> Volver</a>
 
 
 </div>

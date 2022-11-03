@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
-    <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
+    <link rel="stylesheet" href="../../css/postulaciones-activas.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <title>SpeedProg</title>
@@ -54,7 +54,7 @@ if(isset($_GET['error_mensaje'])){
 ?> 
    
 
-    <section>
+    <section class="Tabla-postulaciones-activas">
 <div>
     <?php 
 
@@ -74,7 +74,7 @@ Copiar de solicitudes activas
 
     
     ?>
-   POSTULACIONES PENDIENTES
+   <h1>POSTULACIONES PENDIENTES</h1>
     
 
     <table border="1" width="700" align="center">
@@ -125,7 +125,7 @@ Copiar de solicitudes activas
     <td><?php echo $reg2[0] ?></td>
  
     
-    <td><a href="detalle-postulacion.php?id_postulacion=<?php
+    <td><a id="ProcPostulacion" href="detalle-postulacion.php?id_postulacion=<?php
     echo $reg['id_postulacion']
     ?>"> Procesar Postulacion </td>
     <?php 

@@ -43,14 +43,14 @@
 
         
     </nav>
-
-    <span>POSTULACION TUTOR</span> </br>
+    <section class="Solicitar-tutor-box">   
+    <h1>POSTULACION TUTOR</h1> </br>
     <?php 
     
    
     
     ?>
-    <section class="Solicitar-tutor-box">
+    
         <form method="POST" action="postular.php?permiso=1">
         <?php
             

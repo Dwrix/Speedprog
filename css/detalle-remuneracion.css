@@ -1,0 +1,72 @@
+.Tabla-detalle-remun{
+    width: 800px;
+	height: 600px;
+	background: rgba(0, 0, 0, 0.438);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 320px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 30px 30px;
+	border-radius: 20px;
+}
+.Tabla-detalle-remun h1{
+    margin-left: 30%;
+    font-size: 20px;
+}
+
+.Tabla-detalle-remun table {
+    background-color: rgba(0, 0, 0, 0.219);
+	color: white;
+    margin-top: 20px;
+}
+
+#verDetalle:hover{
+	background-color: rgb(139, 80, 80);
+	color: white;
+}
+
+#Volver{
+	margin-top: 30px;
+	color: white;
+    font-size: 20px;
+}
+
+.Tabla-detalle-remun input[type="text"]
+{
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+select {
+	color: white;
+	background: rgb(32, 29, 29);
+	border: none;
+	font-size: 14px;
+	height: 30px;
+	padding: 5px;
+	width: 250px;
+ }
+
+ .Tabla-detalle-remun input[type="submit"]{
+
+	border: none;
+	outline: none;
+    width: 120px;
+	height: 30px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+    margin-top: 20px;
+
+
+}
