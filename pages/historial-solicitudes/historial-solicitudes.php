@@ -64,6 +64,7 @@ if($tipo=='2'){
         <td>Usuario</td>
         <td>Tutor</td> 
         <td>Calificacion</td>  
+        <td>Comentarios</td> 
         <td>Detalles</td>
            
     </tr>
@@ -100,19 +101,18 @@ if($tipo=='2'){
             $registroEstados1 = mysqli_query($conexion, $sqlEstado) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regEstado = mysqli_fetch_row($registroEstados1);
         }
-        //Buscar resena
         $buscarResena = $reg['id_resena_fk'];
         if(isset($buscarResena)){
             $sqlResena = "SELECT * FROM resena WHERE id_resena = $buscarResena";
             $registroResena = mysqli_query($conexion, $sqlResena) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regResena = mysqli_fetch_row($registroResena);
-        }
         //Buscar calificacion
-        $buscarCalificacion = $regCalificacion['id_calificacion_fk'];
-        if(isset($buscarCalificacion)){
-            $sqlCalificacion = "SELECT calificacion FROM calificacion WHERE id_calificacion = $buscarCalificacion";
-            $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-            $regCalificacion = mysqli_fetch_row($registroCalificacion);
+        $buscarCalificacion = $regResena[2];
+            if(isset($buscarCalificacion)){
+                $sqlCalificacion = "SELECT calificacion FROM calificacion WHERE id_calificacion = $buscarCalificacion";
+                $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                $regCalificacion = mysqli_fetch_row($registroCalificacion);
+            }
         }
 
     ?>
@@ -135,6 +135,7 @@ echo "Sin determinar";
     ?></td>
     <td><?php if(isset($buscarTutor)){
 echo $regTut[0];
+$nombreTutor1 = $regTut[0];
     }else{
 echo "Sin determinar";
     }
@@ -143,7 +144,7 @@ echo "Sin determinar";
     <td><?php
     $estadoSolicitudId = $reg['estado_solicitud_fk'];
     $regIdSolicitud2 = $reg['id_solicitud'];
-    $nombreTutor1 = $regTut[0];
+    
     if($estadoSolicitudId == 4){
         echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
         echo "</td>";
@@ -306,7 +307,7 @@ echo "Sin determinar";
     $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '4' OR estado_solicitud_fk = '5' OR estado_solicitud_fk = '6'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
-    $regIdSolicitud = mysqli_fetch_row($registros);
+    //$regIdSolicitud = mysqli_fetch_row($registros);
 
     ?>
     <table border="1" width="700" align="center">
@@ -319,7 +320,7 @@ echo "Sin determinar";
         <td>Usuario</td>
         <td>Tutor</td> 
         <td>Calificacion</td>  
-        <td>Comentario</td> 
+        <td>Comentarios</td> 
         <td>Detalles</td>
               
     </tr>
@@ -363,14 +364,15 @@ echo "Sin determinar";
             $sqlResena = "SELECT * FROM resena WHERE id_resena = $buscarResena";
             $registroResena = mysqli_query($conexion, $sqlResena) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regResena = mysqli_fetch_row($registroResena);
-        }
         //Buscar calificacion
-        $buscarCalificacion = $regCalificacion['id_calificacion_fk'];
-        if(isset($buscarCalificacion)){
-            $sqlCalificacion = "SELECT calificacion FROM calificacion WHERE id_calificacion = $buscarCalificacion";
-            $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-            $regCalificacion = mysqli_fetch_row($registroCalificacion);
+        $buscarCalificacion = $regResena[2];
+            if(isset($buscarCalificacion)){
+                $sqlCalificacion = "SELECT calificacion FROM calificacion WHERE id_calificacion = $buscarCalificacion";
+                $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                $regCalificacion = mysqli_fetch_row($registroCalificacion);
+            }
         }
+        
 
     ?>
     <td><?php echo $reg2[0] ?></td>
