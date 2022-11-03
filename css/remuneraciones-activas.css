@@ -1,0 +1,33 @@
+.Remuneraciones-activas{
+    width: 800px;
+	height: 600px;
+	background: rgba(0, 0, 0, 0.438);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 320px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 30px 30px;
+	border-radius: 20px;
+}
+.Remuneraciones-activas h1{
+    margin-left: 30%;
+    font-size: 20px;
+    
+}
+
+.Remuneraciones-activas table {
+    background-color: rgba(0, 0, 0, 0.219);
+	color: white;
+    margin-top: 20px;
+}
+
+#RealizarPago:hover{
+	background-color: rgb(139, 80, 80);
+	color: white;
+}
+
+#RealizarPago{
+	
+	color: rgb(139, 80, 80);
+}

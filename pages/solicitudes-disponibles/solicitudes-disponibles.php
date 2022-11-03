@@ -53,7 +53,7 @@ if(isset($_GET['error_mensaje'])){
 ?> 
    
 
-    <section>
+    <section class="Tabla-solicitudes">
 <div>
     <?php 
 
@@ -69,7 +69,7 @@ if(isset($_GET['error_mensaje'])){
 
     
     ?>
-    SOLICITUDES DISPONIBLES
+    <h1>SOLICITUDES DISPONIBLES</h1>
     
     
     <!-- <form action="../detalle-solicitud/detalle-solicitud.php"> -->
@@ -241,7 +241,7 @@ echo $regTut[0];
 echo "Sin determinar";
     }
     
-    ?><td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
+    ?><td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
     echo $reg['id_solicitud']
     ?>"> Ver detalles </td>
     <?php }

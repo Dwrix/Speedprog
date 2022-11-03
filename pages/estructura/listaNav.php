@@ -18,17 +18,15 @@
             echo "<li><a href='../postulacion-tutor/postulacion-tutor.php'>Postular a Tutor</a> </li>";
             echo "<li><a href='../historial-solicitudes/historial-solicitudes.php'>Historial de solicitudes</a> </li>";
             if($tipo == 3){
-                
-            }
-            if($tipo == 4){
-                echo "<li id='sectionmenu'><a href='../panel-administracion/panel-administracion.php'>Pandel de Administracion</a> </li>";
-                echo "<li id='sectionmenu'><a href='../postulacion-tutor/postulaciones-activas.php'>Postulaciones Activas</a> </li>";
-                echo "<li id='sectionmenu'><a href='../remuneracion/remuneraciones-activas.php'>Remuneraciones</a> </li>";
-            }
-            if($tipo == 3 || $tipo == 4){
                 echo "<li id='sectionmenu'><a href='../solicitudes-disponibles/solicitudes-disponibles.php'>Solicitudes Disponibles</a> </li>";
                 echo "<li id='sectionmenu'><a href='../remuneracion/historial-remuneraciones.php'>Historial de Remuneraciones</a> </li>";
             }
+            if($tipo == 4){
+                echo "<li id='sectionmenu'><a href='../panel-administracion/panel-administracion.php'>Pandel de Administracion</a> </li>";
+                //echo "<li id='sectionmenu'><a href='../postulacion-tutor/postulaciones-activas.php'>Postulaciones Activas</a> </li>";
+                //echo "<li id='sectionmenu'><a href='../remuneracion/remuneraciones-activas.php'>Remuneraciones</a> </li>";
+            }
+            
             }else{
                 echo "<li><a href='../login/loginIndex.php'>Ingresar</a></li>";
                 echo "<li><a href='../registrar/registro.php'>Registrarse</a></li>"; 
