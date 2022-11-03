@@ -162,7 +162,7 @@ echo "Sin determinar";
 
 
 }else if($tipo=='3'){
-    $sql = "SELECT * FROM solicitud WHERE (estado_solicitud_fk = '4' OR estado_solicitud_fk = '5') AND (id_tutor_fk = '$userId' OR id_usuario_fk = '$userId')";
+    $sql = "SELECT * FROM solicitud WHERE (estado_solicitud_fk = '4' OR estado_solicitud_fk = '6' OR estado_solicitud_fk = '5') AND (id_tutor_fk = '$userId' OR id_usuario_fk = '$userId')";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     if ($registros->num_rows === 0){
@@ -288,7 +288,7 @@ echo "Sin determinar";
     
     <?php }
 }else if($tipo=='4'){
-    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '4' OR estado_solicitud_fk = '5'";
+    $sql = "SELECT * FROM solicitud WHERE estado_solicitud_fk = '4' OR estado_solicitud_fk = '5' OR estado_solicitud_fk = '6'";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
     $regIdSolicitud = mysqli_fetch_row($registros);
