@@ -222,7 +222,7 @@ echo "Sin determinar";
             $registroResena = mysqli_query($conexion, $sqlResena) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regResena = mysqli_fetch_row($registroResena);
             //Buscar calificacion
-            $buscarCalificacion = $regResena['id_calificacion_fk'];
+            $buscarCalificacion = $regResena[2];
             if(isset($buscarCalificacion)){
                 $sqlCalificacion = "SELECT calificacion FROM calificacion WHERE id_calificacion = $buscarCalificacion";
                 $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -264,7 +264,7 @@ echo "Sin determinar";
 
         echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
         
-    }else if($estadoSolicitudId == 5){
+    }else if($estadoSolicitudId == 4){
         echo "Calificacion: ".$regCalificacion[0]."</br>";
         echo "Comentarios: ".$regResena[1];
     }else{
