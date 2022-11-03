@@ -165,7 +165,7 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
         Especialidades del Tutor
         
         <table border="1" width="700" align="center">
-            <tr>
+            
         <?php 
         while ($regTutorEspecialidad = mysqli_fetch_array($registros2)){
             echo "<tr>";
@@ -173,10 +173,13 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
             $registroEsp = mysqli_query($conexion, $sqlEsp) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $regEspecialidad = mysqli_fetch_array($registroEsp);
             echo "<td>".$regEspecialidad['especialidad']."</td>";
+            echo "<td> <a href='eliminar-especialidad.php?id_usuario=$userId&id_especialidad=$regTutorEspecialidad[2]'> Eliminar Especialidad <a>";
+
             echo "</tr>";
+
         };
         ?>
-        </tr>
+        
         </table>
         </br>
         Balance de Tutor
@@ -211,7 +214,11 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
     </br>
     </br>
         <?php 
-        if (mysqli_num_rows($registrosResenas) > 0){
+        $regResenas = mysqli_fetch_row($registrosResenas);
+
+        if ($regResenas[10]!==null){
+            $sqlSolicitudes = "SELECT * FROM solicitud WHERE id_tutor_fk='$idUsuarioSeleccionado'";
+            $registrosResenas = mysqli_query($conexion, $sqlSolicitudes) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             echo "Calificaciones de solicitudes";
             ?> 
             
@@ -306,25 +313,8 @@ Zona de Peligro </br>
 </br>
 </br>
 
-Literal boton de NUKE que elimina todo rastro de que este usuario alguna vez existio </br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-
-PELIGRO PELIGRO </br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-NO APRETAR BOTON -> <a href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Perfil </a> <- NO APRETAR BOTON
-        
+<a href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Usuario </a>
+</br>      
        
 </div>
     </section>

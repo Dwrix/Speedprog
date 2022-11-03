@@ -56,7 +56,68 @@
 
         
     </nav>
-    <span>PANEL ADMINISTRACION</span>
+    <span>LISTA DE USUARIOS</span>
+
+    <table border="1" width="700" align="center">
+    <tr>
+        <td>ID Usuario</td>
+        <td>Nombre</td>
+        <td>Mail</td>
+        <td>Tipo de Usuario</td>
+        <td>Detalles</td>   
+    </tr>
+    <?php 
+
+
+    //Busqueda de postulaciones en proceso
+    $sql = "SELECT * FROM usuario";
+    $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
+
+    while ($reg = mysqli_fetch_array($registros)){
+        $idUsuario = $reg['id_usuario'];
+        $nombreUsuario = $reg['nombre'];
+        $correoUsuario = $reg['correo'];
+        $idTipoUsuario = $reg['id_tipo_usuario_fk'];
+        ?>
+    <tr>
+        
+    <td><?php echo $idUsuario?></td>  
+    <td><?php echo $nombreUsuario?></td>
+    <td><?php echo $correoUsuario?></td>
+    <?php 
+        $sql2 = "SELECT tipo_usuario FROM tipo_usuario WHERE id_tipo_usuario = '$idTipoUsuario'";
+        $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $reg2 = mysqli_fetch_row($registros2);
+
+    ?>
+    <td><?php echo $reg2[0] ?></td>
+ 
+    <?php 
+    if($userId==$idUsuario){
+        ?>
+        <td><a href="../perfil/perfil.php"> Ver Perfil </td>
+        <?php 
+    }else{
+        ?>
+        <td><a href="detalle-administracion.php?id_usuario=<?php
+        echo $idUsuario
+        ?>"> Ver Detalles </td>
+        <?php 
+    }
+    
+    
+    
+    }
+    
+?>
+    </table>
+
+
+
+
+
+
 
 
     <?php 
