@@ -146,11 +146,23 @@ echo "Sin determinar";
     $nombreTutor1 = $regTut[0];
     if($estadoSolicitudId == 4){
         echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
-    }else if($estadoSolicitudId == 5){
-        echo "Calificacion: ".$regCalificacion[0]."</br>";
-        echo "Comentarios: ".$regResena[1];
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
+        echo "</td>";
+    }else if($estadoSolicitudId == 6){
+        echo $regCalificacion[0];
+        echo "</td>";
+        echo "<td>";
+        echo $regResena[1];
+        echo "</td>";
     }else{
+
         echo "No disponible";
+        echo "</td>";
+        echo "<td>";
+        echo "No disponible";
+        echo "</td>";
     }
     ?>
     </td>
@@ -262,8 +274,11 @@ echo "Sin determinar";
     $regIdSolicitud2 = $reg['id_solicitud'];
     $nombreTutor1 = $regTut[0];
     if($estadoSolicitudId == 4 && $userId == $buscarUsuario){
-
         echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='../calificacion-tutor/calificacion-tutor.php?id_solicitud=$regIdSolicitud2&nombre_tutor=$nombreTutor1'> Calificar </a>";
+        echo "</td>";
         
     }else if($estadoSolicitudId == 6){
 
@@ -386,6 +401,10 @@ echo "Sin determinar";
     $estadoSolicitudId = $reg['estado_solicitud_fk'];
     if($estadoSolicitudId == 4){
         echo "Sin calificar";
+        echo "</td>";
+        echo "<td>";
+        echo "Sin calificar";
+        echo "</td>";
     }else if($estadoSolicitudId == 6){
         echo $regCalificacion[0];
         echo "</td>";
