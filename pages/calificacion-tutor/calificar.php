@@ -62,8 +62,8 @@ if($tipo == '4'){
     $idResena = mysqli_insert_id($conexion);
 
     //modificar solicitud ingresando la resena en la id de la solicitud antes conseguida
-
-    $sqlUpdateSolicitud = "UPDATE solicitud SET id_resena_fk = '$idResena' WHERE id_solicitud='$idSolicitud'";
+    $estadoSolicitudNuevo = "6";
+    $sqlUpdateSolicitud = "UPDATE solicitud SET id_resena_fk = '$idResena' estado_solicitud_fk = '$estadoSolicitudNuevo' WHERE id_solicitud='$idSolicitud'";
     $registrosUpdate1 = mysqli_query($conexion, $sqlUpdateSolicitud) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
     
     
