@@ -96,14 +96,12 @@
     </nav>
 
     <section>
-<div>
-    CHAT
-</div>
-    </br>
+
 
 
 
 <div id="contenedor-chat">
+<h1>CHAT</h1>
     <div id="caja-chat">
         <div id="chat"></div>  
     </div>
