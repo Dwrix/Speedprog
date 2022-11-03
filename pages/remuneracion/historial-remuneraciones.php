@@ -51,6 +51,12 @@
 <?php 
 if($tipo==4){
 //Administrador
+if(isset($_GET['id_usuario'])){
+    $idUsuarioABuscar = $_GET['id_usuario'];
+    $sqlRemuneraciones = "SELECT * FROM remuneracion WHERE id_tutor_fk = '$idUsuarioABuscar'";
+}else{
+    $sqlRemuneraciones = "SELECT * FROM remuneracion";
+}
 ?>
 <table border="1" width="700" align="center">
     <tr>
@@ -64,7 +70,7 @@ if($tipo==4){
     </tr>
     <?php 
     //Seleccionar todas las remuneraciones
-    $sqlRemuneraciones = "SELECT * FROM remuneracion";
+
     $registrosRemuneracion = mysqli_query($conexion, $sqlRemuneraciones) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
 

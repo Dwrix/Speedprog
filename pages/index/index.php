@@ -151,6 +151,46 @@ if(isset($_GET['transferencia'])){
     window.onload = function () { alert("Transferencia realizada exitosamente"); } 
     </script>';
 }
+if(isset($_GET['bloqueado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Esta cuenta se encuentra bloqueada"); } 
+    </script>';
+}
+if(isset($_GET['eliminado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Esta cuenta se encuentra eliminada"); } 
+    </script>';
+}
+if(isset($_GET['eliminacion_especialidad'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Especialidad eliminada del usuario exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['perfil_modificado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Perfil modificado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['usuario_eliminado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Usuario eliminado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['usuario_recuperado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Usuario recuperado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['usuario_bloqueado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Usuario bloqueado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['usuario_desbloqueado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Usuario desbloqueado exitosamente"); } 
+    </script>';
+}
 ?> 
 
     <section>
