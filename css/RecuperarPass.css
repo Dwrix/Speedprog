@@ -1,0 +1,69 @@
+
+/*------------------------box login----------------------------------*/
+.Recuperar-con-box{
+	width: 100px;
+	height: 100px;
+	margin-left: 90px;
+}
+.Recuperar-con-box{
+
+	width: 320px;
+	height: 480px;
+	background: rgba(0, 0, 0, 0.733);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 250px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+
+
+}
+
+
+
+.Recuperar-con-box h1{
+
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	display: block;
+
+
+}
+
+
+.Recuperar-con-box input{
+
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+
+.Recuperar-con-box input[type="email"],
+.Recuperar-con-box input[type="password"]{
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+.Recuperar-con-box input[type="submit"]{
+
+	border: none;
+	outline: none;
+	height: 40px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+
+}
