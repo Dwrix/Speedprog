@@ -78,7 +78,7 @@ if(isset($_GET['error_mensaje'])){
                 <input type="email" id="mail" name="correo" placeholder="Ingrese Email" required><br> 
                 <input type="password" id="pass" name="password" placeholder="Ingrese Contraseña" required><br>
                 <input type="submit" value="Ingresar"><br><br>
-                <a href="#">¿Olvidaste la Contraseña?</a><br><br>
+                <a href="recuperarPass.php">¿Olvidaste la Contraseña?</a><br><br>
                 <span>No estás registrado?</span><a href="../registrar/registro.php"> Crear Cuenta</a>
             </form>
         </div>

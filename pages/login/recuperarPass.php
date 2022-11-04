@@ -1,56 +1,57 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        
-        <form action="recuperarPass.php" method="POST">
-            <input type="text" name="correo" value="" placeholder="email" /> <br/>
-            <input type="submit" value="Recordar contraseña" />
-        </form>
-        
-        <?php
-        require '../correo/PHPMailer/Exception.php';
-        require '../correo/PHPMailer/PHPMailer.php';
-        require '../correo/PHPMailer/SMTP.php';
-		try{
-			if(isset($_POST['correo']) && !empty($_POST['correo'])){
-                $pass = substr( md5(microtime()), 1, 10);
-                $mail = $_POST['correo'];
-                
-                include '../../php/conexionBD.php';
-                
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-                $sql = "Update usuario Set password='$pass' Where correo='$mail'";
+    <link rel="stylesheet" href="../../css/RecuperarPass.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/Slider.js"></script>
 
-                if ($conexion->query($sql) === TRUE) {
-                    echo "usuario modificado correctamente ";
-                } else {
-                    echo "Error modificando: " . $conn->error;
-                }
-                
-                $to = $_POST['correo'];//"destinatario@email.com";
-                $from = "From: " . "SpeedProg Asesorias" ;
-                $subject = "Recordar contraseña";
-                $message = "El sistema le asigno la siguiente clave " . $pass;
+    <title>SpeedProg</title>
 
-                mail($to, $subject, $message, $from);
-                echo 'Correo enviado satisfactoriamente a ' . $_POST['correo'];
-            }
-            else 
-                echo 'Informacion incompleta';
-		}
-		catch (Exception $e) {
-			echo 'Excepción capturada: ',  $e->getMessage(), "\n";
-		}
-            
+<body>
+<nav class="nav-cab">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo">SpeedProg Asesorias</label>
+        <?php 
+        if(!isset($_SESSION)){
+            session_start();
+        };
+        if(isset($_SESSION['user'])){
+            $mail = $_SESSION['user'];
+            include_once '../login/verificacion.php';
+        }else{
+            $userName = '';   
+            $tipo = '';
+        }
+        echo " ".$userName;   
+        include_once '../estructura/listaNav.php';
+        if($tipo == 2){
+            //header("Location: ../login/loginIndex.php?error_mensaje=0");
+        }
         ?>
+
+        
+    </nav>
+    
+    
+        <section class="Recuperar-con-box">
+            <h1>Recuperar contraseña</h1>
+        <form action="../correo/enviar.php" method="POST">
+            <h4>Ingrese su correo para restablecer contraseña</h4><br/>
+            <input type="email" id="mail" name="correo" value="" placeholder="email" /> <br/><br/>
+            <input type="submit" value="Recuperar Contraseña" />
+        </form>
+        </section>
+        <?php 
+    include_once '../estructura/footer.php';
+    ?>   
     </body>
 </html>

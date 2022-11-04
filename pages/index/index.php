@@ -191,6 +191,11 @@ if(isset($_GET['usuario_desbloqueado'])){
     window.onload = function () { alert("Usuario desbloqueado exitosamente"); } 
     </script>';
 }
+if(isset($_GET['mensaje_recuperar_correo'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Se le ha enviado un correo para recuperar su Contraseña"); } 
+    </script>';
+}
 ?> 
 
     <section>
