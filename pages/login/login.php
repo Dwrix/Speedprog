@@ -45,7 +45,7 @@
     
             }else{
                 $errorLogin = "user o pass incorrecto";
-                header("Location: loginIndex.php"); 
+                header("Location: loginIndex.php?mensaje_error=1"); 
             }
         }
 

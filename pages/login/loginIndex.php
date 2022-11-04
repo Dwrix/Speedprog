@@ -47,6 +47,13 @@ if(isset($_GET['error_mensaje'])){
         </script>';
     }
 }
+if(isset($_GET['mensaje_error'])){
+    
+        echo '<script type="text/javascript">
+        window.onload = function () { alert("Error, datos ingresados incorrectos"); } 
+        </script>';
+    
+}
 
 ?>
 
