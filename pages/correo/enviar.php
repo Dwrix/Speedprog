@@ -41,11 +41,13 @@ try {
         if(isset($_POST['correo']) && !empty($_POST['correo'])){
             //cambiar la pass actual del correo a otra random
             $pass = substr( md5(microtime()), 1, 10);
+            $md5pass = md5($pass);
+           // $pass = substr( md5(microtime()), 1, 10);
             $mail2 = $_POST['correo'];
             
             include '../../php/conexionBD.php';
             
-            $sql2 = "UPDATE usuario SET password='$pass' WHERE correo='$mail2'";
+            $sql2 = "UPDATE usuario SET password='$md5pass' WHERE correo='$mail2'";
 
             if ($conexion->query($sql2) === TRUE) {
                 echo "usuario modificado correctamente ";

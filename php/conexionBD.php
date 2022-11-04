@@ -1,6 +1,6 @@
 <?php 
 
-/*
+
 //Conexion de Byron
 $dbHost = 'localhost';
 $dbName = 'speedprogasesorias';
@@ -10,7 +10,7 @@ $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName) or die(mysql_err
 
 
 
-
+/*
 
 //Conexion de Alex
 $dbHost = 'localhost:3306';
@@ -19,7 +19,7 @@ $dbUser = 'root';
 $dbPassword = 'root';
 $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName) or die(mysql_error());
 
-*/
+
 
 //Conexion de pagina Web
 $dbHost = 'localhost';
@@ -28,7 +28,7 @@ $dbUser = 'speedpro_speedprogasesorias';
 $dbPassword = 'AlexDiegoByron2022';
 $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword,$dbName) or die(mysql_error());
 
-
+*/
 
 
 ?>

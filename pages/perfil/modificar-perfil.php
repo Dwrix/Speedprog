@@ -113,7 +113,7 @@ Modificar Perfil
         <tr>
             <td>Password</td>
             <td>
-            <textarea id="passwordUsuario1" name="passwordUsuario1" rows="2" cols="50" required><?php echo $usuarioPassword?></textarea>    
+            <textarea id="passwordUsuario1" name="passwordUsuario1" rows="2" cols="50" required placeholder="Ingrese nueva contraseña"></textarea>    
             </td>
         </tr>
         <tr>
