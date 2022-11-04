@@ -62,7 +62,7 @@
                         echo 'Lo siento, no se pudo crear tu cuenta';
                     }
                 ?>  
-            <form id="form-registro" method="POST" action="registrocuenta.php?permiso=1">
+            <form id="form-registro" method="POST" action="registroCuenta.php?permiso=1">
                 <input type="text" id="rut" name="rut1" placeholder="Número identificador" required><br> 
                 <input type="text" id="nombre" name="nom1" placeholder="Ingrese nombre" required><br> 
                 <input type="date" id="date" min="1900-01-01" max="2022-01-01" name="date" placeholder="Fecha nacimiento" required><br> 
