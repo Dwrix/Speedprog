@@ -196,6 +196,11 @@ if(isset($_GET['mensaje_recuperar_correo'])){
     window.onload = function () { alert("Se le ha enviado un correo para recuperar su Contraseña"); } 
     </script>';
 }
+if(isset($_GET['sesion_exitosa'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Sesion ha sido iniciada exitosamente"); } 
+    </script>';
+}
 ?> 
 
     <section>

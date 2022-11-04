@@ -41,7 +41,7 @@
             if($user->userExists($correoForm,$passForm)){
                 $userSession->setCurrentUser($correoForm);
                 $user->setUser($correoForm);
-                header("Location: ../index/index.php"); 
+                header("Location: ../index/index.php?sesion_exitosa=1"); 
     
             }else{
                 $errorLogin = "user o pass incorrecto";
