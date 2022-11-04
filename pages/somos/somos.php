@@ -44,7 +44,7 @@
     <div>
         <ol class="pagina-principal">
             <li>
-                <div class="columna-izq" style="background-image: url(../../img/teaching.webp)" >
+                <div class="columna-izq" >
 <h2>SpeedProg Asesorias</h2>
 <p class="textosimple">SpeedProg Asesorías es una sociedad de responsabilidad limitada y de rubro informático, consta de una plataforma web que tiene como objetivo poder otorgar un servicio de ayuda a programadores. Este servicio de ayuda ofrece una asesoría especializada a la persona que contrata este servicio, el cual se realizará de manera online.
 </p>
@@ -56,11 +56,12 @@
 La visión del proyecto, es ser un proyecto ambicioso a futuro, que el software sea un pionero en el área de solución de informática para los desarrolladores de programas, software, aplicaciones, etc. Llegar al habla inglesa, no solo la hispanohablante 
 </p>           
 </div>
-                
+<img src="../../img/Speedprog.PNG">               
             </li>
         </ol>
     </div>
 </div>
+
     </section>
     <?php 
     include_once '../estructura/footer.php';

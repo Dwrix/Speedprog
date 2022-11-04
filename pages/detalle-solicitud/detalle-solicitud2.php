@@ -207,7 +207,7 @@ if($tipo == 3){
         ?>
         <?php 
         if($estadoSolicitud=='3'){
-            echo "<input type='submit' value='Ver solucion'>";
+            echo "<input id='btnVerSolucion' type='submit' value='Ver solucion'>";
         }
         ?>
         </form>
@@ -254,7 +254,7 @@ if($tipo == 3){
         ?>
         <?php 
         if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
-            echo "<input type='submit' value='Abandonar solicitud'>";
+            echo "<input id='btnAbandonarSol'type='submit' value='Abandonar solicitud'>";
         }
         ?>
         
@@ -293,7 +293,7 @@ if($tipo == 3){
         ?>
         <?php 
         if($estadoSolicitud=='3'){
-            echo "<input type='submit' value='Ver solucion'>";
+            echo "<input id='btnVerSolucion' type='submit' value='Ver solucion'>";
         }
         ?>
         

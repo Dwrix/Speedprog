@@ -42,9 +42,10 @@
 
         
     </nav>
-    <span>PERFIL</span>
+    
 
- <section>
+ <section class="Perfil-box">
+ <h1>PERFIL</h1>
 <div>
 <?php 
 //Seleccionar usuario de la lista de usuarios
@@ -113,7 +114,7 @@ $registroPostulacion = mysqli_query($conexion, $sqlPostulacion) or die("Problema
 
 ?>
    
-Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
+Informacion Personal 
     <table border="1" width="700" align="center">
         
 
@@ -303,17 +304,13 @@ Informacion Personal <a href="modificar-perfil.php"> Modificar Perfil <a>
     }
 
 ?>
-</br>
-Zona de Peligro </br>
-</br>
-</br>
-</br>
+<a href="modificar-perfil.php"> Modificar Perfil <a>
 </br>
 </br>
 </br>
 </br>
 
-<a href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Usuario </a>
+<a id="Eliminaruser"href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Usuario </a>
 </br>      
        
 </div>

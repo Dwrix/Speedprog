@@ -233,7 +233,7 @@ echo "Sin determinar";
     }
     
     ?></td>
-    <td><a href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php 
+    <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php 
 
     echo $reg['id_solicitud'] 
     ?>"> Ver detalles </td>
@@ -315,7 +315,7 @@ echo "Sin determinar";
     }
     
     ?></td>
-    <td><a href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
+    <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     
     <?php }
 }

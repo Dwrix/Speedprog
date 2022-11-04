@@ -44,7 +44,8 @@
     </nav>
 
 
- <section>
+ <section class="Mod-perfil-box">
+ <h1>Modificar Perfil</h1>
 <div>
 <?php 
 $idUsuario = $_GET['id_usuario'];
@@ -86,7 +87,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
 
 ?>
    
-Modificar Perfil
+
 <form method="POST" action="adm-proceso-modificar-perfil.php?permiso=1">
     <input type='hidden' id='idUsuario1' name='idUsuario1' value=<?php echo $idUsuario ?>>
     <table border="1" width="700" align="center">

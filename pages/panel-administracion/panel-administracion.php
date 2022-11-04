@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <link rel="stylesheet" href="../../css/panel-administracion.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+    
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
@@ -56,7 +56,7 @@
 
         
     </nav>
-
+    <div class='contenido'>   
     <section class="Panel-adm-box">
         <h1>Panel Administrador</h1>
         <ul>
@@ -66,8 +66,9 @@
             <li id='panel'><a href='../remuneracion/historial-remuneraciones.php'>Historial Remuneraciones</a> </li>
         </ul>
     </section>
-
-    <span>LISTA DE USUARIOS</span>
+     
+    <section class="Lista-user-box"> 
+    <h1>LISTA DE USUARIOS</h1>
 
     <table border="1" width="700" align="center">
     <tr>
@@ -107,11 +108,11 @@
     <?php 
     if($userId==$idUsuario){
         ?>
-        <td><a href="../perfil/perfil.php"> Ver Perfil </td>
+        <td><a id="VerDetalle" href="../perfil/perfil.php"> Ver Perfil </td>
         <?php 
     }else{
         ?>
-        <td><a href="detalle-administracion.php?id_usuario=<?php
+        <td><a id="VerDetalle" href="detalle-administracion.php?id_usuario=<?php
         echo $idUsuario
         ?>"> Ver Detalles </td>
         <?php 
@@ -123,8 +124,8 @@
     
 ?>
     </table>
-
-
+    </section>
+</div>   
 
 
 
