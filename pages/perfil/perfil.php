@@ -133,11 +133,7 @@ Informacion Personal
             <td><?php echo $usuarioCorreo?></td>
 
         </tr>
-        <tr>
-            <td>Password</td>
-            <td><?php echo $usuarioPassword?></td>
-
-        </tr>
+        
         <tr>
             <td>Fecha de Nacimiento</td>
             <td><?php echo $usuarioFecha?></td>
