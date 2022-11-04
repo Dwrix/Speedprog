@@ -131,9 +131,10 @@ Subir Imagen
         <a href="#" id="add">+</a>
     </div>
     <div>
-        Link de video  
+        Link de video YouTube  
+
     </div>   
-    <input type="text" id="video1" name="video1" required>
+    <input type="text" id="video1" name="video1" required placeholder="RDMdPhaY78yc4">
     
     <?php 
     mysqli_close($conexion);

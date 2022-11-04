@@ -133,7 +133,7 @@ Subir Imagen extra
     <div>
         Link de video extra 
     </div>   
-    <input type="text" id="video1" name="video1">
+    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4>
     
     <?php 
     mysqli_close($conexion);

@@ -113,7 +113,7 @@
         ?>
    
 
-    DETALLE SOLICITUD<br>
+    MEDIA<br>
 
     <table border="1" width="700" align="center">
         
@@ -130,7 +130,15 @@
     while ($regVideo2 = mysqli_fetch_array($registroMedia2)){
         if($regVideo2['link_video']!=null){
             ?> 
-            <?php echo $regVideo2['link_video'] ?> <?php 
+
+        <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/<?php
+             echo $regVideo2['link_video'] 
+             ?> ">
+        </iframe>
+
+            
+             <?php 
         }
         ?>
             
@@ -170,7 +178,15 @@
     while ($regVideo = mysqli_fetch_array($registroMedia)){
         if($regVideo['link_video']!=null){
             ?> 
-            <?php echo $regVideo['link_video'] ?> <?php 
+
+        <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/<?php
+             echo $regVideo['link_video'] 
+             ?> ">
+        </iframe>
+
+            
+             <?php 
         }
         ?>
             
@@ -184,7 +200,9 @@
     while ($regImagen = mysqli_fetch_array($registroImagen)){
         if($regImagen['index_imagen']!=null){
             ?> 
-            <?php echo $regImagen['index_imagen'] ?> </br> <?php 
+            <?php 
+            echo $regImagen['index_imagen'] 
+            ?> </br> <?php 
         }
         ?>
             

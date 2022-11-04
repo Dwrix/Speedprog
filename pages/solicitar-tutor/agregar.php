@@ -81,6 +81,7 @@ if($tipo == '4'){
        
 
 if($linkVideo!=''){
+    
     $sqlMediaVideo = "INSERT INTO media (link_video, id_solicitud_fk, id_usuario_fk) VALUES ('$linkVideo', '$lastIdSolicitud', '$userId')";
     $regxdxd = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 }
