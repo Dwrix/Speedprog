@@ -110,6 +110,7 @@ div ul ol{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 	align-items: center;
 	padding: 15px;
+
 }
 
 
@@ -128,6 +129,7 @@ div ul ol{
 .tarjeta h3{
 	margin-left: 10px;
 	font-size: 18px;
+	margin: auto;
 }
 
 
