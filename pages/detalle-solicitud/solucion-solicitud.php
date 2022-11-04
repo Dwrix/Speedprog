@@ -43,7 +43,8 @@
         ?>
     </nav>
 
-    <section>
+    <section class="Detalle-solucion-box">
+    <h1>SOLUCIÓN DETALLE SOLICITUD</h1>
 <div>
 <?php 
 //Id de media + ID del usuario (tutor) y entregar todas las imagenes y videos + el mensaje del tutor el cual el usuario o tutor puede ver
@@ -108,7 +109,7 @@
         ?>
    
 
-    DETALLE SOLICITUD<br>
+    <br>
 
     <table border="1" width="700" align="center">
         <tr>
@@ -162,8 +163,8 @@
 
 
 
-
-        <a href="../index/index.php">BOTON Volver</a>
+    </br>
+        <a id="Volver" href="../index/index.php">Volver</a>
 
 
 </div>

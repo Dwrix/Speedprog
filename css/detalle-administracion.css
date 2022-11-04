@@ -1,0 +1,68 @@
+.Detalle-adm{
+	width: 800px;
+	height: 1200px;
+	background: rgba(0, 0, 0, 0.562);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 45%;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+}
+
+.Detalle-adm h1{
+	
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	display: block;
+
+
+}
+
+.Detalle-adm label{
+	
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+
+
+
+.Detalle-adm input[type="submit"]{
+
+	border: none;
+	outline: none;
+    width: 180px;
+	height: 40px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+
+}
+
+
+
+.Detalle-adm a:link, a:visited {
+    background-color: #660d0770;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    margin-top: 15px;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(92, 6, 6);
+  }
+
+
+
+

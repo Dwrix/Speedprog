@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../../css/perfil.css">
+    <link rel="stylesheet" href="../../css/detalle-administracion.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -42,9 +42,10 @@
 
         
     </nav>
-    <span>PERFIL</span>
+    
 
- <section>
+ <section class="Detalle-adm">
+ <h1>PERFIL</h1>
 <div>
 <?php 
 $idUsuarioSeleccionado = $_GET['id_usuario'];
@@ -310,15 +311,7 @@ Informacion Personal de: <?php echo $usuarioNombre?> </br>
     }
 
 ?>
-</br>
-Zona de Peligro </br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+
 <?php
 if($usuarioIDTipoDeUsuario!=5){
     echo "<a href='adm-bloquear-perfil.php?permiso=1&id_usuario=$idUsuarioSeleccionado' onclick='return confirm('Estas seguro?')'> Bloquear Usuario </a> </br>";

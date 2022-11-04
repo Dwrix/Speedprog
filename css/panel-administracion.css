@@ -1,27 +1,21 @@
-.Panel-adm-box{
-    width: 350px;
-	height: 550px;
-	background: rgba(0, 0, 0, 0.438);
+
+.contenido {
+    width: 100%;
+    height: 50%;
+}
+
+.Panel-adm-box {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-left: 57px;
+    float: left;
+    position: relative;
+    width: 20%;
+    border: #660d0770 solid 4px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.438);
 	color: #fff;
-	margin-left: 15%;
-	margin-top: 320px;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-	padding: 30px 30px;
-	border-radius: 20px;
-   
-    
 }
-.Panel-adm-box h1{
-    margin-left: 20%;
-    font-size: 20px;
-}
-
-#panel{
-   
-    
-}
-
 .Panel-adm-box ul a:link, a:visited {
     background-color: #660d0770;
     color: white;
@@ -36,3 +30,123 @@
   a:hover, a:active {
     background-color: rgb(92, 6, 6);
   }
+
+.Lista-user-box {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    width: 47%;
+    background: rgba(0, 0, 0, 0.438);
+    height: auto;
+}
+
+#verDetalle:hover{
+	background-color: rgb(139, 80, 80);
+	color: white;
+}
+
+#verDetalle{
+	
+	color: rgb(139, 80, 80);
+}
+
+/*------------------------Footer----------------------------------*/
+footer{
+    width: 100%;
+    float: left;
+    background: linear-gradient(50deg,black,#504f4f6e);
+    color: white;
+}
+
+.container-footer-all{
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px;
+}
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+.colum1{
+    max-width: 400px;
+    
+}
+.colum1 h1{
+    font-size: 22px;
+}
+.colum1 p{
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 40px;
+}
+.colum2{
+    max-width: 400px;
+}
+.colum2 h1{
+    font-size: 22px;
+}
+.row{
+   margin-top: 20px;
+    display: flex;
+}
+.row img{
+    width: 36px;
+    height: 36px;
+}
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #C7C7C7;
+}
+.colum3{
+    max-width: 400px;
+}
+.colum3 h1{
+    font-size: 22px;
+    
+}
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+    
+}
+.container-footer{
+    width: 100%;
+    background: #101010;
+}
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+.copyright{
+    margin: auto;
+    color: #C7C7C7;
+}
+@media screen and (max-width: 1100px){
+    .container-body{
+        flex-wrap: wrap;
+    }
+    .colum1{
+        max-width: 100%;
+    }
+    .colum2,
+    .colum3{
+        margin-top: 40px;
+    }
+}
+/*------------------------Footer----------------------------------*/
