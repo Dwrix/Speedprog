@@ -1,0 +1,38 @@
+.Panel-adm-box{
+    width: 350px;
+	height: 550px;
+	background: rgba(0, 0, 0, 0.438);
+	color: #fff;
+	margin-left: 15%;
+	margin-top: 320px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 30px 30px;
+	border-radius: 20px;
+   
+    
+}
+.Panel-adm-box h1{
+    margin-left: 20%;
+    font-size: 20px;
+}
+
+#panel{
+   
+    
+}
+
+.Panel-adm-box ul a:link, a:visited {
+    background-color: #660d0770;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    margin-top: 15px;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(92, 6, 6);
+  }

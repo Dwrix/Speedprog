@@ -61,7 +61,7 @@
         
     </nav>
     
-
+    <section class="Tabla-solicitudes">
 
 
     
@@ -77,7 +77,7 @@ if($tipo=='2'){
     }
     ?>
     
-    <section class="Tabla-solicitudes">
+    
     <h1>MIS SOLICITUDES ACTIVAS</h1><br>
     <table border="1" width="700" align="center">
     <tr>

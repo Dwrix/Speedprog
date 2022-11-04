@@ -339,7 +339,7 @@ if($tipo == 3){
     }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
-<input type="submit" value="Ver chat">
+<input id="BtnVerChat" type="submit" value="Ver chat">
 </form>
             <form method="POST" action="media.php?permiso=1">
             <?php 
@@ -352,7 +352,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input id="BtnVerMedia" type='submit' value='Ver media (Administrador)'>
+            <input id="BtnVerMedia" type='submit' value='Ver media (Admin)'>
             </form>
             <form method="POST" action="cancelar-solicitud.php?permiso=1">
             <?php 
@@ -365,7 +365,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input id='BtnCancelar' type='submit' value='Cancelar solicitud (Administrador)'>
+            <input id='BtnCancelar' type='submit' value='Cancelar solicitud (Admin)'>
             </form>
             <form method="POST" action="procesar-solicitud.php?permiso=1">
             <?php 
@@ -378,7 +378,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Procesar solicitud (Administrador)'>
+            <input id='BtnProcesar' type='submit' value='Procesar solicitud (Admin)'>
             </form>
             <form method="POST" action="finalizar-solicitud.php?permiso=1">
             <?php 
@@ -391,7 +391,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Finalizar solicitud (Administrador)'>
+            <input id="BtnFinalizar" type='submit' value='Finalizar solicitud (Admin)'>
             </form>
             <form method="POST" action="abrir-solicitud-administrador.php?permiso=1">
             <?php 
@@ -404,7 +404,7 @@ if($tipo == 3){
                 }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input type='submit' value='Abrir solicitud (Administrador)'>
+            <input id="BtnAbrir" type='submit' value='Abrir solicitud (Admin)'>
             </form>
             <?php
             }

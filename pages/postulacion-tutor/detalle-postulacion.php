@@ -44,7 +44,7 @@
         ?>
     </nav>
 
-    <section>
+    <section class="detalle-post-box">
 <div>
 <?php 
         $idPostulacion = $_GET['id_postulacion'];
@@ -80,7 +80,7 @@
         ?>
    
 
-    DETALLE SOLICITUD<br>
+    <h1>DETALLE SOLICITUD</h1><br>
     <table border="1" width="700" align="center">
         <tr>
             <td>Enunciado</td>
@@ -110,7 +110,7 @@
 
 <form method="POST">
 </br>Comentarios del evaluador</br>
-<textarea id="respuesta1" rows="10" cols="50" name="respuesta1" required></textarea>
+<textarea id="respuesta1" rows="10" cols="50" name="respuesta1" required></textarea></br>
 <?php 
     echo "<input type='hidden' id='idPostulacion1' name='idPostulacion1' value='$idPostulacion'>"; //id solicitud
     echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$datoUsuarioID'>"; //id usuario
@@ -118,13 +118,13 @@
 ?></br>
 <input type='submit' value='Aceptar postulacion' formaction="procesar-postulacion.php?permiso=1&resultado=1">
 <input type='submit' value='Rechazar postulacion' formaction="procesar-postulacion.php?permiso=1&resultado=0">
-</form>
+</form></br>
 
 
 
 
 
-        <a href="postulaciones-activas.php">BOTON Volver</a>
+        <a id="Volver" href="postulaciones-activas.php"> Volver</a>
 
 
 </div>

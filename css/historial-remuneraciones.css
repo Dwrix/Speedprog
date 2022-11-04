@@ -1,4 +1,4 @@
-.Tabla-postulaciones-activas{
+.Tabla-historial-solicitudes{
     width: 800px;
 	height: 600px;
 	background: rgba(0, 0, 0, 0.438);
@@ -10,24 +10,13 @@
 	padding: 30px 30px;
 	border-radius: 20px;
 }
-.Tabla-postulaciones-activas h1{
+.Tabla-historial-solicitudes h1{
     margin-left: 30%;
     font-size: 20px;
-    
 }
 
-.Tabla-postulaciones-activas table {
+.Tabla-historial-solicitudes table {
     background-color: rgba(0, 0, 0, 0.219);
-	color: white;
     margin-top: 20px;
 }
 
-#ProcPostulacion:hover{
-	background-color: rgb(139, 80, 80);
-	color: white;
-}
-
-#ProcPostulacion{
-	
-	color: rgb(139, 80, 80);
-}

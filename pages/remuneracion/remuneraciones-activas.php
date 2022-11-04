@@ -46,10 +46,10 @@
         ?>
 
     </nav>
-    <section>
-<div>
+    <section class="Remuneraciones-activas">
+<h1>
     REMUNERACIONES PENDIENTES
-</div>
+    </h1>
 
 
 
@@ -87,7 +87,7 @@
     
  
     
-    <td><a href="detalle-remuneracion.php?id_balance=<?php
+    <td><a id="RealizarPago"href="detalle-remuneracion.php?id_balance=<?php
     echo $dato 
     ?>"> Realizar Pago </td>
     <?php 
