@@ -45,13 +45,13 @@ try {
             
             include '../../php/conexionBD.php';
             
-            $sql2 = "Update usuario Set password='$pass' Where correo='$mail2'";
+            $sql2 = "UPDATE usuario SET password='$pass' WHERE correo='$mail2'";
 
-            //(if ($conexion->query($sql2) === TRUE) {
-            //    echo "usuario modificado correctamente ";
-            //} else {
-            //    echo "Error modificando: " . $conn->error;
-            //}
+            if ($conexion->query($sql2) === TRUE) {
+                echo "usuario modificado correctamente ";
+            } else {
+                echo "Error modificando: " . $conn->error;
+            }
             $mail->Subject = 'Recuperar contrasena SpeedProg Asesorias';
             $mail->Body    = "Ha solicitado restablecer su contraseña, <b>su nueva contrasena es:</b> '$pass'</br> Haga click <a href='http://speedprogasesorias.com/pages/login/loginIndex.php'>AQUI</a> para logearse: ";
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
