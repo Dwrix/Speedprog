@@ -63,7 +63,8 @@
         ?>
         
     </nav>
-    
+    <section class="Procesar-sol-box">
+    <h1>Procesar solicitud</h1>
 <?php 
 $idSolicitud = $_REQUEST['idSolicitud1'];
 
@@ -108,14 +109,14 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
 ?>
 
 
-    Procesar solicitud
+    
     <input type='hidden' id='idTutor1' name='idTutor1' value=<?php echo $userId ?>>
     <div>
         Solicitud de: <?php echo $regxdd[0] ?> <input type='hidden' id='nombreUsuario1' name='nombreUsuario1' value=<?php echo $regxdd[0] ?>>
-    </div>
+    </div></br>
     <div>
         ID de la Solicitud: <?php echo $idSolicitud ?><input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud ?>>
-    </div>
+    </div></br>
     
     </div>
     Solucion de la problematica
@@ -140,7 +141,7 @@ Subir Imagen
     mysqli_close($conexion);
     ?>
     </div>
-   <div>
+   <div><br>  
     <input type="submit" value="Procesar">
     </div>
     </form>
@@ -151,7 +152,7 @@ Subir Imagen
     ?>
 
 
-
+</section>
     </body>
 
 </html>

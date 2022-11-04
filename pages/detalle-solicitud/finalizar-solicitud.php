@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     
-    <link rel="stylesheet" href="../../css/procesar-solicitud.css">
+    <link rel="stylesheet" href="../../css/finalizar-solicitud.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
@@ -63,6 +63,8 @@
         ?>
         
     </nav>
+    <section class="Finalizar-sol-box">
+    <h1>Finalizar solicitud</h1>
     
 <?php 
 $idSolicitud = $_REQUEST['idSolicitud1'];
@@ -108,14 +110,14 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
 ?>
 
 
-    Finalizar solicitud
+    
     <input type='hidden' id='idTutor1' name='idTutor1' value=<?php echo $userId ?>>
     <div>
         Solicitud de: <?php echo $regxdd[0] ?> <input type='hidden' id='nombreUsuario1' name='nombreUsuario1' value=<?php echo $regxdd[0] ?>>
-    </div>
+    </div><br> 
     <div>
         ID de la Solicitud: <?php echo $idSolicitud ?><input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud ?>>
-    </div>
+    </div><br> 
     
     </div>
     Solucion del problema, mantener o modificar?
@@ -123,7 +125,7 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
          <textarea id="textoSolucion1" rows="20" cols="50" name="textoSolucion1" required><?php echo $reg5[12] ?></textarea>
     </div>
 
-<div>
+<div><br> 
 Subir Imagen extra
     </div>
     <div id="contenedor">
@@ -139,7 +141,7 @@ Subir Imagen extra
     mysqli_close($conexion);
     ?>
     </div>
-   <div>
+   <div><br> 
     <input type="submit" value="Finalizar">
     </div>
     </form>

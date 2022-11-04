@@ -4,9 +4,10 @@
 .columna-izq{
 	padding: 30px;
 	width: auto;
-	max-width: 100%;
+	max-width: 50%;
 	height: auto;
 	max-height: 100%;
+	margin-left: 25%;
 	object-fit: contain;
 	color:white;
 
@@ -14,16 +15,23 @@
 h2{
 	padding-top: 10px;
 	padding-bottom: 10px;
-	transform:rotate(1deg)
+	transform:rotate(1deg);
+	color: white;
 	
 }
 .textosimple{
 background-color:rgba(0, 0, 0, 0.5);
 border: 50%;
 border-radius: 15px;
-
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 padding: 10px;
 
+}
+
+img{
+	border-radius: 20px;
+	margin-left: 35%;
+	margin-bottom: 80px;
 }
 
 /*------------------------Footer----------------------------------*/

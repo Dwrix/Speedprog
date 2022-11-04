@@ -96,6 +96,30 @@
 	border-radius: 20px;
 
 }
+#btnVerSolucion{
+	border: none;
+	outline: none;
+	margin-bottom: 20px;
+	width: 190px;
+	height: 30px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+}
+#btnAbandonarSol{
+	border: none;
+	outline: none;
+	margin-bottom: 20px;
+	width: 190px;
+	height: 30px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+}
 
 .detalle-box a {
 

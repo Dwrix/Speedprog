@@ -44,7 +44,8 @@
     </nav>
 
 
- <section>
+<section class="Mod-perfil-box">
+ <h1>Modificar Perfil</h1>
 <div>
 <?php 
 //Seleccionar usuario de la lista de usuarios

@@ -1,0 +1,47 @@
+.Mod-perfil-box{
+	width: 800px;
+	height: 600px;
+	background: rgba(0, 0, 0, 0.562);
+	color: #fff;
+	margin-left: 50%;
+	margin-top: 350px;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+}
+
+.Mod-perfil-box h1{
+	
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	display: block;
+
+
+}
+
+.Mod-perfil-box label{
+	
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+
+
+
+.Mod-perfil-box input[type="submit"]{
+
+	border: none;
+	outline: none;
+    width: 150px;
+	height: 40px;
+	background-color: #b80f22;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+
+
+}
