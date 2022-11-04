@@ -9,7 +9,7 @@ class User {
 
         public function userExists($email,$pass){
 
-            //$md5pass = md5($pass);
+            $md5pass = md5($pass);
 
             require("../../php/conexionBD.php");
             $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
@@ -26,7 +26,7 @@ class User {
                 echo "error de consulta ", mysqli_error($conexion);
             }
 
-            $ok = mysqli_stmt_bind_param($resultado,"ss",$email,$pass);
+            $ok = mysqli_stmt_bind_param($resultado,"ss",$email,$md5pass);
             $ok = mysqli_stmt_execute($resultado);
             
             if($ok==false){

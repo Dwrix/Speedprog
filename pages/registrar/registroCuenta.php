@@ -31,8 +31,10 @@ if($pas===$passCon){
 
     $tipousuario = 2;
 
+    $md5pass = md5($passCon);
+
     $sql = "INSERT INTO usuario (rut, nombre, fecha_nacimiento, direccion, password, correo, id_pais_fk, id_tipo_usuario_fk) VALUES 
-    ('$rut', '$nom', '$date', '$dir', '$pas', '$mail', '$idpais', '$tipousuario')";
+    ('$rut', '$nom', '$date', '$dir', '$md5pass', '$mail', '$idpais', '$tipousuario')";
 
     if($conexion->query($sql) === TRUE){
         echo "Se registro correctamente";
