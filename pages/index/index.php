@@ -208,33 +208,33 @@ if(isset($_GET['sesion_exitosa'])){
         <div class="slideshow">
             <ul class="slider">
                 <li>
-                    <img src="../../img/test-img.jpg">
+                    <img src="../../img/11.png">
                     <section class="caption">
 
-                        <p>Texto de Prueba - Texto de Prueba - Texto de Prueba - Texto de Prueba -</p>
+                       
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/test-img.jpg">
+                    <img src="../../img/22.png">
                     
                     <section class="caption">
 
-                        <p>Texto de Prueba - Texto de Prueba - Texto de Prueba - Texto de Prueba - </p>
+                        
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/test-img.jpg">
+                    <img src="../../img/33.png">
                     <section class="caption">
 
-                        <p>Texto de Prueba - Texto de Prueba - Texto de Prueba - Texto de Prueba -</p>
+                        
 
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/test-img.jpg">
+                    <img src="../../img/44.png">
                     <section class="caption">
 
-                        <p>Texto de Prueba - Texto de Prueba - Texto de Prueba - Texto de Prueba -</p>
+                        
                     </section>
                 </li>
             </ul>
@@ -259,20 +259,20 @@ if(isset($_GET['sesion_exitosa'])){
     <section>
         <div class="target-group">
             <div class="tarjeta">
-                <span class="fas fa-thumbtack"></span>
-                <h3>Texto de Prueba -</h3>
+                
+                <h3>Solicitar Tutor</h3>
             </div>
             <div class="tarjeta">
-                <span class="fas fa-thumbtack"></span>
-                <h3>Texto de Prueba -</h3>
+                
+                <h3>Postular a Tutor</h3>
             </div>
             <div class="tarjeta">
-                <span class="fas fa-thumbtack"></span>
-                <h3>Texto de Prueba -</h3>
+               
+                <h3>Perfil</h3>
             </div>
             <div class="tarjeta">
-                <span class="fas fa-thumbtack"></span>
-                <h3>Texto de Prueba -</h3>
+                
+                <h3>Cerrar sesion</h3>
             </div>
         </div>
     </section>
