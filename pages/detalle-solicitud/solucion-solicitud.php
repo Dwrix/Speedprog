@@ -136,7 +136,15 @@
     while ($regVideo = mysqli_fetch_array($registroMedia)){
         if($regVideo['link_video']!=null){
             ?> 
-            <?php echo $regVideo['link_video'] ?> <?php 
+
+            <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/<?php
+                 echo $regVideo['link_video'] 
+                 ?> ">
+            </iframe>
+    
+                
+                 <?php 
         }
         ?>
             

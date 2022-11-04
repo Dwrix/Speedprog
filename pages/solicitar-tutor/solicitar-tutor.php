@@ -112,9 +112,9 @@
         </div>
 
         <div>
-            Link de video (opcional)  
+            Link de YouTube video (ingresar URL link del video)  
         </div>   
-    <input type="text" id="video1" name="video1">
+    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4">
     <div>Valor: $1.000 CLP</div><br>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">
