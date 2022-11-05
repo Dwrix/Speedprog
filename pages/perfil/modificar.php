@@ -31,7 +31,7 @@ if(!isset($_GET['permiso'])){
     $rutUsuario = mysqli_real_escape_string($conexion, $_POST['rutUsuario1']);
     $mailUsuario = mysqli_real_escape_string($conexion, $_POST['mailUsuario1']);
 
-    $passwordUsuario = mysqli_real_escape_string($conexion, $_POST['passwordUsuario1']);
+    $passwordUsuario = mysqli_real_escape_string($conexion, $_POST['pass']);
 
    
     

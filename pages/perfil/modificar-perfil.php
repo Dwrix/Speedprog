@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="../../css/modificar-perfil.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/Slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/password_strength.js"></script>
+    <link rel="icon" href="../../img/Speedprogicon.PNG">
+
+    <script>
+    $(document).ready(function($) {
+        $('#myPassword').strength_meter();
+    });
+    </script>
 
     <title>SpeedProg</title>
 
@@ -111,15 +120,18 @@ Modificar Perfil
             </td>
         </tr>
         <tr>
-            <td>Password</td>
+            <td>Password</td> 
             <td>
-            <textarea id="passwordUsuario1" name="passwordUsuario1" rows="2" cols="50" placeholder="Ingrese nueva contraseña"></textarea>    
+                <div class="effects">
+                    <div id="myPassword"></div>
+       
+                </div>
             </td>
         </tr>
         <tr>
             <td>Fecha de Nacimiento</td>
             <td>
-            <input type="date" id="fechaUsuario1" name="fechaUsuario1" required><?php echo "Su fecha de nacimiento: ".$usuarioFecha?><br> 
+            <input type="date" min="1900-01-01" max="2022-01-01" id="fechaUsuario1" name="fechaUsuario1" required><?php echo "Su fecha de nacimiento: ".$usuarioFecha?><br> 
                 
             </td>
         </tr>

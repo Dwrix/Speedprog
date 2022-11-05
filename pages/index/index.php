@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/header.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
+    <link rel="icon" href="../../img/Speedprogicon.PNG">
 
     <title>SpeedProg</title>
 

@@ -1,10 +1,10 @@
 .Detalle-media-box{
-	width: 800px;
-	height: 500px;
+	width: auto;
+	height: auto;
 	background: rgba(0, 0, 0, 0.562);
 	color: #fff;
 	margin-left: 50%;
-	margin-top: 300px;
+	margin-top: 800px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 70px 30px;
