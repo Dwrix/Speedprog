@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../css/postulaciones-activas.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="icon" href="../../img/Speedprogicon.PNG">
     <title>SpeedProg</title>
 
 <body>

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../../js/password_strength.js"></script>
+    <link rel="icon" href="../../img/Speedprogicon.PNG">
    
     
     <script>
