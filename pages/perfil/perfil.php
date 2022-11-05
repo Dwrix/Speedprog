@@ -215,7 +215,7 @@ Informacion Personal
         $regResenas = mysqli_fetch_row($registrosResenas);
 
         if ($regResenas[10]!==null){
-            $sqlSolicitudes = "SELECT * FROM solicitud WHERE id_tutor_fk='$idUsuarioSeleccionado'";
+            $sqlSolicitudes = "SELECT * FROM solicitud WHERE id_tutor_fk='$userId'";
             $registrosResenas = mysqli_query($conexion, $sqlSolicitudes) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             echo "Calificaciones de solicitudes";
             ?> 

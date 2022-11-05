@@ -131,7 +131,8 @@ Modificar Perfil
         <tr>
             <td>Fecha de Nacimiento</td>
             <td>
-            <input type="date" min="1900-01-01" max="2022-01-01" id="fechaUsuario1" name="fechaUsuario1" required><?php echo "Su fecha de nacimiento: ".$usuarioFecha?><br> 
+            <input type="date" min="1900-01-01" max="2022-01-01" id="fechaUsuario1" name="fechaUsuario1" required value="<?php 
+            echo date('Y-m-d',strtotime($usuarioFecha))?>"><br> 
                 
             </td>
         </tr>
@@ -141,12 +142,21 @@ Modificar Perfil
             <select id="paisUsuario1" name="paisUsuario1">
         <?php 
     while ($regPaises = mysqli_fetch_row($registroPaises)){
-        ?>
+        if($regPaises[0]==$usuarioPais){
+            ?>
+            <option selected="<?php echo $regPaises[0] ?>"><?php echo $regPaises[0] ?></option>
+            <?php
+        }else{
+            ?>
+            
             <option><?php echo $regPaises[0] ?></option>
-        <?php }
+        <?php
+        }
+        
+        }
         ?>
         </select>
-                <?php echo "Su pais: ".$usuarioPais?>
+                
             </td>
             
         </tr>
@@ -158,7 +168,7 @@ Modificar Perfil
         </tr>
         
 </table>
-<input type="submit" value="Modificar">
+<input type="submit" value="Modificar" onclick="return confirm('La sesion sera cerrada al realizar los cambios, estas seguro?')">
     </form>
 
         
