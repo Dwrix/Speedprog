@@ -1,10 +1,10 @@
 .Procesar-sol-box{
     width: 550px;
-	height: 650px;
+	height: auto;
 	background: rgba(0, 0, 0, 0.438);
 	color: #fff;
 	margin-left: 50%;
-	margin-top: 320px;
+	margin-top: 400px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 30px 30px;

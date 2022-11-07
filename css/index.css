@@ -76,7 +76,7 @@ div ul ol{
 	align-items: center;
 
 	color: #fff;
-	font-size: 8px;
+	font-size: 10px;
 	cursor: pointer;
 	z-index: 2;
 }
@@ -110,6 +110,7 @@ div ul ol{
 	box-shadow: 0 10px 20px rgba(0,0,0,0.6);
 	align-items: center;
 	padding: 15px;
+	transition: .20s;
 
 }
 

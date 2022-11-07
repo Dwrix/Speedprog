@@ -1,10 +1,10 @@
 .Solicitar-tutor-box{
     width: 550px;
-	height: 600px;
+	height: auto;
 	background: rgba(0, 0, 0, 0.438);
 	color: #fff;
 	margin-left: 50%;
-	margin-top: 320px;
+	margin-top: 350px;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 30px 30px;
@@ -36,7 +36,7 @@ select {
 
 	border: none;
 	outline: none;
-    
+    width: 150px;
 	height: 30px;
 	background-color: #b80f22;
 	color: #fff;
@@ -48,4 +48,8 @@ select {
 #descripcion1{
     width: 500px;
     background-color: darkgray;
+}
+
+table {
+	width: 300px;
 }
