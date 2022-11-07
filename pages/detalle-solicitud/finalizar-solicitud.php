@@ -120,7 +120,7 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
         ID de la Solicitud: <?php echo $idSolicitud ?><input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud ?>>
     </div><br> 
     
-    </div>
+    
     Solucion del problema, mantener o modificar?
     <div>
          <textarea id="textoSolucion1" rows="20" cols="50" name="textoSolucion1" required><?php echo $reg5[12] ?></textarea>
@@ -136,13 +136,13 @@ Subir Imagen extra
     <div>
         Link de video extra 
     </div>   
-    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4>
+    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4"
     
     <?php 
     mysqli_close($conexion);
     ?>
-    </div>
-   <div><br> 
+    
+    <div><br><br> 
     <input type="submit" value="Finalizar">
     </div>
     </form>

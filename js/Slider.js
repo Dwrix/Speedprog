@@ -5,7 +5,7 @@ $(document).ready(function () {
   
     for (var i = 0; i < imgItems; i++) {
 
-        $('.paginacion').append("<li class='fa fa-book'></li>");
+        $('.paginacion').append("<li class='fa fa-circle'></li>");
     }
    
     $('.slider li').hide();

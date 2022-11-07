@@ -176,7 +176,7 @@ if($tipo == 3){
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?><?php 
 if($userId!=$reg5[8]){
-    echo "<input type='submit' value='Aceptar solicitud'>";
+    echo "<br><input id='BtnCancelar' type='submit' value='Aceptar solicitud'>";
 }
 }else if($tipo == 4){
 ?>
@@ -201,7 +201,7 @@ if($userId!=$reg5[8]){
 ?>
 
 
-
+        <br>
         <a href="../solicitudes-disponibles/solicitudes-disponibles.php">Volver</a>
 
 </section>  
