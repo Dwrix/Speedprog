@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="../../css/modificar-perfil.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../js/Slider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/password_strength.js"></script>
     <link rel="icon" href="../../img/Speedprogicon.PNG">
+
+    <script>
+    $(document).ready(function($) {
+        $('#myPassword').strength_meter();
+    });
+    </script>
+
 
     <title>SpeedProg</title>
 
@@ -113,9 +122,12 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
             </td>
         </tr>
         <tr>
-            <td>Password</td>
+            <td>Password</td> 
             <td>
-            <textarea id="passwordUsuario1" name="passwordUsuario1" rows="2" cols="50" required><?php echo $usuarioPassword?></textarea>    
+                 <div class="effects">
+                    <div id="myPassword"></div>
+       
+                </div>
             </td>
         </tr>
         <tr>

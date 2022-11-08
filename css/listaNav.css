@@ -5,10 +5,23 @@ font-size: 20px;
 
 
 }
-#Home,#home.active{
-color: white;
-background: gray;
-transition: .5s;
+#Home{
+    background-size: 50px;
+    color: white;
+    border-radius: 5px;
+   
+    
+
+}
+
+#home.active{
+    width: 100px;
+    height: 100px;
+    
+    color: white;
+    background: rgba(128, 128, 128, 0.514);
+    
+    
 
 }
 #QS{
