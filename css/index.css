@@ -89,6 +89,27 @@ div ul ol{
 	right: 10px;
 }
 
+#tarjeta1{
+	margin-left: 70px;
+	color:white;
+	font-size: 25px;
+}
+#tarjeta2{
+	margin-left: 70px;
+	color:white;
+	font-size: 25px;
+}
+#tarjeta3{
+	margin-left: 60px;
+	color:white;
+	font-size: 25px;
+}
+#tarjeta4{
+	margin-left: 60px;
+	color:white;
+	font-size: 25px;
+}
+
 
 /*estilo tarjetas*/
 

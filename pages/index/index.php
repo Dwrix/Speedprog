@@ -261,19 +261,19 @@ if(isset($_GET['sesion_exitosa'])){
         <div class="target-group">
             <div class="tarjeta">
                 
-                <h3>Test1</h3>
+                <a id="tarjeta1" href="../solicitar-tutor/solicitar-tutor.php">Solicitar tutor</a>
             </div>
             <div class="tarjeta">
                 
-                <h3>Test2</h3>
+                <a id="tarjeta2" href="../postulacion-tutor/postulacion-tutor.php">Postular a tutor</a>
             </div>
             <div class="tarjeta">
                
-                <h3>Test3</h3>
+                <a id="tarjeta3" href="../mis-solicitudes/mis-solicitudes.php">Solicitudes activas</a>
             </div>
             <div class="tarjeta">
                 
-                <h3>Test4</h3>
+                 <a id="tarjeta4" href="../historial-solicitudes/historial-solicitudes.php">Historial solicitudes</a>
             </div>
         </div>
     </section>
