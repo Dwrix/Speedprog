@@ -49,7 +49,7 @@
                 </script>';
             }
         }else if(isset($_GET['abierta'])){
-            if($_GET['exito']==='1'){
+            if($_GET['abierta']==='1'){
                 echo '<script type="text/javascript">
                 window.onload = function () { alert("Solicitud ha sido re abierta para ser aceptada"); } 
                 </script>';
