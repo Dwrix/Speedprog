@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="../../css/listaNav.css">
 <link rel="stylesheet" href="../../css/listaNav.css">
 <span class="lista-fuera">
+    <span class="pepega">
             <a id="Home" href="../../index.php">Home</a>
             <a id ="QS" href="../somos/somos.php">Quienes Somos</a>
+</span>
 </span>
 
 <ul>
