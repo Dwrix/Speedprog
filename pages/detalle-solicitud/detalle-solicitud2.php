@@ -231,7 +231,7 @@ if($tipo == 3){
     ?>
     <?php 
         if($estadoSolicitud=='2' && $userId!=$reg5[8]){
-            echo "<input type='submit' value='Procesar solicitud'>";
+            echo "<input id='BtnProcesar' type='submit' value='Procesar solicitud'>";
         }else if($estadoSolicitud=='3' && $userId!=$reg5[8]){
             echo "<input id='BtnFinalizar' type='submit' value='Finalizar solicitud'>";
         }
