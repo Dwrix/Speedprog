@@ -174,6 +174,7 @@ Modificar Perfil
         
        
 </div>
+<a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     <?php 
     mysqli_close($conexion);

@@ -194,7 +194,7 @@ if(isset($_GET['id_usuario'])){
     header("Location: ../login/loginIndex.php?error_mensaje=0");
 }
 ?>
-
+<a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     <?php 
     include_once '../estructura/footer.php';

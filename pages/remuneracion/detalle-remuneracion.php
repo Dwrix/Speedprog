@@ -121,7 +121,7 @@ Metodo de Pago <select id="metodoDePago1" name="metodoDePago1">
 
 
 
-<a id="Volver" href="remuneraciones-activas.php"> Volver</a>
+<a id="Volver" href="javascript:history.back()">Volver</a>
 
 
 </div>

@@ -288,6 +288,7 @@ echo "Sin determinar";
 
     
 </div>
+<a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     <?php 
     include_once '../estructura/footer.php';

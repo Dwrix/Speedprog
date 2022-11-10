@@ -173,7 +173,7 @@
 
 
     </br>
-        <a id="Volver" href="../index/index.php">Volver</a>
+    <a id="Volver" href="javascript:history.back()">Volver</a>
 
 
 </div>

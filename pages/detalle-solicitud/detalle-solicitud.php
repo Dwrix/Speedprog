@@ -202,7 +202,7 @@ if($userId!=$reg5[8]){
 
 
         <br>
-        <a href="../solicitudes-disponibles/solicitudes-disponibles.php">Volver</a>
+        <a id="Volver" href="javascript:history.back()">Volver</a>
 
 </section>  
 </div>

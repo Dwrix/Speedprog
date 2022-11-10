@@ -391,6 +391,7 @@ echo "<a href='adm-eliminar-perfil.php?permiso=1&id_usuario=$idUsuarioSelecciona
 </br>      
        
 </div>
+<a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     <?php 
     mysqli_close($conexion);

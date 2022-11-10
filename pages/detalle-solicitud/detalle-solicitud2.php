@@ -170,7 +170,13 @@ if($tipo == 3 || $tipo == 2){
     }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
+<?php 
+if(isset($reg5[9])){
+?>
 <input id="BtnVerChat" type="submit" value="Ver chat">
+<?php
+}
+?>
 </form>
 
 <?php
@@ -340,7 +346,11 @@ if($tipo == 3){
     }
     echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
 ?>
+
+
 <input id="BtnVerChat" type="submit" value="Ver chat">
+
+
 </form>
             <form method="POST" action="media.php?permiso=1">
             <?php 
@@ -413,7 +423,7 @@ if($tipo == 3){
 
 
 
-        <a href="../index/index.php">Volver</a>
+<a id="Volver" href="javascript:history.back()">Volver</a>
 
 </section>   
 </div>
