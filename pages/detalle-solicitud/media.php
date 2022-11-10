@@ -98,6 +98,12 @@
             $regEstado = mysqli_fetch_row($registroEstados1);
         }
 
+        $sqlTestMedia = "SELECT * FROM media WHERE id_solicitud_fk = $idSolicitud";
+        $registroTestMedia = mysqli_query($conexion, $sqlTestMedia) or die("Problemas en la seleccion1:" . mysqli_error($conexion));
+        if($registroTestMedia->num_rows === 0){
+
+        }else{
+
             $sqlMediaVideo = "SELECT link_video FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
             $registroMedia = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion2:" . mysqli_error($conexion));
             
@@ -111,7 +117,7 @@
             
             $sqlMediaImagen2 = "SELECT index_imagen FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $reg5[8]";
             $registroImagen2 = mysqli_query($conexion, $sqlMediaImagen2) or die("Problemas en la seleccion5:" . mysqli_error($conexion));
-
+        }
         ?>
    
 
@@ -119,7 +125,15 @@
     MEDIA<br>
 
     <br>
+<?php 
+if($registroTestMedia->num_rows === 0){
+    ?>
+    No hay media en esta solicitud en estos momentos.
+    <?php
+}else{
 
+
+?>
 
     <table border="1" width="700" align="center">
         
@@ -218,16 +232,20 @@
 
     </table>
 
-
+<?php
+}
+?>
 
     </br>
-        <a id="Volver" href="../index/index.php">Volver</a>
-
+    </br>
+        <a id="Volver" href="javascript:history.back()">Volver</a>
+        
 
 </div>
     </section>
     <?php 
     mysqli_close($conexion);
+
     ?>
 
     <?php 

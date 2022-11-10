@@ -86,6 +86,7 @@
     <input type="submit" value="Enviar">
     </div>
     </form>
+    <a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
 
 

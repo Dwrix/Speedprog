@@ -146,6 +146,7 @@ Subir Imagen
     <input type="submit" value="Procesar">
     </div>
     </form>
+    <a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     
     <?php 

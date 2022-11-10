@@ -125,7 +125,7 @@
 
 
 
-        <a id="Volver" href="postulaciones-activas.php"> Volver</a>
+<a id="Volver" href="javascript:history.back()">Volver</a>
 
 
 </div>

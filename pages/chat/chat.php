@@ -27,9 +27,9 @@
             req.open('POST', 'chat-refresh.php', true);
             req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             var usuarioxd = <?php echo $idUsuario?>;
-
+            var solicitudxd = <?php echo $idSolicitud?>;
             var tutorxd = <?php echo $idTutor?>;
-            req.send("idUsuario=" + usuarioxd + "&idTutor=" + tutorxd);
+            req.send("idUsuario=" + usuarioxd + "&idTutor=" + tutorxd + "&idSolicitud=" + solicitudxd);
         }
         setInterval(function(){ajax();}, 1000);
     </script>
@@ -123,7 +123,7 @@
       
     }
     ?>
-   
+   <a id="Volver" href="javascript:history.back()">Volver</a>
 </div>
 
 

@@ -135,7 +135,7 @@ Copiar de solicitudes activas
 ?>
     </table>
 
-
+    <a id="Volver" href="javascript:history.back()">Volver</a>
 
     
     

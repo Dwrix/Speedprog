@@ -146,6 +146,7 @@ Subir Imagen extra
     <input type="submit" value="Finalizar">
     </div>
     </form>
+    <a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
     
     <?php 

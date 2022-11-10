@@ -135,7 +135,9 @@
     <input type="submit" value="Ingresar Solicitud">
     </div>
     </form>
+    <a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
+    
  </section>   
     <?php 
     include_once '../estructura/footer.php';
