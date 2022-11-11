@@ -1,16 +1,26 @@
 <link rel="stylesheet" href="../../css/listaNav.css">
-<link rel="stylesheet" href="../../css/listaNav.css">
+
 <span class="lista-fuera">
+    
     <span class="pepega">
+            <span class="usuario">
+                
+            <?php 
+            echo " ".$userName;   
+            ?>
+            </span>
+            <span class="home">
             <a id="Home" href="../../index.php">Home</a>
+            </span>
             <a id ="QS" href="../somos/somos.php">Quienes Somos</a>
-</span>
+            
+    </span>
 </span>
 
 <ul>
             
      
-    <?php 
+        <?php
         if(isset($_SESSION['user'])){
 
             echo "<li><a href='../perfil/perfil.php'>Perfil</a></li>";
@@ -33,7 +43,7 @@
                 echo "<li><a href='../login/loginIndex.php'>Ingresar</a></li>";
                 echo "<li><a href='../registrar/registro.php'>Registrarse</a></li>"; 
             }
-     ?>
+            ?>
             
  </ul>
 

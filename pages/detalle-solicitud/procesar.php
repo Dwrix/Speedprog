@@ -15,7 +15,7 @@ if(!isset($_GET['permiso'])){
             $userName = '';   
             $tipo = '';
         }
-        echo " ".$userName;   
+           
         include_once '../estructura/listaNav.php';
         
         ?>

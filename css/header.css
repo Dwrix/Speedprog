@@ -26,6 +26,7 @@ label.logo{
 	line-height: 80px;
 	padding: 20px 20px 20px 50px;
 	font-weight: bold;
+	
 }
 nav ul{
 	float: right;
@@ -61,19 +62,35 @@ a.active,a:hover{
 	display: none;
 }
 
+/*-----campana----------------*/
+.campana{
+	color:white;
+	float: right;
+	margin-left: 20px;
+	size: 20px;
+}
+
+
 /*-----nav fuera del menu----------------*/
 .lista-fuera{
-	margin-left: 45%;
+	
+	
 	font-size: 20px;
 	
 	
 }
-#Home,#home.active{
+.home{
 	color: white;
-	background: gray;
+	background: rgb(99, 98, 98);
 	transition: .5s;
+	padding: 5px;
+	padding-left: 7px;
+	
+	border-radius: 10px;
+
 	
 }
+
 #QS{
 	padding-left: 10px;
 	color: white;
@@ -89,11 +106,13 @@ a.active,a:hover{
 		position: absolute;
 		width: 30%;
 		height: 100%;
-		background: #0c0000e0;
+		background: #020202d7;
 		top: 80px;
 		left: -100%;
 		text-align: center;
 		transition: all .5s;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
 	}
 	nav ul li{
 		display: block;

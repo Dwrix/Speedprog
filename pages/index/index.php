@@ -12,6 +12,7 @@
     <link rel="icon" href="../../img/Speedprogicon.PNG">
 
     <title>SpeedProg</title>
+</head>
 
 <body>
 
@@ -20,7 +21,11 @@
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
+            <a href="#" class="campana">
+                <i class="fa fa-bell fa-xs"></i>
+            </a>
         </label>
+        
         <label class="logo">SpeedProg Asesorias</label>
         <?php 
         if(!isset($_SESSION)){
@@ -33,7 +38,7 @@
             $userName = '';   
             $tipo = '';
         }
-        echo " ".$userName;   
+        
         include_once '../estructura/listaNav.php';
         if($tipo == 2){
             //header("Location: ../login/loginIndex.php?error_mensaje=0");

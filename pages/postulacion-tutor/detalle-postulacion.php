@@ -35,7 +35,7 @@
             $userName = '';   
             $tipo = '';
         }
-        echo $userName;   
+          
         include_once '../estructura/listaNav.php';
         if($tipo != 4){
             header("Location: ../login/loginIndex.php?error_mensaje=0");
