@@ -32,7 +32,7 @@
             $userName = '';   
             $tipo = '';
         }
-        echo " ".$userName;   
+           
         include_once '../estructura/listaNav.php';
         if($tipo == 2){
             //header("Location: ../login/loginIndex.php?error_mensaje=0");
