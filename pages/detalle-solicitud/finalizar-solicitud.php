@@ -121,23 +121,21 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
     </div><br> 
     
     
-    Solucion del problema, mantener o modificar?
+    Comentarios sobre la atencion.
     <div>
-         <textarea id="textoSolucion1" rows="20" cols="50" name="textoSolucion1" required><?php echo $reg5[12] ?></textarea>
+         <textarea id="textoSolucion1" rows="20" cols="50" name="textoSolucion1"><?php echo $reg5[12] ?></textarea>
     </div>
-
-<div><br> 
-Subir Imagen extra
-    </div>
-    <div id="contenedor">
-    <input type="text" id="media" rows="1" cols="50" name="media[]"/>
-        <a href="#" id="add">+</a>
-    </div>
-    <div>
-        Link de video extra 
-    </div>   
-    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4"
     
+<div>
+Logro solucionar su problema?<br>
+<select id="solucion1" name="solucion1">
+    <option>Si</option>
+    <option>No</option>
+    </select>
+<div>
+    
+<br> 
+
     <?php 
     mysqli_close($conexion);
     ?>

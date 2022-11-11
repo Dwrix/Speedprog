@@ -10,6 +10,7 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
     <link rel="icon" href="../../img/Speedprogicon.PNG">
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 
     <title>SpeedProg</title>
 
@@ -71,13 +72,16 @@
     <section class="Lista-user-box"> 
     <h1>LISTA DE USUARIOS</h1>
 
-    <table border="1" width="700" align="center">
+    <table border="1" width="700" align="center" class="sortable">
     <tr>
-        <td>ID Usuario</td>
-        <td>Nombre</td>
-        <td>Mail</td>
-        <td>Tipo de Usuario</td>
-        <td>Detalles</td>   
+        <th>ID Usuario</th>
+        <th>Nombre</th>
+        <th>Mail</th>
+        <th>Tipo de Usuario</th>
+        <th>Ingresos</th>
+        <th>Egresos</th>
+        <th>Deuda</th>
+        <th>Detalles</th>  
     </tr>
     <?php 
 
@@ -86,12 +90,19 @@
     $sql = "SELECT * FROM usuario";
     $registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
+    $totalIngresosTodos = 0;
+    $totalEgresosTodos = 0;
+    $totalDeudaTodos = 0;
+
+
 
     while ($reg = mysqli_fetch_array($registros)){
+        $totalIngreso = 0;
         $idUsuario = $reg['id_usuario'];
         $nombreUsuario = $reg['nombre'];
         $correoUsuario = $reg['correo'];
         $idTipoUsuario = $reg['id_tipo_usuario_fk'];
+        $idBalance = $reg['id_balance_fk'];
         ?>
     <tr>
         
@@ -102,10 +113,46 @@
         $sql2 = "SELECT tipo_usuario FROM tipo_usuario WHERE id_tipo_usuario = '$idTipoUsuario'";
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
+        //Ingresos
+        $sqlIngreso = "SELECT costo_servicio FROM detalle_pago WHERE id_usuario_fk = '$idUsuario'";
+        $registros3 = mysqli_query($conexion, $sqlIngreso) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        while ($regIngresos = mysqli_fetch_array($registros3)){
+            $totalIngreso += $regIngresos[0];
+            $totalIngresosTodos += $regIngresos[0];
+        }
+        
+        if($idBalance !== null){
+            
+            $sqlEgreso = "SELECT pago_transferencia_tutor, deuda_actual FROM balance WHERE id_balance = '$idBalance'";
+            $registros4 = mysqli_query($conexion, $sqlEgreso) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $reg4 = mysqli_fetch_row($registros4);
+            $egresos = $reg4[0];
+            $totalEgresosTodos += $egresos;
+            $deudaTutor = $reg4[1];
+            $totalDeudaTodos += $deudaTutor;
+            //Egresos
+            //Deuda
+        }else{
+            $egresos = 0;
+            $deudaTutor = 0;
+        }
+        
+        
+       
+       
 
     ?>
+
+        
+
+    
+
+
+
     <td><?php echo $reg2[0] ?></td>
- 
+    <td><?php echo "$".$totalIngreso." CLP." ?></td>
+    <td><?php echo "$".$egresos." CLP." ?></td>
+    <td><?php echo "$".$deudaTutor." CLP." ?></td>
     <?php 
     if($userId==$idUsuario){
         ?>
@@ -125,6 +172,20 @@
     
 ?>
     </table>
+    <br>
+    <table border="1" width="700" align="center">
+        <tr>
+            <td>Total Ingresos</td>
+                <td> Total Egresos </td>
+                <td> Total Deuda </td>
+</tr>
+<tr>
+<td> <?php echo "$".$totalIngresosTodos." CLP. " ?> </td>
+<td> <?php echo "$".$totalEgresosTodos." CLP. " ?> </td>
+<td> <?php echo "$".$totalDeudaTodos." CLP. " ?> </td>
+</tr>
+</table>
+
     <a id="Volver" href="javascript:history.back()">Volver</a>
     </section>
 </div>   
