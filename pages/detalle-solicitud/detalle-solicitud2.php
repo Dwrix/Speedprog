@@ -218,11 +218,13 @@ if($tipo == 3){
         }
         ?>
         </form>
+       
+
     <form method="POST" action="<?php 
     if($estadoSolicitud=='2'){//Estado 2, la consulta fue tomada por un tutor, pero esta en prceso de ser solucionada
         echo "procesar-solicitud.php?permiso=1";//Estado 2 -> 3, la consulta fue solucionada y se procesde a responderla
-    }else if($estadoSolicitud=='3'){//Estado 3 corresponde a en consulta, la cual es basicamente para que el cliente haga preguntas
-        echo "finalizar-solicitud.php?permiso=1"; //En finalizar pasa a estado 4, el cual se da como terminada la atencion
+    }else if($estadoSolicitud=='3'){
+        echo "finalizar-solicitud.php?permiso=1";
     }
     ?>">
     <?php 
@@ -238,7 +240,7 @@ if($tipo == 3){
     <?php 
         if($estadoSolicitud=='2' && $userId!=$reg5[8]){
             echo "<input id='BtnProcesar' type='submit' value='Procesar solicitud'>";
-        }else if($estadoSolicitud=='3' && $userId!=$reg5[8]){
+        }else if($estadoSolicitud=='3' && $userId==$reg5[8]){
             echo "<input id='BtnFinalizar' type='submit' value='Finalizar solicitud'>";
         }
         ?>
@@ -273,18 +275,33 @@ if($tipo == 3){
             <?php 
                 echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
                 echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
-                if(isset($reg5[9])){
-                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
-                }else{
-                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
-                }
+                    if(isset($reg5[9])){
+                        echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                    }else{
+                        echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                    }
                 echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
             ?>
-            <input id="BtnVerMedia" type='submit' value='Ver media'>
+            
             </form>
-        <form method="POST" action="<?php 
+        
+        <?php 
     if($estadoSolicitud=='3'){
-        echo "solucion-solicitud.php?permiso=1";
+        ?>
+    <form method="POST" action="finalizar-solicitud.php?permiso=1">  
+        <?php
+        echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+        echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+        if(isset($reg5[9])){
+            echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+        }else{
+            echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+        }
+        echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+        ?>
+        <input id="BtnVerMedia" type='submit' value='Ver media'>
+    </form>
+        <?php
     }
     ?>">
         <?php 
@@ -305,7 +322,16 @@ if($tipo == 3){
         ?>
         
         </form>
+<?php
+if($estadoSolicitud=='3'){//Estado 3 corresponde a en consulta, la cual es basicamente para que el cliente haga preguntas
+    ?>
 
+    <?php
+    
+    
+    echo "finalizar-solicitud.php?permiso=1";
+}
+?>
 
 
         <form method="POST" action="<?php 
@@ -352,7 +378,23 @@ if($tipo == 3){
 
 
 </form>
-            <form method="POST" action="media.php?permiso=1">
+<form method="POST" action="solucion-solicitud.php?permiso=1">
+            <?php 
+                echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+                echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+                if(isset($reg5[9])){
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                }else{
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                }
+                echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            ?>
+            <input id="BtnVerMedia" type='submit' value='Ver solucion(Admin)'>
+            </form>        
+
+
+
+<form method="POST" action="media.php?permiso=1">
             <?php 
                 echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
                 echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario

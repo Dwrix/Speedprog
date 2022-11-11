@@ -59,19 +59,19 @@
         $idTutor = $_REQUEST['idTutor1'] or die("Error al ingresar a la pagina");
         $sqlTest5 = "SELECT * FROM solicitud WHERE id_solicitud='$idSolicitud'";
         
-        $registros5 = mysqli_query($conexion, $sqlTest5) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $registros5 = mysqli_query($conexion, $sqlTest5) or die("Problemas en la seleccion11:" . mysqli_error($conexion));
         $reg5 = mysqli_fetch_row($registros5);
         $estadoSolicitud = $reg5[6];
         
 
 
         $sqlTest0 = "SELECT id_especialidad_fk FROM solicitud WHERE id_solicitud='$idSolicitud'";
-        $registros = mysqli_query($conexion, $sqlTest0) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $registros = mysqli_query($conexion, $sqlTest0) or die("Problemas en la seleccion1:" . mysqli_error($conexion));
         $regIdEspecialidad = mysqli_fetch_row($registros) or die("Problemas en la seleccion.");
         $sql = "SELECT * FROM usuario_especialidad WHERE id_especialidad_fk ='$regIdEspecialidad[0]' AND id_usuario_fk='$userId'";
-        $registros2 = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $registros2 = mysqli_query($conexion, $sql) or die("Problemas en la seleccion3:" . mysqli_error($conexion));
         $sqlEsp = "SELECT especialidad FROM especialidad WHERE id_especialidad='$reg5[11]'";
-        $regEsp = mysqli_query($conexion, $sqlEsp) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $regEsp = mysqli_query($conexion, $sqlEsp) or die("Problemas en la seleccion4:" . mysqli_error($conexion));
         $reg6 = mysqli_fetch_row($regEsp);
         if ($registros2->num_rows === 0 && $tipo=='3'){
                     
@@ -98,12 +98,16 @@
             $regEstado = mysqli_fetch_row($registroEstados1);
         }
 
+        if($idTutor != "sin-tutor"){
             $sqlMediaVideo = "SELECT link_video FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
-            $registroMedia = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+            $registroMedia = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion123:" . mysqli_error($conexion));
             
             
             $sqlMediaImagen = "SELECT index_imagen FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
             $registroImagen = mysqli_query($conexion, $sqlMediaImagen) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        }
+        
+           
             
 
 
@@ -127,13 +131,26 @@
             <td><?php echo $reg5[2]?></td>
         </tr>
         <tr>
-            <td>Respuesta de <?php echo $regTut[0] ?></td>
+            <td> <?php 
+            if($idTutor != "sin-tutor"){
+                echo "Respuesta de: </b>";
+                echo $regTut[0]; 
+            }else{
+                echo "Tutor sin determinar";
+            }
+            
+            ?></td>
             <td><?php echo $reg5[12]?></td>
         </tr>
         <tr>
             <td>Link video(s)</td>
             <td>
             <?php 
+    if(!isset($registroMedia)){
+        echo "Sin videos";
+    }else{
+
+    
     while ($regVideo = mysqli_fetch_array($registroMedia)){
         if($regVideo['link_video']!=null){
             ?> 
@@ -147,6 +164,7 @@
                 
                  <?php 
         }
+        }
         ?>
             
     <?php } ?>
@@ -156,11 +174,15 @@
             <td>Imagen(es)</td>
             <td>
             <?php 
+            if(!isset($registroMedia)){
+                echo "Sin imagenes";
+            }else{
     while ($regImagen = mysqli_fetch_array($registroImagen)){
         if($regImagen['index_imagen']!=null){
             ?> 
             <?php echo $regImagen['index_imagen'] ?> </br> <?php 
         }
+    }
         ?>
             
     <?php } ?>
