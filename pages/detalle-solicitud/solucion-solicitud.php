@@ -140,7 +140,7 @@
             }
             
             ?></td>
-            <td><?php echo $reg5[12]?></td>
+            <td><?php echo $reg5[14]?></td>
         </tr>
         <tr>
             <td>Link video(s)</td>
