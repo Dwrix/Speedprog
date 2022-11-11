@@ -37,6 +37,7 @@ if($tipo == '2'){
     
     
     $idSolicitud1 = mysqli_real_escape_string($conexion, $_POST['idSolicitud1']);
+    $texto = mysqli_real_escape_string($conexion, $_POST['textoSolucion1']);
     $solucion = mysqli_real_escape_string($conexion, $_POST['solucion1']);
     //$userId; Tutor
     $date = date('y-m-d h:i:s');
