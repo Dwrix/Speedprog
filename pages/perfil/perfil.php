@@ -295,6 +295,13 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
                 echo "</td>";
                 $sqlCalificacion = "SELECT id_calificacion_fk FROM resena WHERE id_resena='$regResenas[10]'";
                 $registroCalificacion = mysqli_query($conexion, $sqlCalificacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                if(mysqli_num_rows($registroCalificacion) == 0){
+                    echo "<td>";
+                echo "Sin calificar";
+                echo "</td>";
+                echo "</tr>";
+                }else{
+                
                 $regCalificacion = mysqli_fetch_array($registroCalificacion);
                 $sqlCalificacion1 = "SELECT calificacion FROM calificacion WHERE id_calificacion='$regCalificacion[0]'";
                 $registroCalificacion1 = mysqli_query($conexion, $sqlCalificacion1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -303,6 +310,7 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
                 echo $regCalificacion1['calificacion'];
                 echo "</td>";
                 echo "</tr>";
+            }
             }
             ?> </table> <?php
         }
