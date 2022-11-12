@@ -79,7 +79,7 @@ if($tipo=='2'){
     ?>
     
     
-    <h1>MIS SOLICITUDES ACTIVAS</h1><br>
+    <h1>MIS SOLICiTUDES ACTIVAS</h1><br>
     <table border="1" width="700" align="center">
     <tr>
         <td style="display:none;">ID</td>

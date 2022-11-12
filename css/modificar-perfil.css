@@ -1,14 +1,16 @@
 .Mod-perfil-box{
-	width: 800px;
-	height: 500px;
+	width: 100%;
+  	max-width: 800px;
+	display:block;
+	margin: auto;
+	border-radius: 10px;
 	background: rgba(0, 0, 0, 0.562);
 	color: #fff;
-	margin-left: 50%;
-	margin-top: 350px;
-	transform: translate(-50%, -50%);
 	box-sizing: border-box;
 	padding: 70px 30px;
 	border-radius: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .Mod-perfil-box h1{

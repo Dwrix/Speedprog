@@ -29,9 +29,10 @@ padding: 10px;
 }
 
 img{
-	border-radius: 20px;
-	margin-left: 35%;
-	margin-bottom: 80px;
+	display:block;
+	margin:auto;
+	border-radius: 10px;
+	
 }
 
 /*------------------------Footer----------------------------------*/

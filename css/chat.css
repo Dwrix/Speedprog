@@ -1,13 +1,16 @@
 #contenedor-chat{
-    width: 350px;
-	background: rgba(0, 0, 0, 0.486);
-	color: #fff;
-	margin-left: 35%;
-	
-	
-	box-sizing: border-box;
-	padding: 70px 30px;
-	border-radius: 20px;
+	width: 100%;
+	max-width: 350px;
+  	display:block;
+  	margin: auto;
+  	border-radius: 10px;
+  	background: rgba(0, 0, 0, 0.562);
+  	color: #fff;
+  	box-sizing: border-box;
+  	padding: 70px 30px;
+  	border-radius: 20px;
+  	margin-top: 20px;
+  	margin-bottom: 20px;
 }
 
 h1{

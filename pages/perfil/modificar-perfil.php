@@ -95,7 +95,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
 
 ?>
    
-Modificar Perfil
+
 <form method="POST" action="modificar.php?permiso=1">
     <input type='hidden' id='idTutor1' name='idTutor1' value=<?php echo $userId ?>>
     <table border="1" width="700" align="center">

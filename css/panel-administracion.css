@@ -2,6 +2,7 @@
 .contenido {
     width: 100%;
     height: 50%;
+    
 }
 
 .Panel-adm-box {
@@ -10,11 +11,12 @@
     margin-left: 57px;
     float: left;
     position: relative;
-    width: 20%;
+    width: auto;
     border: #660d0770 solid 4px;
     height: auto;
     background: rgba(0, 0, 0, 0.438);
 	color: #fff;
+    
 }
 .Panel-adm-box ul a:link, a:visited {
     background-color: #660d0770;
@@ -25,6 +27,7 @@
     display: inline-block;
     border-radius: 20px;
     margin-top: 15px;
+    
   }
   
   a:hover, a:active {
@@ -37,9 +40,10 @@
     margin-left: 10px;
     position: relative;
     float: left;
-    width: 47%;
+    width: auto;
     background: rgba(0, 0, 0, 0.438);
     height: auto;
+    margin-bottom: 40px;
 }
 
 #verDetalle:hover{
@@ -51,6 +55,56 @@
 	
 	color: rgb(139, 80, 80);
 }
+#Volver{
+	margin-top: 30px;
+	color: white;
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgb(54, 54, 54);
+    border-radius: 5px;
+}
+
+
+
+
+
+
+tr:hover {background-color: #535554d8;}
+
+td {
+    
+    padding: 5px;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px solid white;
+    border-left: 1px;
+}
+
+
+table{
+    table-layout: fixed;
+    width: auto;
+}
+table #ing{
+    
+    width: auto;
+}
+table #eg{
+    
+    width: auto;
+}
+table #deu{
+    
+    width: auto;
+}
+
+th{
+    background-color: rgb(85, 87, 87);
+}
+
+
+
+
 
 /*------------------------Footer----------------------------------*/
 footer{
