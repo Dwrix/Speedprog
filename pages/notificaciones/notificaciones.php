@@ -228,6 +228,21 @@ if(isset($_GET['error_mensaje'])){
                     "USUARIO ha calificacio la solicitud TITULO id: ID"
                     Redireccionar a perfil del usuario
                     */
+                }else if($regNot[4] == 14){ //Usuario cancela solicitud - Notificar Tutor (si existe)
+                    /*
+                    Verificar si existe tutor
+                    Si no existe, No notificar
+                    Notificar solo si existe, al tutor
+                    Recolectar:
+                    $regNot[3] = fk_usuario_objetivo_id
+                    $regNot[5] = fk_usuario_id
+                    $regNot[6] = fk_tutor_id
+                    $regNot[8] = fk_solicitud_id
+                    conseguir el titulo y ID de la solicitud mediante id solicitud
+                    conseguir nombre del usuario mediante su id
+                    "USUARIO ha cancelado la solicitud TITULO"
+                    Redireccionar a historial de solicitudes
+                    */
                 }
             
 
