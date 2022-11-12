@@ -4,21 +4,22 @@
 /*------------------------box registro----------------------------------*/
 
 .user-box{
-	width: 100px;
-	height: 100px;
-	margin-left: 130px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 .registro-box{
-	width: 380px;
-	height: 650px;
-	background: rgba(0, 0, 0, 0.733);
-	color: #fff;
-	margin-left: 50%;
-	margin-top: 350px;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-	padding: 70px 30px;
-	border-radius: 20px;
+	width: 100%;
+	max-width: 400px;
+  display:block;
+  margin: auto;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.562);
+  color: #fff;
+  box-sizing: border-box;
+  padding: 70px 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .registro-box h1{

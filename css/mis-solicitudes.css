@@ -1,17 +1,19 @@
 .Tabla-solicitudes{
-    width: 800px;
-	height: 600px;
-	background: rgba(0, 0, 0, 0.438);
+    width: 100%;
+  	max-width: 800px;
+	display:block;
+	margin: auto;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.562);
 	color: #fff;
-	margin-left: 50%;
-	margin-top: 320px;
-	transform: translate(-50%, -50%);
 	box-sizing: border-box;
-	padding: 30px 30px;
+	padding: 70px 30px;
 	border-radius: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .Tabla-solicitudes h1{
-    margin-left: 30%;
+    color: white;
     font-size: 20px;
 }
 
