@@ -180,7 +180,12 @@
     while ($regImagen = mysqli_fetch_array($registroImagen)){
         if($regImagen['index_imagen']!=null){
             ?> 
-            <?php echo $regImagen['index_imagen'] ?> </br> <?php 
+            
+            
+            <img src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
+             
+            
+            </br> <?php 
         }
     }
         ?>
