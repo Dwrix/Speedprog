@@ -72,7 +72,7 @@ if(!isset($_GET['permiso'])){
     
     
 mysqli_close($conexion);
-//header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=3");
+header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=3");
     
     
     
