@@ -465,7 +465,7 @@ if($estadoSolicitud=='3'){//Estado 3 corresponde a en consulta, la cual es basic
 
 
 
-<a id="Volver" href="javascript:history.back()">Volver</a>
+<a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
 
 </section>   
 </div>

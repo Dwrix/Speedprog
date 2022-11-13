@@ -238,7 +238,7 @@ if($registroTestMedia->num_rows === 0){
 
     </br>
     </br>
-        <a id="Volver" href="javascript:history.back()">Volver</a>
+     <a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
         
 
 </div>

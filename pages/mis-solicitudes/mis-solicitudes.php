@@ -324,7 +324,7 @@ echo "Sin determinar";
 
 
     </table>
-    <a id="Volver" href="javascript:history.back()">Volver</a>
+    <a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
 </section>
 
 

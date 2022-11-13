@@ -21,4 +21,15 @@
     background-color: rgba(0, 0, 0, 0.219);
     margin-top: 20px;
 }
+#Volver{
+	margin-top: 30px;
+	color: white;
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 5px;
+}
+#Volver:hover{
+    background-color: rgb(0, 0, 0);
+}
 
