@@ -26,13 +26,7 @@ if(!isset($_GET['permiso'])){
 if($tipo == '4'){
     header("Location: ../index/index.php?error_mensaje=5");
 }else{
-    require("../../php/conexionBD.php");
-    $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
-    if(mysqli_connect_errno()){
-        echo "fallo la conexion";
-        exit();
-    }
-    mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+    
     
     
     
@@ -42,6 +36,7 @@ if($tipo == '4'){
     $especialidad = mysqli_real_escape_string($conexion, $_POST['especialidades1']);
     $metodoDePago = mysqli_real_escape_string($conexion, $_POST['metododepago1']);
     $linkVideo = mysqli_real_escape_string($conexion, $_POST['video1']);
+    
     
     $sqlMetodoDePagoID = "SELECT id_metodo_de_pago FROM metodo_de_pago WHERE metodo_de_pago='$metodoDePago'";
     $registroMetodo = mysqli_query($conexion, $sqlMetodoDePagoID) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -68,23 +63,43 @@ if($tipo == '4'){
     $regxd = mysqli_query($conexion, $sql1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $lastIdSolicitud = mysqli_insert_id($conexion);
 
-    $media = $_POST['media'];
-    if($media[0]==''){
-        echo "nulo";
-    }else{
-        foreach($media AS $key => $value){
-            //$value es el contenido a agregar
-            $sqlMedia = "INSERT INTO media (index_imagen, id_solicitud_fk, id_usuario_fk) VALUES ('$value', '$lastIdSolicitud', '$userId')";
-            $conexion->query($sqlMedia);  
-        }
-    }
-       
-
-if($linkVideo!=''){
     
-    $sqlMediaVideo = "INSERT INTO media (link_video, id_solicitud_fk, id_usuario_fk) VALUES ('$linkVideo', '$lastIdSolicitud', '$userId')";
-    $regxdxd = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-}
+    
+    
+        
+        $fileCount = count($_FILES['file']['name']);
+        if($fileCount > 0 ){
+            
+            for($i=0;$i<$fileCount;$i++){
+                $fileName = $_FILES['file']['name'][$i];
+                
+                if ($fileName !== ""){
+                    
+                    $sqlMediaDocumento = "INSERT INTO media (index_imagen, id_solicitud_fk, id_usuario_fk) VALUES ('$fileName', '$lastIdSolicitud', '$userId')";
+                    $regImagenIngreso = mysqli_query($conexion, $sqlMediaDocumento) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                    $IDMedia = mysqli_insert_id($conexion);
+                    $newMod = $IDMedia.$fileName;
+                    move_uploaded_file($_FILES['file']['tmp_name'][$i], '../../imagenes/'.$newMod);
+                    $sqlMediaMod = "UPDATE media SET index_imagen = '$newMod' WHERE id_media = '$IDMedia'";
+                    $regMod = mysqli_query($conexion, $sqlMediaMod) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                }
+                
+            }
+        }
+        
+    
+        
+
+    if($linkVideo!=''){
+        $pattern="/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/";
+        if($resultadoVideo = preg_match($pattern, $linkVideo, $match)){ 
+            
+            $sqlMediaVideo = "INSERT INTO media (link_video, id_solicitud_fk, id_usuario_fk) VALUES ('$match[1]', '$lastIdSolicitud', '$userId')";
+           $regxdxd = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        }
+        
+        
+    }
 
     
     
