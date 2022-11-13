@@ -23,21 +23,17 @@ if(!isset($_GET['permiso'])){
 <?php
 
 
-if($tipo == '2'){
-    header("Location: ../index/index.php?error_mensaje=0");
-}else{
+
    
     
     
     
     $idSolicitud1 = mysqli_real_escape_string($conexion, $_POST['idSolicitud1']);
-    $texto = mysqli_real_escape_string($conexion, $_POST['textoSolucion1']);
-    $linkVideo = mysqli_real_escape_string($conexion, $_POST['video1']);
-    //$userId; Tutor
-    //$date = date('y-m-d h:i:s');
     
-    $sqlUpdate1 = "UPDATE solicitud SET  estado_solicitud_fk = '3', respuesta_tutor = '$texto' WHERE id_solicitud='$idSolicitud1'";
-    $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
+    $linkVideo = mysqli_real_escape_string($conexion, $_POST['video1']);
+
+    
+    
 
     $fileCount = count($_FILES['file']['name']);
         if($fileCount > 0 ){
@@ -48,12 +44,12 @@ if($tipo == '2'){
                 if ($fileName !== ""){
                     
                     $sqlMediaDocumento = "INSERT INTO media (index_imagen, id_solicitud_fk, id_usuario_fk) VALUES ('$fileName', '$idSolicitud1', '$userId')";
-                    $regImagenIngreso = mysqli_query($conexion, $sqlMediaDocumento) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                    $regImagenIngreso = mysqli_query($conexion, $sqlMediaDocumento) or die("Problemas en la seleccion1:" . mysqli_error($conexion));
                     $IDMedia = mysqli_insert_id($conexion);
                     $newMod = $IDMedia.$fileName;
                     move_uploaded_file($_FILES['file']['tmp_name'][$i], '../../imagenes/'.$newMod);
                     $sqlMediaMod = "UPDATE media SET index_imagen = '$newMod' WHERE id_media = '$IDMedia'";
-                    $regMod = mysqli_query($conexion, $sqlMediaMod) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                    $regMod = mysqli_query($conexion, $sqlMediaMod) or die("Problemas en la seleccion2:" . mysqli_error($conexion));
                 }
                 
             }
@@ -76,11 +72,11 @@ if($tipo == '2'){
     
     
 mysqli_close($conexion);
-header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=2");
+//header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=3");
     
     
     
-}
+
 
 
 

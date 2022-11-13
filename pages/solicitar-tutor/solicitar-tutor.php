@@ -11,26 +11,7 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
     <link rel="icon" href="../../img/Speedprogicon.PNG">
-    <script>
-        $(document).ready(function(e){
-            //Variables
-            var html = '<div><input type="text" id="childmedia" rows="1" cols="50" name="media[]" /><a href="#" id="eliminar"> x</a></div>';
-            var maxRows = 5;
-            var x = 1;
-            //Agregar Rows
-            $("#add").click(function(e){
-                if(x<=maxRows){
-                    $("#contenedor").append(html);
-                    x++;
-                } 
-            });
-            //Eliminar Rows
-            $("#contenedor").on('click','#eliminar', function(e){
-                $(this).parent('div').remove();
-                x--;
-            });
-        });
-    </script>
+    
 
 
     <title>SpeedProg</title>
@@ -67,15 +48,9 @@
     
     <br><br>    
     <section class="Solicitar-tutor-box">
-        <form method="POST" action="agregar.php?permiso=1">
+        <form method="POST" action="agregar.php?permiso=1" enctype="multipart/form-data">
         <?php
-            require("../../php/conexionBD.php");
-            $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
-            if(mysqli_connect_errno()){
-                echo "fallo la conexion";
-                exit();
-            }
-            mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
+            
 
             $sql = "SELECT * FROM especialidad";
             $sql2 = "SELECT * FROM metodo_de_pago";
@@ -108,14 +83,13 @@
             Link de imagen (opcional)
         </div>
         <div id="contenedor">
-            <input type="text" id="media" rows="1" cols="50" name="media[]" />
-            <a href="#" id="add">+</a>
+            <input type="file" id="file" rows="1" cols="50" name="file[]" multiple accept="image/gif, image/jpeg, image/png">
         </div>
 
         <div>
             Link de YouTube video (ingresar URL link del video)  
         </div>   
-    <input type="text" id="video1" name="video1" placeholder="RDMdPhaY78yc4">
+    <input type="text" id="video1" name="video1" placeholder="https://www.youtube.com/watch?v=OiYKS5SIcSQ">
     <div>Valor: $1.000 CLP</div><br>
     <div>
         Metodo de Pago <select id="metododepago1" name="metododepago1">

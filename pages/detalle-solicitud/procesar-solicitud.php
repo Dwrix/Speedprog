@@ -11,27 +11,7 @@
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
     <link rel="icon" href="../../img/Speedprogicon.PNG">
-    <script>
-        $(document).ready(function(e){
-            //Variables
-            var html = '<div><input type="text" id="childmedia" rows="1" cols="50" name="media[]" /><a href="#" id="eliminar"> x</a></div>';
-            var maxRows = 5;
-            var x = 1;
-            //Agregar Rows
-            $("#add").click(function(e){
-                if(x<=maxRows){
-                    $("#contenedor").append(html);
-                    x++;
-                } 
-            });
-            //Eliminar Rows
-            $("#contenedor").on('click','#eliminar', function(e){
-                $(this).parent('div').remove();
-                x--;
-            });
-        });
-    </script>
-
+    
 
     <title>SpeedProg</title>
 </head>
@@ -86,18 +66,8 @@ $estadoSolicitud = $reg5[6];
 
     
     <br><br>    
-    <form method="POST" action="procesar.php?permiso=1">
-    <?php
-     require("../../php/conexionBD.php");
-     $conexion = mysqli_connect($dbHost,$dbUser,$dbPassword);
-     if(mysqli_connect_errno()){
-         echo "fallo la conexion";
-         exit();
-     }
-     mysqli_select_db($conexion, $dbName) or die("No se encuentra la base de datos"); 
-
-    ?>
-
+    <form method="POST" action="procesar.php?permiso=1" enctype="multipart/form-data">
+    
 <?php 
 
 $idUsuario1 = $_REQUEST["idUsuario1"];
@@ -129,14 +99,13 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
 Subir Imagen 
     </div>
     <div id="contenedor">
-    <input type="text" id="media" rows="1" cols="50" name="media[]" required/>
-        <a href="#" id="add">+</a>
+    <input type="file" id="file" rows="1" cols="50" name="file[]" required multiple accept="image/gif, image/jpeg, image/png"/>   
     </div>
     <div>
         Link de video YouTube  
 
     </div>   
-    <input type="text" id="video1" name="video1" required placeholder="RDMdPhaY78yc4">
+    <input type="text" id="video1" name="video1" required placeholder="https://www.youtube.com/watch?v=OiYKS5SIcSQ">
     
     <?php 
     mysqli_close($conexion);

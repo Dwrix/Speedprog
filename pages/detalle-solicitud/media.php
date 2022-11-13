@@ -104,12 +104,16 @@
 
         }else{
 
-            $sqlMediaVideo = "SELECT link_video FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
-            $registroMedia = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion2:" . mysqli_error($conexion));
+            if($idTutor != "sin-tutor"){
+                $sqlMediaVideo = "SELECT link_video FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
+                $registroMedia = mysqli_query($conexion, $sqlMediaVideo) or die("Problemas en la seleccion2:" . mysqli_error($conexion));
+                
+                
+                $sqlMediaImagen = "SELECT index_imagen FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
+                $registroImagen = mysqli_query($conexion, $sqlMediaImagen) or die("Problemas en la seleccion3:" . mysqli_error($conexion));
+            }
             
             
-            $sqlMediaImagen = "SELECT index_imagen FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idTutor";
-            $registroImagen = mysqli_query($conexion, $sqlMediaImagen) or die("Problemas en la seleccion3:" . mysqli_error($conexion));
             
             $sqlMediaVideo2 = "SELECT link_video FROM media WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $reg5[8]";
             $registroMedia2 = mysqli_query($conexion, $sqlMediaVideo2) or die("Problemas en la seleccion4:" . mysqli_error($conexion));
@@ -171,8 +175,14 @@ if($registroTestMedia->num_rows === 0){
             <?php 
     while ($regImagen2 = mysqli_fetch_array($registroImagen2)){
         if($regImagen2['index_imagen']!=null){
+            
             ?> 
-            <?php echo $regImagen2['index_imagen'] ?> </br> <?php 
+            
+            
+            <img src="../../imagenes/<?php echo $regImagen2['index_imagen'] ?>">
+             
+            
+            </br> <?php 
         }
         ?>
             
@@ -182,8 +192,10 @@ if($registroTestMedia->num_rows === 0){
 
     </table>
     </br>
-
-    <table border="1" width="700" align="center">
+<?php 
+if($idTutor != "sin-tutor"){
+    ?>
+<table border="1" width="700" align="center">
         
 
         <tr>
@@ -219,10 +231,14 @@ if($registroTestMedia->num_rows === 0){
             <?php 
     while ($regImagen = mysqli_fetch_array($registroImagen)){
         if($regImagen['index_imagen']!=null){
+            
             ?> 
-            <?php 
-            echo $regImagen['index_imagen'] 
-            ?> </br> <?php 
+            
+            
+            <img src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
+             
+            
+            </br> <?php 
         }
         ?>
             
@@ -231,14 +247,59 @@ if($registroTestMedia->num_rows === 0){
         </tr>
 
     </table>
+    <?php
+}
+?>
+    
 
 <?php
 }
 ?>
 
+
     </br>
     </br>
+
      <a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
+
+<?php 
+if($tipo != 4){
+?>
+<form method="POST" action="agregar-media.php?permiso=1" enctype="multipart/form-data">
+    
+    
+<input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud ?>>
+
+    <div>
+
+    Subir Imagen(es)
+        </div>
+        <div id="contenedor">
+        <input type="file" id="file" rows="1" cols="50" name="file[]" multiple accept="image/gif, image/jpeg, image/png"/>   
+        </div>
+        <div>
+            Link de video YouTube  
+    
+        </div>   
+        <input type="text" id="video1" name="video1" placeholder="https://www.youtube.com/watch?v=OiYKS5SIcSQ">
+        
+        
+        </div>
+       <div><br>  
+        <input type="submit" value="Subir Media">
+        </div>
+        </form>
+</br>
+<?php
+}
+?>
+
+
+    
+
+
+        <a id="Volver" href="javascript:history.back()">Volver</a>
+
         
 
 </div>
