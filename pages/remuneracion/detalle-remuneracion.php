@@ -121,7 +121,7 @@ Metodo de Pago <select id="metodoDePago1" name="metodoDePago1">
 
 
 
-<a id="Volver" href="javascript:history.back()">Volver</a>
+<a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
 
 
 </div>
