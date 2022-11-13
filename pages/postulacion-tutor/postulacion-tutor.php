@@ -105,7 +105,9 @@
         </div><br>
 
         <div>
-            <span>Formulario</span></br>
+            <span>Agregar links de documentos, certificaciones y todo lo que pueda ser utilizado para comprobar legitimidad del area que esta postulando
+
+            </span></br>
             <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" required></textarea>
         </div><br>
 
