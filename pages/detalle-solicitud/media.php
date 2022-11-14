@@ -179,7 +179,7 @@ if($registroTestMedia->num_rows === 0){
             ?> 
             
             
-            <img src="../../imagenes/<?php echo $regImagen2['index_imagen'] ?>">
+            <img id="imgsubidas" src="../../imagenes/<?php echo $regImagen2['index_imagen'] ?>">
              
             
             </br> <?php 
@@ -235,7 +235,7 @@ if($idTutor != "sin-tutor"){
             ?> 
             
             
-            <img src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
+            <img id="imgsubidas" src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
              
             
             </br> <?php 
@@ -269,13 +269,13 @@ if($tipo != 4){
     
     
 <input type='hidden' id='idSolicitud1' name='idSolicitud1' value=<?php echo $idSolicitud ?>>
-
+</br></br>
     <div>
 
     Subir Imagen(es)
         </div>
         <div id="contenedor">
-        <input type="file" id="file" rows="1" cols="50" name="file[]" multiple accept="image/gif, image/jpeg, image/png"/>   
+        <input type="file" id="file" rows="1" cols="50" name="file[]"  multiple accept="image/gif, image/jpeg, image/png"/>   
         </div>
         <div>
             Link de video YouTube  
@@ -298,7 +298,7 @@ if($tipo != 4){
     
 
 
-        <a id="Volver" href="javascript:history.back()">Volver</a>
+        
 
         
 

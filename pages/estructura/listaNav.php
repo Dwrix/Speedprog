@@ -13,6 +13,7 @@
             <a id="Home" href="../../index.php">Home</a>
             </span>
             <a id ="QS" href="../somos/somos.php">Quienes Somos</a>
+
             
     </span>
 </span>
@@ -34,7 +35,7 @@
                 echo "<li id='sectionmenu'><a href='../remuneracion/historial-remuneraciones.php'>Historial de Remuneraciones</a> </li>";
             }
             if($tipo == 4){
-                echo "<li id='sectionmenu'><a href='../panel-administracion/panel-administracion.php'>Pandel de Administracion</a> </li>";
+                echo "<li id='sectionmenu'><a href='../panel-administracion/panel-administracion.php'>Panel de Administracion</a> </li>";
                 //echo "<li id='sectionmenu'><a href='../postulacion-tutor/postulaciones-activas.php'>Postulaciones Activas</a> </li>";
                 //echo "<li id='sectionmenu'><a href='../remuneracion/remuneraciones-activas.php'>Remuneraciones</a> </li>";
             }
@@ -44,7 +45,17 @@
                 echo "<li><a href='../registrar/registro.php'>Registrarse</a></li>"; 
             }
             ?>
+
+            
             
  </ul>
 
-
+            <?php
+            if(isset($_SESSION['user'])){
+                echo "<label for='check' class='checkbtn'>";   
+                echo    "<a href='../notificaciones/notificaciones.php' class='campana'>";
+                echo        "<i class='fa fa-bell fa-xs'></i>";
+                echo    "</a>";
+                echo "</label>";
+            }
+            ?>

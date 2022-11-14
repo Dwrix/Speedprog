@@ -59,6 +59,37 @@
     background: rgba(241, 239, 239, 0.904);
 }
 
+.Procesar-sol-box input{
+	
+	width: 400px;
+	margin-bottom: 20px;
+
+}
+
+
+.Procesar-sol-box input[type="text"]{
+
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+#file{
+	width: 200px;
+	margin-top: 5px;
+	background-color: rgb(36, 35, 35);
+	color: #fff;
+	
+	border-radius: 20px;
+}
+
 #Volver{
 	margin-top: 30px;
 	color: white;

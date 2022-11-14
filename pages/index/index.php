@@ -21,9 +21,6 @@
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa fa-bars"></i>
-            <a href="#" class="campana">
-                <i class="fa fa-bell fa-xs"></i>
-            </a>
         </label>
         
         <label class="logo">SpeedProg Asesorias</label>
