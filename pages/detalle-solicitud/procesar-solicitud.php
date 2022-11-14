@@ -93,7 +93,7 @@ $sqlxdd = "SELECT nombre FROM usuario WHERE id_usuario='$idUsuario1'";
     Solucion de la problematica
     <div>
          <textarea id="textoSolucion1" rows="20" cols="50" name="textoSolucion1" required></textarea>
-    </div>
+    </div></br>
 
 <div>
 Subir Imagen 
@@ -111,7 +111,7 @@ Subir Imagen
     mysqli_close($conexion);
     ?>
     </div>
-   <div><br>  
+   <div>
     <input type="submit" value="Procesar">
     </div>
     </form>

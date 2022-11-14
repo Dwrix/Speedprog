@@ -59,3 +59,21 @@
 #Volver:hover{
     background-color: rgb(0, 0, 0);
 }
+
+#file{
+	width: 200px;
+	margin-top: 5px;
+	background-color: rgb(36, 35, 35);
+	color: #fff;
+	
+	border-radius: 20px;
+}
+
+#imgsubidas{
+	max-height: 650px;
+	max-width: 650px;
+}
+iframe{
+	max-height: 400px;
+	min-width: 650px;
+}
