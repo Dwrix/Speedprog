@@ -70,7 +70,7 @@ if(isset($_SESSION['user'])){
     
     //Verificacion si existen notificaciones
     if($registrosSQL->num_rows > 0 ){
-        
+        $noMostrar = 0;
         while ($regNot = mysqli_fetch_array($registrosSQL)){
             
             //Verificar si las notificaciones encontradas tienen visto o no
@@ -81,12 +81,15 @@ if(isset($_SESSION['user'])){
                 
                 <?php
                 
-                
+                $noMostrar = 1;
                 break;
-            }else{
-                //Aqui deberia estar la campana en blanco, sin notificaciones encontradas
             }
         }
+        
+        if($noMostrar == 0){
+        //Aqui deberia ir la campa por defecto
+        }
+
     }
 }
 ?>
