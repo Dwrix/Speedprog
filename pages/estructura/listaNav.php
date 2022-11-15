@@ -67,7 +67,7 @@
 if(isset($_SESSION['user'])){
     $sqlNotificaciones = "SELECT * FROM notificacion WHERE fk_usuario_objetivo_id = '$userId'";
     $registrosSQL = mysqli_query($conexion, $sqlNotificaciones) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-    
+    $campana = 0;
     //Verificacion si existen notificaciones
     if($registrosSQL->num_rows > 0 ){
         
@@ -81,12 +81,16 @@ if(isset($_SESSION['user'])){
                 
                 <?php
                 
-                
+                $campana = 1;
                 break;
-            }else{
-                //Aqui deberia estar la campana en blanco, sin notificaciones encontradas
             }
         }
+        
+        
+
     }
+    if($campana == 0){
+        //Aqui deberia ir la campa por defecto
+        }
 }
 ?>
