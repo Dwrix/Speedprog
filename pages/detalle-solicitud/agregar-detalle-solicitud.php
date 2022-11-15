@@ -114,7 +114,7 @@ $tituloSolicitud = $regTitulo[0];
 
 $notificacion1 = "El tutor $nombreTutor ha aceptado su solicitud $tituloSolicitud";
 $visto = 0;
-$tipoNot = 2;
+$tipoNot = 1;
 
 $sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_tutor_id, fk_solicitud_id) 
 VALUES ('$notificacion1', '$visto', '$idUsuario1', '$tipoNot', '$idUsuario1', '$idTutor1', '$idSolicitud1')";

@@ -133,7 +133,26 @@ Logro solucionar su problema?<br>
     <option>No</option>
     </select>
 <div>
+
+<?php 
+$sql = "SELECT * FROM calificacion";
+$registros = mysqli_query($conexion, $sql) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
+?>
+    <br>
     
+    <div>
+    Calificar tutor: <select id="calificacion1" name="calificacion1">
+    <?php 
+    while ($reg = mysqli_fetch_array($registros)){
+        ?>
+            <option><?php echo $reg['calificacion'] ?></option>
+    <?php }
+    
+    ?>
+    </select>
+    
+
 <br> 
 
     <?php 
