@@ -82,6 +82,8 @@
                 
                 
                 break;
+            }else{
+                //Aqui deberia estar la campana en blanco, sin notificaciones encontradas
             }
         }
     }
