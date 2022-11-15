@@ -64,6 +64,7 @@
 
 <?php
 //Proceso de verificar si existen nuevas notificaciones
+if(isset($_SESSION['user'])){
     $sqlNotificaciones = "SELECT * FROM notificacion WHERE fk_usuario_objetivo_id = '$userId'";
     $registrosSQL = mysqli_query($conexion, $sqlNotificaciones) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     
@@ -87,5 +88,5 @@
             }
         }
     }
-
+}
 ?>
