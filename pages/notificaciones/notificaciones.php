@@ -65,23 +65,30 @@ if(isset($_GET['error_mensaje'])){
         echo "<td> No existen notificaciones </td>";
     }else{
         while ($regNot = mysqli_fetch_array($registrosSQL)){
+            //Cambiar estados de notificaciones a visto
+            $sqlUpdate551 = "UPDATE notificacion SET visto = '1' WHERE id_notificacion='$regNot[0]'";
+            $registrosUpdate551 = mysqli_query($conexion, $sqlUpdate551) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+
             /*
             Al determinar que si existen notificaciones con x usuario
             Determinar cual tipo de notificacion es:
                 $regNot[4] = tipo de notificacion
             */
                 if($regNot[4] == 2){ //Tutor acepta solicitud de usuario - Notificar usuario
-                    /*
-                    Recolectar:
-                    $regNot[3] = fk_usuario_objetivo_id
-                    $regNot[5] = fk_usuario_id
-                    $regNot[6] = fk_tutor_id
-                    $regNot[8] = fk_solicitud_id
-                    conseguir el titulo de la solicitud mediante id solicitud
-                    conseguir nombre del tutor mediante su id
-                    "TUTOR ha aceptado su solicitud TITULO"
-                    Redireccionar a detalle solicitud2 de la solicitud 
-                    */ 
+                   //Conseguir id solicitud para redirigir
+                    echo "<tr>";
+                    echo "<td>";
+                    echo $regNot[1];
+                    echo "</td>";
+                    echo "<td>";
+                    echo "<a href=../detalle-solicitud/detalle-solicitud2.php?id_solicitud=".$regNot[8]."> Ver Solicitud </a>";
+                    echo "</td>";
+                    echo "</tr>";
+                   
+                   
+                   //Mostrar mensaje
+                    
+                    $sqlTituloSolicitud;
                 }else if($regNot[4] == 3){ //Tutor procesa solicitud - Notificar usuario
                     /*
                     Recolectar:
@@ -249,14 +256,7 @@ if(isset($_GET['error_mensaje'])){
             
             
             
-            echo "<tr>";
-            echo "<td>";
-
-            echo "</td>";
-            echo "<td>";
             
-            echo "</td>";
-            echo "</tr>";
         }
     }
     

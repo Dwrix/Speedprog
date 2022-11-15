@@ -18,12 +18,14 @@
     </span>
 </span>
 
+
+
+
 <ul>
             
      
         <?php
         if(isset($_SESSION['user'])){
-
             echo "<li><a href='../perfil/perfil.php'>Perfil</a></li>";
             echo "<li><a href='../login/logout.php'>Cerrar sesion</a></li>";
             echo "<li><a href='../mis-solicitudes/mis-solicitudes.php'>Solicitudes Activas</a> </li>";
@@ -59,3 +61,29 @@
                 echo "</label>";
             }
             ?>
+
+<?php
+//Proceso de verificar si existen nuevas notificaciones
+    $sqlNotificaciones = "SELECT * FROM notificacion WHERE fk_usuario_objetivo_id = '$userId'";
+    $registrosSQL = mysqli_query($conexion, $sqlNotificaciones) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    
+    //Verificacion si existen notificaciones
+    if($registrosSQL->num_rows > 0 ){
+        
+        while ($regNot = mysqli_fetch_array($registrosSQL)){
+            
+            //Verificar si las notificaciones encontradas tienen visto o no
+            if($regNot[2]==0){
+                //Dentro de este espacio, la campana deberia cambiar de color, ya que existe notificaciones sin ver
+
+                ?>
+                
+                <?php
+                
+                
+                break;
+            }
+        }
+    }
+
+?>

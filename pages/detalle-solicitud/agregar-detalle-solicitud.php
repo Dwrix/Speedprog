@@ -93,6 +93,33 @@ $sqlUpdateBalance = "UPDATE balance SET monto_bruto_total='$monto_bruto_total', 
 neto_total='$neto_total', deuda_actual='$deuda_actual' WHERE id_balance = '$regIDBalance[0]'";
 $registrosBalanceUpdate = mysqli_query($conexion, $sqlUpdateBalance) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
 
+//Agregar notificacion *primera notificacion*
+//Tipo de notificacion 2
+// Usuario objetivo, usuario, tutor, solicitud
+
+//Conseguir nombre del Tutor
+$sqlNombreTutor = "SELECT nombre FROM usuario WHERE id_usuario='$idTutor1'";
+$registrosNombreTutor = mysqli_query($conexion, $sqlNombreTutor) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+$regNombreTutor = mysqli_fetch_row($registrosNombreTutor);
+
+$nombreTutor = $regNombreTutor[0];
+
+//Conseguir titulo de la solicitud
+
+$sqlTituloSolicitud1 = "SELECT titulo FROM solicitud WHERE id_solicitud='$idSolicitud1'";
+$registrosTituloSolicitud = mysqli_query($conexion, $sqlTituloSolicitud1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+$regTitulo = mysqli_fetch_row($registrosTituloSolicitud);
+
+$tituloSolicitud = $regTitulo[0];
+
+$notificacion1 = "El tutor $nombreTutor ha aceptado su solicitud $tituloSolicitud";
+$visto = 0;
+$tipoNot = 2;
+
+$sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_tutor_id, fk_solicitud_id) 
+VALUES ('$notificacion1', '$visto', '$idUsuario1', '$tipoNot', '$idUsuario1', '$idTutor1', '$idSolicitud1')";
+$registroNotificacion = mysqli_query($conexion, $sqlNotificacion) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+
 
 header("Location: ../mis-solicitudes/mis-solicitudes.php?exito=1");
 
