@@ -45,6 +45,48 @@ $date = date('y-m-d h:i:s');
 $sqlUpdate1 = "UPDATE solicitud SET estado_solicitud_fk = '5' WHERE id_solicitud='$idSolicitud1'";
 $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
+//Agregar notificacion
+//Tipo de notificacion 2
+// Usuario objetivo, usuario, tutor, solicitud
+
+//Determinar si el usuario que proceso el coso es tutor o administrador
+//Conseguir nombre del Tutor
+$userName;
+
+//Conseguir  informacion de la solicitud
+
+$sqlTituloSolicitud1 = "SELECT * FROM solicitud WHERE id_solicitud='$idSolicitud1'";
+$registrosTituloSolicitud = mysqli_query($conexion, $sqlTituloSolicitud1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+$regTitulo = mysqli_fetch_row($registrosTituloSolicitud);
+
+$tituloSolicitud1 = $regTitulo[1];
+$idUsuario1 = $regTitulo[8];
+$idTutor1 = $regTitulo[9];
+
+
+
+$visto = 0;
+$tipoNot = 1;
+
+
+
+
+
+
+    
+    $notificacion1 = "El administrador $userName ha cancelado su solicitud $tituloSolicitud1";
+    
+    //Notificacion usuario
+    $sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_administrador_id, fk_solicitud_id) 
+    VALUES ('$notificacion1', '$visto', '$idUsuario1', '$tipoNot', '$idUsuario1', '$userId', '$idSolicitud1')";
+    $registroNotificacion = mysqli_query($conexion, $sqlNotificacion) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+    
+
+
+
+
+
+
 header("Location: ../index/index.php?cancelar_solicitud=0");
 
 ?>

@@ -143,7 +143,7 @@
             <td><?php echo $reg5[14]?></td>
         </tr>
         <tr>
-            <td>Link video(s)</td>
+            <td>Video(s)</td>
             <td>
             <?php 
     if(!isset($registroMedia)){

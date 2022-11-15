@@ -148,7 +148,7 @@ if($registroTestMedia->num_rows === 0){
         </tr>
        
         <tr>
-            <td>Link video(s)</td>
+            <td>Video(s)</td>
             <td>
             <?php 
     while ($regVideo2 = mysqli_fetch_array($registroMedia2)){
@@ -204,7 +204,7 @@ if($idTutor != "sin-tutor"){
         </tr>
        
         <tr>
-            <td>Link video(s)</td>
+            <td>Video(s)</td>
             <td>
             <?php 
     while ($regVideo = mysqli_fetch_array($registroMedia)){

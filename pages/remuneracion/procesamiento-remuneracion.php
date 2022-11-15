@@ -70,7 +70,7 @@ if($tipo != '4'){
     $sqlDetalle = "INSERT INTO remuneracion (monto_pagado, fecha_pago, boleta, administrador_fk, metodo_de_pago_fk, id_tutor_fk) VALUES 
     ('$monto', '$date', '$boleta', '$userId','$idMetodoDePago', '$idTutor')";
     $regg1 = mysqli_query($conexion, $sqlDetalle) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-
+    $idRemuneracion = mysqli_insert_id($conexion);
     //Modificar balance segun la cantidad transferida en pago_transferencia_tutor y su resta en deuda_total
 
     $pagoTransferencia = $regB[5];
@@ -84,6 +84,33 @@ if($tipo != '4'){
     WHERE id_balance = '$idBalance'" ;
     $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
    
+    //Agregar notificacion
+    //Tipo de notificacion 2
+    // Usuario objetivo, usuario, tutor, solicitud
+    
+    //Determinar si el usuario que proceso el coso es tutor o administrador
+    //Conseguir nombre del Tutor
+    $userName;
+    
+    //Conseguir  informacion de la solicitud
+    
+   
+    
+    
+    
+    
+    
+    $visto = 0;
+    $tipoNot = 3;
+    
+   
+        
+        $notificacion1 = "El administrador $userName le ha realizado una remuneracion de $$monto con id $idRemuneracion";
+
+            $sqlNotificacion2 = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_administrador_id, fk_remuneracion_id) 
+            VALUES ('$notificacion1', '$visto', '$idTutor', '$tipoNot', '$idTutor', '$userId', '$idRemuneracion')";
+            $registroNotificacion2 = mysqli_query($conexion, $sqlNotificacion2) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+
     header("Location: ../index/index.php?transferencia=0");
 
     }

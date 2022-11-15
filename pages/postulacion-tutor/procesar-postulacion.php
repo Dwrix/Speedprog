@@ -46,7 +46,26 @@ if($tipo != '4'){
     $idUsuario = mysqli_real_escape_string($conexion, $_POST['idUsuario1']);
     
 
- 
+//Agregar notificacion
+//Tipo de notificacion 2
+// Usuario objetivo, usuario, tutor, solicitud
+
+//Determinar si el usuario que proceso el coso es tutor o administrador
+//Conseguir nombre del Tutor
+$userName;
+
+//Conseguir  informacion de la solicitud
+
+//Conseguir la especialidad
+        $sqlEsp1 = "SELECT especialidad FROM especialidad WHERE id_especialidad='$idEspecialidad'";
+        $registroEsp1 = mysqli_query($conexion, $sqlEsp1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $regEsp1 = mysqli_fetch_row($registroEsp1);
+        $nombreEspecialidad = $regEsp1[0];
+
+
+
+$visto = 0;
+$tipoNot = 2;
 
 
    
@@ -56,7 +75,17 @@ if($tipo != '4'){
         //Proceso de rechazo
         $sqlUpdate1 = "UPDATE postulacion_tutor SET estado_fk = '3', respuesta_evaluador = '$respuesta', evaluador_fk = '$userId' WHERE id_postulacion = '$idPostulacion'" ;
         $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
+
+        $notificacion1 = "El administrador $userName ha rechazado su postulacion a $nombreEspecialidad";
+        
+        //Notificacion usuario
+        $sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_administrador_id) 
+        VALUES ('$notificacion1', '$visto', '$idUsuario', '$tipoNot', '$idUsuario', '$userId')";
+        $registroNotificacion = mysqli_query($conexion, $sqlNotificacion) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+
         header("Location: ../index/index.php?postulacion_rechazo=0");
+
+
 
     }else if($resultado==1){
         //Proceso de aceptacion
@@ -89,11 +118,24 @@ if($tipo != '4'){
         $registrosUpdate3 = mysqli_query($conexion, $sqlUpdate3) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
         
         header("Location: ../index/index.php?postulacion_aceptacion=0");
+
+        $notificacion1 = "El administrador $userName ha aceptado su postulacion a $nombreEspecialidad, felicidades!";
+        
+        //Notificacion usuario
+        $sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_administrador_id) 
+        VALUES ('$notificacion1', '$visto', '$idUsuario', '$tipoNot', '$idUsuario', '$userId')";
+        $registroNotificacion = mysqli_query($conexion, $sqlNotificacion) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
         
     }else{
         header("Location: ../index/index.php?error_mensaje=1");  
     }
-mysqli_close($conexion);
+
+
+
+
+
+
+    mysqli_close($conexion);
    
 }
 ?>
