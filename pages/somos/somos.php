@@ -61,7 +61,8 @@ La visión del proyecto, es ser un proyecto ambicioso a futuro, que el software 
             </li>
         </ol>
     </div>
-</div>
+</div><br><br><br><br><br>
+
 
     </section>
     <?php 

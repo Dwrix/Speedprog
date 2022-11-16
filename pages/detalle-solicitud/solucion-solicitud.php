@@ -182,7 +182,7 @@
             ?> 
             
             
-            <img src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
+            <img id="imgsubidas" src="../../imagenes/<?php echo $regImagen['index_imagen'] ?>">
              
             
             </br> <?php 

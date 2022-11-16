@@ -45,6 +45,13 @@ color: white;
 	color:white;
 	margin-left: 20px;
 	size: 20px;
-
+    margin-right: -10px;
     
+}
+
+.campana img{
+    margin-right: -10px;
+    margin-top: 25px;
+    width: 33px;
+    height: 33px;
 }

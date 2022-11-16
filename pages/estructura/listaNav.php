@@ -52,15 +52,7 @@
             
  </ul>
 
-            <?php
-            if(isset($_SESSION['user'])){
-                echo "<label for='check' class='checkbtn'>";   
-                echo    "<a href='../notificaciones/notificaciones.php' class='campana'>";
-                echo        "<i class='fa fa-bell fa-xs'></i>";
-                echo    "</a>";
-                echo "</label>";
-            }
-            ?>
+           
 
 <?php
 //Proceso de verificar si existen nuevas notificaciones
@@ -76,7 +68,12 @@ if(isset($_SESSION['user'])){
             //Verificar si las notificaciones encontradas tienen visto o no
             if($regNot[2]==0){
                 //Dentro de este espacio, la campana deberia cambiar de color, ya que existe notificaciones sin ver
-
+                echo "<label for='check' class='checkbtn'>";   
+                echo    "<a href='../notificaciones/notificaciones.php' class='campana'>";
+                echo        "<img id='campana2'src='../../img/notificacion.png'>";
+                echo    "</a>";
+                echo  "</label>";
+                       
                 ?>
                 
                 <?php
@@ -91,6 +88,11 @@ if(isset($_SESSION['user'])){
     }
     if($campana == 0){
         //Aqui deberia ir la campa por defecto
+            echo "<label for='check' class='checkbtn'>";   
+            echo    "<a href='../notificaciones/notificaciones.php' class='campana'>";
+            echo        "<i class='fa fa-bell fa-xs'></i>";
+            echo    "</a>";
+            echo "</label>";
         }
 }
 ?>
