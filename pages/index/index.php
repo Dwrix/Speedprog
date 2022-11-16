@@ -209,6 +209,21 @@ if(isset($_GET['paypal_error'])){
     window.onload = function () { alert("No se pudo redirigir correctamente a la solicitud"); } 
     </script>';
 }
+if(isset($_GET['error_pago_paypal'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("No se pudo realizar el pago en PayPal"); } 
+    </script>';
+}
+if(isset($_GET['pedido_pagado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Pedido pagado exitosamente"); } 
+    </script>';
+}
+if(isset($_GET['pedido_ya_pagado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Este pedido ya fue pagado"); } 
+    </script>';
+}
 ?> 
 
     <section>

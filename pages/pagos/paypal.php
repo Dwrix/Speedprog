@@ -71,8 +71,8 @@ if(isset($_GET["id_solicitud"])){
     <label for="item_name" class="form-label">Solicitud SpeedProg Asesorias</label>
     <input type="hidden" name="item_name" id="" value="Solicitud SpeedProg Asesorias" required=""><br>
 
-    <label for="amount" class="form-label">Monto $1.13 USD</label>
-    <input type="hidden" name="amount" id="" value="1.13" required=""><br>
+    <label for="amount" class="form-label">Monto $1.50 USD (Impuestos incluidos)</label>
+    <input type="hidden" name="amount" id="" value="1.50" required=""><br>
 
     <input type="hidden" name="currency_code" value="USD">
 
