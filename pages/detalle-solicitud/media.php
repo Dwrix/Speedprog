@@ -256,12 +256,7 @@ if($idTutor != "sin-tutor"){
 }
 ?>
 
-
-    </br>
-    </br>
-
-     <a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
-
+    
 <?php 
 if($tipo != 4){
 ?>
@@ -294,7 +289,7 @@ if($tipo != 4){
 }
 ?>
 
-
+<a class="fa fa-arrow-left fa-xs"id="Volver" href="javascript:history.back()"> Volver</a>
     
 
 

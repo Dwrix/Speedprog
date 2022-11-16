@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
-    <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
+    <link rel="stylesheet" href="../../css/notificaciones.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="icon" href="../../img/Speedprogicon.PNG">
@@ -54,7 +54,7 @@ if(isset($_GET['error_mensaje'])){
 ?> 
    
 
-    <section class="">
+    <section class="noti-box">
 <div>
     <h1>NOTIFICACIONES</h1>
     <table border="1" width="700" align="center">
@@ -75,19 +75,19 @@ if(isset($_GET['error_mensaje'])){
                     echo $regNot[1];
                     echo "</td>";
                     echo "<td>";
-                    echo "<a href=../detalle-solicitud/detalle-solicitud2.php?id_solicitud=".$regNot[8]."> Ver Solicitud </a>";  
+                    echo "<a id='verDetalle' href=../detalle-solicitud/detalle-solicitud2.php?id_solicitud=".$regNot[8]."> Ver Solicitud </a>";  
                 }else if($regNot[4] == 2){ //Redireccion a perfil
                     //Conseguir id solicitud para redirigir
                     echo $regNot[1];
                     echo "</td>";
                     echo "<td>";
-                    echo "<a href=../perfil/perfil.php> Ver Perfil </a>"; 
+                    echo "<a id='verDetalle' href=../perfil/perfil.php> Ver Perfil </a>"; 
                 }else if($regNot[4] == 3){ //Redireccion a remuneraciones
                     //Conseguir id solicitud para redirigir
                     echo $regNot[1];
                     echo "</td>";
                     echo "<td>";
-                    echo "<a href=../remuneracion/historial-remuneraciones.php> Ver Remuneraciones </a>"; 
+                    echo "<a id='verDetalle' href=../remuneracion/historial-remuneraciones.php> Ver Remuneraciones </a>"; 
                 }
                 echo "</td>";
                 echo "</tr>";
