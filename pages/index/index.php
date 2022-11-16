@@ -204,6 +204,11 @@ if(isset($_GET['sesion_exitosa'])){
     window.onload = function () { alert("Sesion ha sido iniciada exitosamente"); } 
     </script>';
 }
+if(isset($_GET['paypal_error'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("No se pudo redirigir correctamente a la solicitud"); } 
+    </script>';
+}
 ?> 
 
     <section>
