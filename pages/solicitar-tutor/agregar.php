@@ -46,8 +46,8 @@ if($tipo == '4'){
     $reg = mysqli_fetch_array($registroEspecialidad);
 
     $date = date('y-m-d h:i:s');
-    $estadodesolicitud = 1;
-    
+    $estadodesolicitud = 7; //Esperando Pago
+    /*
     $sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, costo_servicio, boleta_pago, metodo_de_pago_fk, id_usuario_fk) VALUES
     ('$date', '1000', 'informacion de boleta de ejemplo', '$regM[0]', '$userId')";
     $regg1 = mysqli_query($conexion, $sqlDetalle) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -55,10 +55,10 @@ if($tipo == '4'){
 
 
     $idDetalle = mysqli_insert_id($conexion);
-
-    $sql1 = "INSERT INTO solicitud (titulo, descripcion, fecha_ingreso, estado_solicitud_fk, id_detalle_pago_fk, 
+*/
+    $sql1 = "INSERT INTO solicitud (titulo, descripcion, fecha_ingreso, estado_solicitud_fk, 
     id_usuario_fk, id_especialidad_fk ) VALUES ('$titulo',
-    '$descripcion', '$date', '$estadodesolicitud','$idDetalle', '$userId', '$reg[0]')";
+    '$descripcion', '$date', '$estadodesolicitud', '$userId', '$reg[0]')";
     //$regg2 = mysqli_query($conexion, $sql1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $regxd = mysqli_query($conexion, $sql1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $lastIdSolicitud = mysqli_insert_id($conexion);
@@ -107,7 +107,7 @@ if($tipo == '4'){
     
     
 mysqli_close($conexion);
-header("Location: ../index/index.php?mensaje_exito=0");
+header("Location: ../pagos/paypal.php?id_solicitud=$lastIdSolicitud");
     
     
     
