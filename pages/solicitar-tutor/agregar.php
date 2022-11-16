@@ -47,15 +47,7 @@ if($tipo == '4'){
 
     $date = date('y-m-d h:i:s');
     $estadodesolicitud = 7; //Esperando Pago
-    /*
-    $sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, costo_servicio, boleta_pago, metodo_de_pago_fk, id_usuario_fk) VALUES
-    ('$date', '1000', 'informacion de boleta de ejemplo', '$regM[0]', '$userId')";
-    $regg1 = mysqli_query($conexion, $sqlDetalle) or die("Problemas en la seleccion:" . mysqli_error($conexion));
- 
-
-
-    $idDetalle = mysqli_insert_id($conexion);
-*/
+   
     $sql1 = "INSERT INTO solicitud (titulo, descripcion, fecha_ingreso, estado_solicitud_fk, 
     id_usuario_fk, id_especialidad_fk ) VALUES ('$titulo',
     '$descripcion', '$date', '$estadodesolicitud', '$userId', '$reg[0]')";

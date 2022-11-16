@@ -93,7 +93,7 @@
     $totalIngresosTodos = 0;
     $totalEgresosTodos = 0;
     $totalDeudaTodos = 0;
-
+    $valorUSD = 912.25;
 
 
     while ($reg = mysqli_fetch_array($registros)){
@@ -114,13 +114,30 @@
         $registros2 = mysqli_query($conexion, $sql2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $reg2 = mysqli_fetch_row($registros2);
         //Ingresos
-        $sqlIngreso = "SELECT costo_servicio FROM detalle_pago WHERE id_usuario_fk = '$idUsuario'";
+        $sqlIngreso = "SELECT boleta_pago_fk FROM detalle_pago WHERE id_usuario_fk = '$idUsuario'";
         $registros3 = mysqli_query($conexion, $sqlIngreso) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-        while ($regIngresos = mysqli_fetch_array($registros3)){
-            $totalIngreso += $regIngresos[0];
-            $totalIngresosTodos += $regIngresos[0];
+
+        if(mysqli_num_rows($registros3)>0){
+            while ($regIngresos = mysqli_fetch_array($registros3)){
+                $sqlIngreso4 = "SELECT bruto, moneda_fk FROM boleta_pago WHERE id_boleta_pago = '$regIngresos[0]'";
+                $registros4 = mysqli_query($conexion, $sqlIngreso4) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+                $regIngresos4 = mysqli_fetch_array($registros4);
+                if($regIngresos4[1] == 2){
+                    $montoCLP = $regIngresos4[0]*$valorUSD;
+                    $totalIngreso += $montoCLP;
+                    $totalIngresosTodos += $montoCLP;
+
+                }else{
+                    $totalIngreso += $regIngresos4[0];
+                    $totalIngresosTodos += $regIngresos4[0];
+                }
+
+               
+            }
+            
         }
-        
+
+       
         if($idBalance !== null){
             
             $sqlEgreso = "SELECT pago_transferencia_tutor, deuda_actual FROM balance WHERE id_balance = '$idBalance'";

@@ -275,9 +275,10 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
     </br>
     </br>
         <?php 
+        
         $regResenas = mysqli_fetch_row($registrosResenas);
 
-        if ($regResenas[10]!==null){
+        if (isset($regResenas[10])){
             $sqlSolicitudes = "SELECT * FROM solicitud WHERE id_tutor_fk='$userId'";
             $registrosResenas = mysqli_query($conexion, $sqlSolicitudes) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             echo "Calificaciones de solicitudes";
