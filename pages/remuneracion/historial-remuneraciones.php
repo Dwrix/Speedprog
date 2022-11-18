@@ -63,7 +63,6 @@ if(isset($_GET['id_usuario'])){
     <tr>
         <td>ID Remuneracion</td>
         <td>Tutor</td>
-        <td>Monto Pagado</td> 
         <td>Fecha de Pago</td>
         <td>Boleta</td>   
         <td>Administrador</td>
@@ -79,9 +78,8 @@ if(isset($_GET['id_usuario'])){
 
     while ($reg = mysqli_fetch_array($registrosRemuneracion)){
         $idRemuneracion = $reg['remuneracion_id'];
-        $montoPagado = $reg['monto_pagado'];
         $fechaDePago = $reg['fecha_pago'];
-        $boleta = $reg['boleta'];
+        $IDboleta = $reg['id_boleta_remuneracion_fk'];
         $idAdministrador = $reg['administrador_fk'];
         $idMetodoDePago = $reg['metodo_de_pago_fk'];
         $idTutor = $reg['id_tutor_fk'];
@@ -93,6 +91,13 @@ if(isset($_GET['id_usuario'])){
         //Tutor
         $nombreTutor = $regTutor[0];
 
+        //Seleccionar monto
+        $sqlMonto = "SELECT monto_pagado FROM boleta_remuneracion WHERE id_boleta_remuneracion = '$IDboleta'";
+        $registroMonto = mysqli_query($conexion, $sqlMonto) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
+        $regMonto = mysqli_fetch_row($registroMonto); 
+        $montoUSD = $regMonto[0];
+        $montoCLP = 921.70*$montoUSD;
+        
         //Seleccionar metodo de pago
         $sqlM = "SELECT metodo_de_pago FROM metodo_de_pago WHERE id_metodo_de_pago = '$idMetodoDePago'";
         $registroM = mysqli_query($conexion, $sqlM) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
@@ -111,9 +116,8 @@ if(isset($_GET['id_usuario'])){
     <tr>
     <td><?php echo $idRemuneracion ?></td>   
     <td><?php echo $nombreTutor ?></td>
-    <td><?php echo "$".$montoPagado." CLP." ?></td>
+    <td><?php echo "$".$montoCLP." CLP." ?></td>
     <td><?php echo $fechaDePago ?></td>
-    <td><?php echo $boleta ?></td>
     <td><?php echo $administrador ?></td>
     <td><?php echo $metodoDePago ?></td>
     <?php 

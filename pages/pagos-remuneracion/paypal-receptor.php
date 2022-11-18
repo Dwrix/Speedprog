@@ -22,7 +22,7 @@ include_once '../estructura/listaNav.php';
 
 // Validamos la respuesta
 
-if(!empty($_GET['id_remuneracion']) && !empty($_GET['monto'])){ 
+if(!empty($_GET['id_remuneracion']) && !empty($_GET['monto']) && $tipo=4){ 
     // Get transaction information from URL 
     $id_remuneracion = $_GET['id_remuneracion'];  
     $monto = $_GET['monto'];  
