@@ -81,7 +81,7 @@
         ?>
    
 
-    <h1>DETALLE SOLICITUD</h1><br>
+    <h1>DETALLE POSTULACION</h1><br>
     <table border="1" width="700" align="center">
         <tr>
             <td>Enunciado</td>

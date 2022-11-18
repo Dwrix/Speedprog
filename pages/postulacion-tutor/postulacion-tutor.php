@@ -110,6 +110,21 @@
             </span></br>
             <textarea id="descripcion1" rows="20" cols="50" name="descripcion1" required></textarea>
         </div><br>
+        <?php 
+        $sqlPayPalMail = "SELECT mail_paypal FROM usuario WHERE id_usuario = '$userId'";
+        $registrosPay = mysqli_query($conexion, $sqlPayPalMail) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        $regPay = mysqli_fetch_array($registrosPay);
+        echo $regPay[0];
+        if($regPay[0]==""){
+?>
+<span>Ingresar mail de PayPal 
+
+</span></br>
+<textarea id="paypal1" rows="1" cols="60" name="paypal1" required></textarea>
+<?php
+        }
+        ?>
+        
 
         
     <?php 

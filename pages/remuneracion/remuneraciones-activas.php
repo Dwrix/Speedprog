@@ -59,6 +59,7 @@
     <tr>
         <td>Tutor</td>
         <td>Deuda Actual</td>
+        <td>Cuenta PayPal</td>
         <td>Detalles</td>   
     </tr>
     <?php 
@@ -82,7 +83,7 @@
     <tr>
     <td><?php echo $regPos[2] ?></td>   
     <td><?php echo "$".$deuda." CLP." ?></td>  
-
+    <td><?php echo $regPos[10] ?></td> 
 
 
     
