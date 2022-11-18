@@ -34,9 +34,12 @@ if($tipo == '4'){
     
     $descripcion = mysqli_real_escape_string($conexion, $_POST['descripcion1']);
     $especialidad = mysqli_real_escape_string($conexion, $_POST['especialidades1']);
+    $payPalMail = mysqli_real_escape_string($conexion, $_POST['paypal1']);
 
-    
-
+    if(isset($payPalMail)){
+        $sqlUpdate25 = "UPDATE usuario SET mail_paypal = '$payPalMail' WHERE id_usuario='$userId'";
+        $registrosUpdate15 = mysqli_query($conexion, $sqlUpdate25) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
+    }
     
     
     while ($regTutorEspecialidad = mysqli_fetch_array($registros2)){

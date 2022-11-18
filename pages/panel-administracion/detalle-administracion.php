@@ -83,6 +83,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
 //Seleccionar balance en caso de ser tutor
 
 if($usuarioIDTipoDeUsuario == 3){
+    $UsuarioPaypal = $regUsuario15[10];
     $sqlBalance = "SELECT * FROM balance WHERE id_balance='$usuarioIDBalance'";
     $registroBalance = mysqli_query($conexion, $sqlBalance) or die("Problemas en la seleccion:" . mysqli_error($conexion));
     $regBalance = mysqli_fetch_row($registroBalance);
@@ -227,7 +228,18 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
 <?php 
     if($usuarioIDTipoDeUsuario==3){
         ?> 
-        </br>
+        <br>
+        Cuenta PayPal
+        <table border="1" width="700" align="center">
+            <?php
+            echo "<tr><td>";
+            echo $UsuarioPaypal;
+            echo "</td>";
+            echo "</tr>";
+            ?>
+         
+        </table>
+        <br>
         Especialidades del Tutor
         
         <table border="1" width="700" align="center">

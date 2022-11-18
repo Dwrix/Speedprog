@@ -73,6 +73,10 @@ $usuarioIDPais = $regUsuario15[7];
 $usuarioIDTipoDeUsuario = $regUsuario15[8];
 $usuarioIDBalance = $regUsuario15[9];
 
+if($usuarioIDTipoDeUsuario == 3){
+    $UsuarioPaypal = $regUsuario15[10];
+}
+
 //Seleccionar pais del usuario
 $sqlPais = "SELECT pais FROM pais WHERE id_pais='$usuarioIDPais'";
 $registroPais = mysqli_query($conexion, $sqlPais) or die("Problemas en la seleccion:" . mysqli_error($conexion));
@@ -91,6 +95,7 @@ $registroTipoDeUsuario = mysqli_query($conexion, $sqlTipoDeUsuario) or die("Prob
 $regTipoDeUsuario = mysqli_fetch_row($registroTipoDeUsuario);
 
 $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
+
 
 
 ?>
@@ -166,6 +171,20 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
             <textarea id="direccionUsuario1" name="direccionUsuario1" rows="2" cols="50" required><?php echo $usuarioDireccion?></textarea>
             </td>
         </tr>
+        <?php
+if($usuarioIDTipoDeUsuario == 3){
+    ?>
+<tr>
+<td>Mail PayPal</td>
+            <td>
+            <textarea id="paypal1" name="paypal1" rows="2" cols="50" required><?php echo $UsuarioPaypal?></textarea>
+            </td>
+</tr>
+    <?php
+    
+}
+        ?>
+        
         
 </table>
 <input type="submit" value="Modificar" onclick="return confirm('La sesion sera cerrada al realizar los cambios, estas seguro?')">

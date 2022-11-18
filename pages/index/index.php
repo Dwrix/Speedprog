@@ -224,6 +224,21 @@ if(isset($_GET['pedido_ya_pagado'])){
     window.onload = function () { alert("Este pedido ya fue pagado"); } 
     </script>';
 }
+if(isset($_GET['paypal_error_2'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("No se pudo redirigir correctamente la remuneracion"); } 
+    </script>';
+}
+if(isset($_GET['pedido_ya_remunerado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("La remuneracion ya fue realizada"); } 
+    </script>';
+}
+if(isset($_GET['pedido_remunerado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Remuneracion realizada"); } 
+    </script>';
+}
 ?> 
 
     <section>

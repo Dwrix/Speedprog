@@ -90,6 +90,10 @@
             <td>Deuda Actual</td>
             <td><?php echo "$".$regB[6]?></td>
         </tr>
+        <tr>
+            <td>Cuenta PayPal</td>
+            <td><?php echo $regPos[10]?></td>
+        </tr>
     </table>
 
 
