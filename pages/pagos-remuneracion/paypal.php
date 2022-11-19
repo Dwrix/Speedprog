@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
-    <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
+    <link rel="stylesheet" href="../../css/paypal.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="icon" href="../../img/Speedprogicon.PNG">
@@ -77,18 +77,20 @@ $payPalMailTutor = $regSS[1];
 ?> 
    
 
-    <section class="">
+   <section class="paypal-box">
 <div>
-    <h1>PAYPAL</h1>
+    <span class="paypal-logo1">
+      <i id="pay">Pay</i><i id="pal">Pal</i>
+    </span><br><br>
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form_pay">
 
     <input type="hidden" name="business" value="<?php echo $payPalMailTutor ?>">
     <input type="hidden" name="cmd" value="_xclick">
 
-    <label for="item_name" class="form-label">Pago de Remuneracion a <?php echo $nombreTutor ?></label>
+    <label for="item_name" class="form-label">Pago de Remuneracion a: <?php echo $nombreTutor ?></label><br>
     <input type="hidden" name="item_name" id="" value="Pago de Remuneracion a <?php echo $nombreTutor ?>" required=""><br>
 
-    <label for="amount" class="form-label">Monto <?php echo $montoDolar?> USD (Impuestos incluidos)</label>
+    <label for="amount" class="form-label">Monto: <?php echo $montoDolar?> USD (Impuestos incluidos)</label>
     <input type="hidden" name="amount" id="" value="<?php echo $montoDolar?>" required=""><br>
 
     <input type="hidden" name="currency_code" value="USD">
@@ -102,7 +104,14 @@ $payPalMailTutor = $regSS[1];
     <input type="hidden" name="return" value="http://localhost:3000/pages/pagos-remuneracion/paypal-receptor.php?id_remuneracion=<?php echo $idRemuneracion."&monto=".$montoDolar ?>"> <!-- Modificar al hosting real -->
     <input type="hidden" name="cancel_return" value="http://localhost:3000/pages/pagos-remuneracion/paypal-cancel-return.php"> <!-- Modificar al hosting real -->
     <br>
-    <button type="submit">Ir a PayPal</button>
+    <button class="paypal-button">
+        <span class="paypal-button-title">
+            Compra ahora con
+        </span>
+        <span class="paypal-logo2">
+            <i id="pay">Pay</i><i id="pal">Pal</i>
+        </span>
+    </button>
     <form>
 </section>
     <?php 

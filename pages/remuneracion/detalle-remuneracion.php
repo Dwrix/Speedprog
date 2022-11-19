@@ -99,7 +99,7 @@
 
 <form method="POST" action="procesamiento-remuneracion.php?permiso=1">
 </br>Monto a transferir en CLP: 
-<input type='text' id='monto1' name='monto1' required></br>
+<input type='number' id='monto1' name='monto1' required></br>
 <?php 
     echo "<input type='hidden' id='idBalance1' name='idBalance1' value='$idBalance'>"; //id balance
     echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$regPos[0]'>"; //id tutor

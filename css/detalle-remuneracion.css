@@ -40,7 +40,8 @@
     background-color: rgb(0, 0, 0);
 }
 
-.Tabla-detalle-remun input[type="text"]
+.Tabla-detalle-remun input[type="text"],
+.Tabla-detalle-remun input[type="number"]
 {
 
 	border: none;

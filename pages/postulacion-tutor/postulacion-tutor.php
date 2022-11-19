@@ -120,7 +120,7 @@
 <span>Ingresar mail de PayPal 
 
 </span></br>
-<textarea id="paypal1" rows="1" cols="60" name="paypal1" required></textarea>
+<input type="text" id="paypal1" name="paypal1" required>
 <?php
         }
         ?>
