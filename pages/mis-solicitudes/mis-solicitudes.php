@@ -92,7 +92,8 @@ if($tipo=='2'){
         <td>Descripcion</td>
         <td>Estado de la Solicitud</td>
         <td>Usuario</td>
-        <td>Tutor</td>   
+        <td>Tutor</td>  
+        <td>Premium</td> 
         <td>Detalles</td>   
     </tr>
     <?php
@@ -110,13 +111,13 @@ if($tipo=='2'){
 
         $buscarTutor = $reg['id_tutor_fk'];
         if(isset($buscarTutor)){
-            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $sqlTutor = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarTutor";
             $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regTut = mysqli_fetch_row($registrosTut);
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -155,6 +156,13 @@ echo "Sin determinar";
     }
     
     ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
     <td><a id="verDetalle"href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     
     <?php }
@@ -177,7 +185,8 @@ echo "Sin determinar";
         <td>Descripcion</td>   
         <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
-        <td>Tutor</td>   
+        <td>Tutor</td>  
+        <td>Premium</td> 
         <td>Detalles</td>   
     </tr>
     <?php
@@ -196,13 +205,13 @@ echo "Sin determinar";
 
         $buscarTutor = $reg['id_tutor_fk'];
         if(isset($buscarTutor)){
-            $sqlTutor = "SELECT nombre FROM usuario WHERE id_usuario = $buscarTutor";
+            $sqlTutor = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarTutor";
             $registrosTut = mysqli_query($conexion, $sqlTutor) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regTut = mysqli_fetch_row($registrosTut);
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -238,6 +247,13 @@ echo "Sin determinar";
     }
     
     ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
     <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php 
 
     echo $reg['id_solicitud'] 
@@ -257,7 +273,8 @@ echo "Sin determinar";
         <td>Descripcion</td>
         <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
-        <td>Tutor</td>   
+        <td>Tutor</td> 
+        <td>Premium</td>  
         <td>Detalles</td>   
     </tr>
     <?php
@@ -283,7 +300,7 @@ echo "Sin determinar";
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -319,6 +336,13 @@ echo $regTut[0];
 echo "Sin determinar";
     }
     
+    ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
     ?></td>
     <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
     

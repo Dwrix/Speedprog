@@ -60,7 +60,7 @@ $usuarioFecha = $regUsuario15[3];
 $usuarioDireccion = $regUsuario15[4];
 $usuarioPassword = $regUsuario15[5];
 $usuarioCorreo = $regUsuario15[6];
-
+$usuarioPremium = $regUsuario15[11];
 $usuarioIDPais = $regUsuario15[7];
 $usuarioIDTipoDeUsuario = $regUsuario15[8];
 $usuarioIDBalance = $regUsuario15[9];
@@ -154,6 +154,17 @@ Informacion Personal
         <tr>
             <td>Tipo de Usuario</td>
             <td><?php echo $usuarioTipoDeUsuario?></td>
+
+        </tr>
+        <tr>
+            <td>Usuario Premium</td>
+            <td><?php
+             if($usuarioPremium==0){
+                echo "No";
+             }else{
+                echo "Si";
+             }
+             ?></td>
 
         </tr>
 </table>

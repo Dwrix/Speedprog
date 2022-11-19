@@ -16,5 +16,6 @@ $res555 = mysqli_fetch_array($reg1555);
 $userId = $res555[0];
 $userName = $res555[2];
 $tipo = $res555[8];
+$premium = $res555[11];
     
 ?>

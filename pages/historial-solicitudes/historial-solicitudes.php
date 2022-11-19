@@ -65,6 +65,7 @@ if($tipo=='2'){
         <td>Estado de la Solicitud</td>
         <td>Usuario</td>
         <td>Tutor</td> 
+        <td>Premium</td>
         <td>Calificacion</td>  
         <td>Comentarios</td> 
         <td>Detalles</td>
@@ -91,7 +92,7 @@ if($tipo=='2'){
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -143,6 +144,13 @@ echo "Sin determinar";
     }
     
     ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
     <td><?php
     $estadoSolicitudId = $reg['estado_solicitud_fk'];
     $regIdSolicitud2 = $reg['id_solicitud'];
@@ -193,6 +201,7 @@ echo "Sin determinar";
         <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
         <td>Tutor</td> 
+        <td>Premium</td>
         <td>Calificacion</td>  
         <td>Comentarios</td>  
         <td>Detalles</td>
@@ -220,7 +229,7 @@ echo "Sin determinar";
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -272,6 +281,13 @@ echo "Sin determinar";
     }
     
     ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
     <td><?php
     $estadoSolicitudId = $reg['estado_solicitud_fk'];
     $regIdSolicitud2 = $reg['id_solicitud'];
@@ -321,6 +337,7 @@ echo "Sin determinar";
         <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
         <td>Tutor</td> 
+        <td>Premium</td>
         <td>Calificacion</td>  
         <td>Comentarios</td> 
         <td>Detalles</td>
@@ -349,7 +366,7 @@ echo "Sin determinar";
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -400,6 +417,13 @@ echo $regTut[0];
 echo "Sin determinar";
     }
     
+    ?></td>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
     ?></td>
     <td><?php
     $estadoSolicitudId = $reg['estado_solicitud_fk'];

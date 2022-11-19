@@ -239,6 +239,21 @@ if(isset($_GET['pedido_remunerado'])){
     window.onload = function () { alert("Remuneracion realizada"); } 
     </script>';
 }
+if(isset($_GET['error_administrador_premium'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Error, un usuario administrador no puede contratar servicios premium"); } 
+    </script>';
+}
+if(isset($_GET['already_premium'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Error, usted ya es usuario premium"); } 
+    </script>';
+}
+if(isset($_GET['premium_pagado'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Version premium pagada exitosamente!"); } 
+    </script>';
+}
 ?> 
 
     <section>
