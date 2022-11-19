@@ -85,7 +85,8 @@ if(isset($_GET['error_mensaje'])){
         <td>Descripcion</td>
         <td>Estado de la Solicitud</td>   
         <td>Usuario</td>
-        <td>Tutor</td>  
+        <td>Tutor</td> 
+        <td>Premium</td> 
         <td>Detalles</td>   
     </tr>
     <?php 
@@ -131,7 +132,7 @@ if(isset($_GET['especialidades1']) && $_GET['especialidades1'] != "Seleccionar")
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -170,6 +171,16 @@ echo "Sin determinar";
     }
     
     ?></td>
+
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
+
+
     <td><a href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
     echo $reg['id_solicitud']
     ?>"> Ver detalles </td>
@@ -206,7 +217,7 @@ echo "Sin determinar";
         }
         $buscarUsuario = $reg['id_usuario_fk'];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -242,7 +253,17 @@ echo $regTut[0];
 echo "Sin determinar";
     }
     
-    ?><td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
+    ?>
+    <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
+    
+    
+    <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud.php?id_solicitud=<?php
     echo $reg['id_solicitud']
     ?>"> Ver detalles </td>
     <?php }

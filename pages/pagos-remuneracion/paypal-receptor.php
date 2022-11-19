@@ -72,7 +72,7 @@ if(!empty($_GET['id_remuneracion']) && !empty($_GET['monto']) && $tipo=4){
         $neto_total = $regBal2[4];
         $pago_transferencia_tutor = $regBal2[5];
         $deuda_actual = $regBal2[6];
-
+            
           
         
         $pago_transferencia_tutor += $montoCLP; //Actualizar el monto maximo que la empresa le ha transferido a x tutor

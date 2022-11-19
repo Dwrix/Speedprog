@@ -84,7 +84,7 @@
         }
         $buscarUsuario = $reg5[8];
         if(isset($buscarUsuario)){
-            $sqlUsuario1 = "SELECT nombre FROM usuario WHERE id_usuario = $buscarUsuario";
+            $sqlUsuario1 = "SELECT nombre, premium FROM usuario WHERE id_usuario = $buscarUsuario";
             $registrosUsuario = mysqli_query($conexion, $sqlUsuario1) or die("Problemas en la seleccion!:" . mysqli_error($conexion));
             $regUsuario1 = mysqli_fetch_row($registrosUsuario);
         }
@@ -113,6 +113,16 @@
             <td>Descripcion</td>
             <td><?php echo $reg5[2]?></td>
         </tr>
+        <tr>
+            <td>Premium</td>
+        <td><?php 
+    if($regUsuario1[1]==0){
+        echo "No";
+    }else{
+        echo "Si";
+    }
+    ?></td>
+    </tr>
         <tr>
         <td>Estado de la solicitud</td>
         <td><?php if(isset($buscarEstado)){

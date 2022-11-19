@@ -66,12 +66,13 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
     $payment_gross = $_GET['amt']; 
     $currency_code = $_GET['cc']; 
     $payment_status = $_GET['st']; 
-    $payment_fee = 0.38;
+    $payment_fee = 0.87;
     $moneda = 2;
     $metodo = 1;
+    $tipodePago = 2; //Premium
     $neto = $payment_gross - $payment_fee;
     $date = date('y-m-d h:i:s');
-    $estadodesolicitud = 1; //Pago realizado, solicitud abierta
+
 
     //Crear boleta de pago, primero verificar si id boleta sitio no existe
     
@@ -82,16 +83,11 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
             header("Location: ../index/index.php?pedido_ya_pagado=0");
         }else{
             
-            //Conseguir usuario de la solicitud
-            $sqlUsuario = "SELECT id_usuario_fk FROM solicitud WHERE id_solicitud = '$item_number'";
-            $registrosUsuario = mysqli_query($conexion, $sqlUsuario) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-            $regUsuario = mysqli_fetch_row($registrosUsuario);
-            $usuario = $regUsuario[0];
-            $tipoPago = 1; //Solicitud
+
             
             //Boleta no existe
-            $sqlBoleta = "INSERT INTO boleta_pago (id_boleta_sitio, bruto, impuesto, neto, moneda_fk, id_solicitud_fk, metodo_de_pago_fk, tipo_pago_fk) 
-            VALUES ('$txn_id', '$payment_gross', '$payment_fee', '$neto', '$moneda', '$item_number', '$metodo', '$tipoPago')";
+            $sqlBoleta = "INSERT INTO boleta_pago (id_boleta_sitio, bruto, impuesto, neto, moneda_fk, metodo_de_pago_fk, tipo_pago_fk) 
+            VALUES ('$txn_id', '$payment_gross', '$payment_fee', '$neto', '$moneda', '$metodo', '$tipodePago')";
             $registrosBoleta = mysqli_query($conexion, $sqlBoleta) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $IDBoleta = mysqli_insert_id($conexion);
     
@@ -100,16 +96,16 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
             //Crear detalle pago y linkear la boleta al detalle pago
             
             $sqlDetalle = "INSERT INTO detalle_pago (fecha_de_pago, boleta_pago_fk, metodo_de_pago_fk, id_usuario_fk) VALUES
-            ('$date', $IDBoleta, '$metodo', '$usuario')";
+            ('$date', $IDBoleta, '$metodo', '$userId')";
             $regg1 = mysqli_query($conexion, $sqlDetalle) or die("Problemas en la seleccion:" . mysqli_error($conexion));
             $idDetalle = mysqli_insert_id($conexion);
-            
+            $setPremium = 1;
             //Insertar id de detalle pago en la solicitud
 
-            $sqlUpdate1 = "UPDATE solicitud SET estado_solicitud_fk = '$estadodesolicitud', id_detalle_pago_fk = '$idDetalle' WHERE id_solicitud='$item_number'";
+            $sqlUpdate1 = "UPDATE usuario SET premium = '$setPremium' WHERE id_usuario = '$userId'";
             $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate1) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
-            header("Location: ../index/index.php?pedido_pagado=0");
+            header("Location: ../index/index.php?premium_pagado=0");
 
         }
         
