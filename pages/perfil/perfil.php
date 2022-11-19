@@ -321,9 +321,7 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
 ?>
 <a href="modificar-perfil.php"> Modificar Perfil <a>
 </br>
-</br>
-</br>
-</br>
+
 
 <a id="Eliminaruser"href="eliminar-perfil.php?permiso=1" onclick="return confirm('Estas seguro?')"> Eliminar Usuario </a>
 </br>      

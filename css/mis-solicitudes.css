@@ -12,6 +12,7 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
 .Tabla-solicitudes h1{
     color: white;
     font-size: 20px;
@@ -20,6 +21,10 @@
 .Tabla-solicitudes table {
     background-color: rgba(0, 0, 0, 0.219);
 	color: white;
+}
+.checkbtn{
+    margin-top: 30px;
+
 }
 
 #verDetalle:hover{

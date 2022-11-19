@@ -4,10 +4,16 @@
     height: 50%;
     
 }
+.checkbtn{
+    margin-top: 30px;
+
+}
 
 .Panel-adm-box {
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 20px;
     margin-left: 57px;
     float: left;
     position: relative;
@@ -16,6 +22,8 @@
     height: auto;
     background: rgba(0, 0, 0, 0.438);
 	color: #fff;
+    
+    
     
 }
 .Panel-adm-box ul a:link, a:visited {
