@@ -88,16 +88,20 @@ $tipoNot = 2;
 
 
     }else if($resultado==1){
-        //Proceso de aceptacion
+        
 
         //Agregar especialidad a usuario
         $sqlDetalle2 = "INSERT INTO usuario_especialidad (id_usuario_fk, id_especialidad_fk) VALUES ('$idUsuario', '$idEspecialidad')";
         $regg12 = mysqli_query($conexion, $sqlDetalle2) or die("Problemas en la seleccion:" . mysqli_error($conexion));
-        
+
         //Determinar si el usuario ya es tutor para saber si crear o no balance y/o cambiar su estado
         $sqlSelectUsuario = "SELECT id_tipo_usuario_fk FROM usuario WHERE id_usuario='$idUsuario'";
         $registroSelectUsuario = mysqli_query($conexion, $sqlSelectUsuario) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $regSS = mysqli_fetch_row($registroSelectUsuario);
+
+        
+        
+        
 
         if($regSS[0]!=3){
             //Crear balance para tutor
@@ -113,6 +117,8 @@ $tipoNot = 2;
             $registrosUpdate1 = mysqli_query($conexion, $sqlUpdate2) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
         }
         
+
+
         //Update la postulacion
         $sqlUpdate3 = "UPDATE postulacion_tutor SET estado_fk = '1', respuesta_evaluador = '$respuesta', evaluador_fk = '$userId' WHERE id_postulacion = '$idPostulacion'" ;
         $registrosUpdate3 = mysqli_query($conexion, $sqlUpdate3) or die("Problemas en la seleccion update solicitud:" . mysqli_error($conexion));
