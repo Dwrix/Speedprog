@@ -1,4 +1,13 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/password_strength.js"></script>
+<script>
+    $(document).ready(function($) {
+        $('#myPassword').strength_meter();
+    });
+    </script>
 <?php 
+
 
 if(!isset($_GET['permiso'])){
     header("Location: ../index/index.php?error_mensaje=0");
@@ -31,7 +40,7 @@ if(!isset($_GET['permiso'])){
     $rutUsuario = mysqli_real_escape_string($conexion, $_POST['rutUsuario1']);
     $mailUsuario = mysqli_real_escape_string($conexion, $_POST['mailUsuario1']);
     $mailPayPal = mysqli_real_escape_string($conexion, $_POST['paypal1']);
-    $passwordUsuario = mysqli_real_escape_string($conexion, $_POST['pass']);
+    $passwordUsuario = mysqli_real_escape_string($conexion, $_POST['passwordUsuario1']);
 
    
     
