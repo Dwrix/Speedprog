@@ -117,7 +117,7 @@ $registroPostulacion = mysqli_query($conexion, $sqlPostulacion) or die("Problema
 ?>
    
 Informacion Personal 
-    <table border="1" width="700" align="center">
+    <table border="2" width="700px" align="center">
         
 
         <tr>

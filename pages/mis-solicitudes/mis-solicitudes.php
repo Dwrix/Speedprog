@@ -83,18 +83,18 @@ if($tipo=='2'){
     ?>
     
     
-    <h1>MIS SOLICiTUDES ACTIVAS</h1><br>
+    <h1>MIS SOLICITUDES ACTIVAS</h1><br>
     <table border="1" width="700" align="center">
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>
-        <td>Estado de la Solicitud</td>
-        <td>Usuario</td>
-        <td>Tutor</td>  
-        <td>Premium</td> 
-        <td>Detalles</td>   
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>
+        <th>Estado de la Solicitud</th>
+        <th>Usuario</th>
+        <th>Tutor</th>  
+        <th>Premium</th> 
+        <th>Detalles</th>   
     </tr>
     <?php
     while ($reg = mysqli_fetch_array($registros)){   
@@ -178,17 +178,18 @@ echo "Sin determinar";
         header("Location: ../index/index.php?error_mensaje=4");
     }
     ?>
+    <h1>MIS SOLICITUDES ACTIVAS</h1><br>
     <table border="1" width="700" align="center">
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>   
-        <td>Estado de la Solicitud</td>   
-        <td>Usuario</td>
-        <td>Tutor</td>  
-        <td>Premium</td> 
-        <td>Detalles</td>   
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>   
+        <th>Estado de la Solicitud</th>   
+        <th>Usuario</th>
+        <th>Tutor</th>  
+        <th>Premium</th> 
+        <th>Detalles</th>   
     </tr>
     <?php
 
