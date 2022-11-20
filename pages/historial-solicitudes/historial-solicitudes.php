@@ -149,6 +149,8 @@ echo "Sin determinar";
         echo "No";
     }else{
         echo "Si";
+        ?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
     }
     ?></td>
     <td><?php
@@ -286,6 +288,8 @@ echo "Sin determinar";
         echo "No";
     }else{
         echo "Si";
+        ?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
     }
     ?></td>
     <td><?php
@@ -423,6 +427,8 @@ echo "Sin determinar";
         echo "No";
     }else{
         echo "Si";
+        ?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
     }
     ?></td>
     <td><?php

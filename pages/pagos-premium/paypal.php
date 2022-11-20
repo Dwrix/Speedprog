@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="../../js/jquery-3.5.1.min.js"></script>
     <script src="../../js/Slider.js"></script>
-    <link rel="stylesheet" href="../../css/solicitudes-disponibles.css">
+    <link rel="stylesheet" href="../../css/paypal.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="icon" href="../../img/Speedprogicon.PNG">
@@ -56,16 +56,18 @@ if(isset($_GET['error_mensaje'])){
 ?> 
    
 
-    <section class="">
+   <section class="paypal-box">
 <div>
-    <h1>PAYPAL</h1>
+    <span class="paypal-logo1">
+      <i id="pay">Pay</i><i id="pal">Pal</i>
+    </span><br><br>
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form_pay">
 
     <input type="hidden" name="business" value="sb-x43f43f22204762@business.example.com">
     <input type="hidden" name="cmd" value="_xclick">
 
     <label for="item_name" class="form-label">Version Premium SpeedProg Asesorias</label>
-    <input type="hidden" name="item_name" id="" value="Version Premium SpeedProg Asesorias" required=""><br>
+    <input type="hidden" name="item_name" id="" value="Version Premium SpeedProg Asesorias" required=""><br><br>
 
     <label for="amount" class="form-label">Monto $10.62 USD (Impuestos incluidos)</label>
     <input type="hidden" name="amount" id="" value="10.62" required=""><br>
@@ -81,7 +83,14 @@ if(isset($_GET['error_mensaje'])){
     <input type="hidden" name="return" value="http://localhost:3000/pages/pagos-premium/paypal-receptor.php"> <!-- Modificar al hosting real -->
     <input type="hidden" name="cancel_return" value="http://localhost:3000/pages/pagos-premium/paypal-cancel-return.php"> <!-- Modificar al hosting real -->
     <br>
-    <button type="submit">Ir a PayPal</button>
+    <button class="paypal-button">
+        <span class="paypal-button-title">
+            Compra ahora con
+        </span>
+        <span class="paypal-logo2">
+            <i id="pay">Pay</i><i id="pal">Pal</i>
+        </span>
+    </button>
     <form>
 </section>
     <?php 

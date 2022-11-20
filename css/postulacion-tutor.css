@@ -34,7 +34,7 @@ select {
 	width: 250px;
  }
 
- .Solicitar-tutor-box input[type="text"]{
+ .Solicitar-tutor-box input[type="email"]{
 	width: 250px;
 	border: none;
 	border-bottom: 1px solid #fff;

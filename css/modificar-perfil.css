@@ -71,57 +71,6 @@ select {
 	width: 250px;
  }
 
- #nombreUsuario1 {
-	border: none;
-	width: 350px;
-	border-bottom: 1px solid #fff;
-	background: rgb(173, 173, 173);
-	outline: none;
-	height: 32px;
-	
-	font-size: 16px;
- }
- #rutUsuario1{
-	border: none;
-	width: 350px;
-	border-bottom: 1px solid #fff;
-	background: rgb(173, 173, 173);
-	outline: none;
-	height: 32px;
-	
-	font-size: 16px;
- }
- #mailUsuario1 {
-	border: none;
-	width: 350px;
-	border-bottom: 1px solid #fff;
-	background: rgb(173, 173, 173);
-	outline: none;
-	height: 32px;
-	
-	font-size: 16px;
- }
- #passwordUsuario1 {
-	border: none;
-	
-	border-bottom: 1px solid #fff;
-	background: rgb(173, 173, 173);
-	
-	outline: none;
-	height: 32px;
-	
-	font-size: 16px;
- }
- #direccionUsuario1{
-	border: none;
-	width: 350px;
-	border-bottom: 1px solid #fff;
-	background: rgb(173, 173, 173);
-	outline: none;
-	height: 32px;
-	
-	font-size: 16px;
- }
 
  
 /* vENTANA VERIFICACION*/
@@ -335,6 +284,27 @@ select {
 .pswd_info .valid {
 	background:url(../img/valid.png) no-repeat 0 50%;   
 	color:#3a7d34;
+}
+
+
+.Mod-perfil-box input[type="email"],
+.Mod-perfil-box input[type="text"],
+.Mod-perfil-box input[type="password"]
+{
+
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+
+	
+}
+
+#direccionUsuario1{
+	width: 400px;
 }
 
 #Volver{

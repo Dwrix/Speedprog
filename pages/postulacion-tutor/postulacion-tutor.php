@@ -117,10 +117,10 @@
         echo $regPay[0];
         if($regPay[0]==""){
 ?>
-<span>Ingresar mail de PayPal 
+<span>Ingresar correo de PayPal 
 
 </span></br>
-<input type="text" id="paypal1" name="paypal1" required>
+<input type="email" id="paypal1" name="paypal1" required>
 <?php
         }
         ?>

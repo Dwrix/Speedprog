@@ -9,18 +9,9 @@
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../js/password_strength.js"></script>
     <link rel="icon" href="../../img/Speedprogicon.PNG">
 
-    <script>
-    $(document).ready(function($) {
-        $('#myPassword').strength_meter();
-    });
-    </script>
-
-
+   
     <title>SpeedProg</title>
 
 <body>
@@ -111,34 +102,32 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
         <tr>
             <td>Nombre</td>
             <td>
-                <textarea id="nombreUsuario1" name="nombreUsuario1" rows="2" cols="50" required><?php echo $usuarioNombre?></textarea>    
+                <input type="text" id="nombreUsuario1" name="nombreUsuario1"  value="<?php echo $usuarioNombre?>"required>    
             </td>
         </tr>
         <tr>
             <td>ID Personal</td>
             <td>
-            <textarea id="rutUsuario1" name="rutUsuario1" rows="2" cols="50" required><?php echo $UsuarioRut?></textarea>   
-        </td>
+                <input type="text" id="rutUsuario1" name="rutUsuario1"  value="<?php echo $UsuarioRut?>"required>  
+            </td>
         </tr>
         <tr>
-            <td>Mail</td>
+            <td>Correo</td>
             <td>
-            <textarea id="mailUsuario1" name="mailUsuario1" rows="2" cols="50" required><?php echo $usuarioCorreo?></textarea>    
+            <input type="email" id="mailUsuario1" name="mailUsuario1"  value="<?php echo $usuarioCorreo?>"required>    
             </td>
         </tr>
         <tr>
             <td>Password</td> 
             <td>
-                 <div class="effects">
-                    <div id="myPassword"></div>
-       
-                </div>
+                <input type="password" id="passwordUsuario1" name="passwordUsuario1"  placeholder="Ingrese nueva contraseña">
             </td>
         </tr>
         <tr>
             <td>Fecha de Nacimiento</td>
             <td>
-            <input type="date" id="fechaUsuario1" name="fechaUsuario1" required><?php echo "Su fecha de nacimiento: ".$usuarioFecha?><br> 
+            <input type="date" min="1900-01-01" max="2022-01-01" id="fechaUsuario1" name="fechaUsuario1" required value="<?php 
+            echo date('Y-m-d',strtotime($usuarioFecha))?>"><br> 
                 
             </td>
         </tr>
@@ -146,21 +135,28 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
             <td>Pais</td>
             <td>
             <select id="paisUsuario1" name="paisUsuario1">
-        <?php 
+            <?php 
     while ($regPaises = mysqli_fetch_row($registroPaises)){
-        ?>
+        if($regPaises[0]==$usuarioPais){
+            ?>
+            <option selected="<?php echo $regPaises[0] ?>"><?php echo $regPaises[0] ?></option>
+            <?php
+        }else{
+            ?>
+            
             <option><?php echo $regPaises[0] ?></option>
         <?php }
+        }
         ?>
         </select>
-                <?php echo "Su pais: ".$usuarioPais?>
+                
             </td>
             
         </tr>
         <tr>
             <td>Direccion</td>
             <td>
-            <textarea id="direccionUsuario1" name="direccionUsuario1" rows="2" cols="50" required><?php echo $usuarioDireccion?></textarea>
+                <input type="text" id="direccionUsuario1" name="direccionUsuario1" value="<?php echo $usuarioDireccion?>" required>
             </td>
         </tr>
         <?php

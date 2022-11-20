@@ -160,7 +160,8 @@ echo "Sin determinar";
     if($regUsuario1[1]==0){
         echo "No";
     }else{
-        echo "Si";
+        echo "Si";?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
     }
     ?></td>
     <td><a id="verDetalle"href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
@@ -251,7 +252,8 @@ echo "Sin determinar";
     if($regUsuario1[1]==0){
         echo "No";
     }else{
-        echo "Si";
+        echo "Si"; ?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php 
     }
     ?></td>
     <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php 
@@ -341,7 +343,9 @@ echo "Sin determinar";
     if($regUsuario1[1]==0){
         echo "No";
     }else{
-        echo "Si";
+        echo "Si";?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
+        
     }
     ?></td>
     <td><a id="verDetalle" href="../detalle-solicitud/detalle-solicitud2.php?id_solicitud=<?php echo $reg['id_solicitud'] ?>"> Ver detalles </td>
