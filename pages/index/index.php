@@ -254,6 +254,16 @@ if(isset($_GET['premium_pagado'])){
     window.onload = function () { alert("Version premium pagada exitosamente!"); } 
     </script>';
 }
+if(isset($_GET['postulacion_en_proceso'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Ya existe una postulacion a este idioma que se encuentra en proceso"); } 
+    </script>';
+}
+if(isset($_GET['ya_tiene'])){
+    echo '<script type="text/javascript">
+    window.onload = function () { alert("Error, el tutor ya tiene la especialidad seleccionada"); } 
+    </script>';
+}
 ?> 
 
     <section>

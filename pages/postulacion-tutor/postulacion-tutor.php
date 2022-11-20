@@ -65,6 +65,8 @@
             //Este registro debe ser utilizado directamente para que funcione, no puede ser inscrito aqui
             //Si el usuario es tutor, seleccionar sus especialidades y sus nombres
 
+            
+            
             if($tipo==3){
                 ?> 
                 </br>
@@ -89,11 +91,68 @@
         </br>
         <?php
             }
+        //Buscar seleccion de postulacion_tutor para determinar si el usuario tiene o no postulaciones
+        $sqlPostulacion = "SELECT * FROM postulacion_tutor WHERE id_usuario_fk='$userId'";
+        $registroPostulacion = mysqli_query($conexion, $sqlPostulacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+        if(mysqli_num_rows($registroPostulacion) > 0){
 
-        ?>
-        
+       ?>
+        </br>
+Postulaciones del usuario
+<table border="1" width="700" align="center">
+<tr>
+<td>Especialidad</td>
+<td>Evaluador</td>
+<td>Resultado</td>
+<td>Respuesta del evaluador</td>
+</tr>
+    <?php
+while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
+    echo "<tr>";
+    $postulacionID = $regPostulacion[0];
+    $idEvaluador = $regPostulacion[3];
+    $estadoPostulacionID = $regPostulacion[4];
+    $especialidadID = $regPostulacion[6];
+    $respuestaEvaluador = $regPostulacion[7];
+
+    $sqlNombreEstadoPostulacion = "SELECT estado_postulacion FROM estado_postulacion_tutor WHERE id_estado_postulacion='$estadoPostulacionID'";
+    $registroNombreEstadoPostulacion = mysqli_query($conexion, $sqlNombreEstadoPostulacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    $regNEP = mysqli_fetch_row($registroNombreEstadoPostulacion);
+
+    $usuarioEstadoDePostulacion = $regNEP[0];
+
+    //Conseguir ID y nombre del evaluador mediante evaluador_fk el cual consiste de un administrador
+    $sqlEvaluadorPostulacion = "SELECT nombre FROM usuario WHERE id_usuario='$idEvaluador'";
+    $registroEvaluadorPostulacion = mysqli_query($conexion, $sqlEvaluadorPostulacion) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    
+    if(mysqli_num_rows($registroEvaluadorPostulacion)>=1){
+        $regEP = mysqli_fetch_row($registroEvaluadorPostulacion);
+
+        $usuarioPostulacionTutorNombreEvaluador = $regEP[0];
+    }else{
+        $usuarioPostulacionTutorNombreEvaluador = "Sin asignar";
+    }
+    
+
+    //Especialidad evaluada
+    $sqlxdd = "SELECT especialidad FROM especialidad WHERE id_especialidad='$especialidadID'";
+    $registroxdd = mysqli_query($conexion, $sqlxdd) or die("Problemas en la seleccion:" . mysqli_error($conexion));
+    $regxdd = mysqli_fetch_row($registroxdd);
+
+    $usuarioPostulacionEspecialidad = $regxdd[0];
+    echo "<td>".$usuarioPostulacionEspecialidad."</td>";
+    echo "<td>".$usuarioPostulacionTutorNombreEvaluador."</td>";
+    echo "<td>".$usuarioEstadoDePostulacion."</td>";
+    echo "<td>".$respuestaEvaluador."</td>";
+    echo "</tr>";
+}
+?> </table> <?php
+}
+
+?>
         
         <div>
+            <br>
             <div>Seleccionar lenguaje de programacion a postular</div>
             <select id="especialidades1" name="especialidades1">
             <?php 
@@ -114,7 +173,6 @@
         $sqlPayPalMail = "SELECT mail_paypal FROM usuario WHERE id_usuario = '$userId'";
         $registrosPay = mysqli_query($conexion, $sqlPayPalMail) or die("Problemas en la seleccion:" . mysqli_error($conexion));
         $regPay = mysqli_fetch_array($registrosPay);
-        echo $regPay[0];
         if($regPay[0]==""){
 ?>
 <span>Ingresar correo de PayPal 
