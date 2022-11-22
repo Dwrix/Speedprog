@@ -100,35 +100,32 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
         
 
         <tr>
-            <td>Nombre</td>
+            <th>Nombre</th>
             <td>
                 <input type="text" id="nombreUsuario1" name="nombreUsuario1"  value="<?php echo $usuarioNombre?>"required>  
             </td>
         </tr>
         <tr>
-            <td>ID Personal</td>
+            <th>ID Personal</th>
             <td>
                 <input type="text" id="rutUsuario1" name="rutUsuario1"  value="<?php echo $UsuarioRut?>"required> 
             </td>
         </tr>
         <tr>
-            <td>Correo</td>
+            <th>Correo</th>
             <td>
             <input type="email" id="mailUsuario1" name="mailUsuario1"  value="<?php echo $usuarioCorreo?>"required>
             </td>
         </tr>
         <tr>
-            <td>Password</td> 
+            <th>Password</th> 
             <td>
-                <input type="password" id="passwordUsuario1" name="passwordUsuario1"  placeholder="Ingrese nueva contraseña"> 
-
-
-                
+                <input type="password" id="passwordUsuario1" name="passwordUsuario1"  placeholder="Ingrese nueva contraseña">
                  
             </td>
         </tr>
         <tr>
-            <td>Fecha de Nacimiento</td>
+            <th>Fecha de Nacimiento</th>
             <td>
             <input type="date" min="1900-01-01" max="2022-01-01" id="fechaUsuario1" name="fechaUsuario1" required value="<?php 
             echo date('Y-m-d',strtotime($usuarioFecha))?>"><br> 
@@ -136,7 +133,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
             </td>
         </tr>
         <tr>
-            <td>Pais</td>
+            <th>Pais</th>
             <td>
             <select id="paisUsuario1" name="paisUsuario1">
         <?php 
@@ -160,7 +157,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
             
         </tr>
         <tr>
-            <td>Direccion</td>
+            <th>Direccion</th>
             <td>
                 <input type="text" id="direccionUsuario1" name="direccionUsuario1" value="<?php echo $usuarioDireccion?>" required>
             </td>
@@ -169,7 +166,7 @@ $usuarioTipoDeUsuario = $regTipoDeUsuario[0];
 if($usuarioIDTipoDeUsuario == 3){
     ?>
 <tr>
-<td>Correo PayPal</td>
+<th>Correo PayPal</th>
             <td>
             <textarea id="paypal1" name="paypal1" rows="2" cols="50" required><?php echo $UsuarioPaypal?></textarea>
             </td>

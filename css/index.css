@@ -9,6 +9,7 @@ div ul ol{
 	position: relative;
 	margin: auto;
 	margin-top: 20px;
+	
 }
 
 .slider li ul{
@@ -23,6 +24,9 @@ div ul ol{
 
 .slider img{
 	width: 100%;
+	border-radius: 20px;
+	border: 2px #666565cb;
+	border-style: solid;
 	
 }
 

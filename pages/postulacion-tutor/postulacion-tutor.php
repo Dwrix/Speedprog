@@ -45,7 +45,7 @@
         
     </nav>
     <section class="Solicitar-tutor-box">   
-    <h1>POSTULACION TUTOR</h1> </br>
+    <h1>POSTULACIÓN TUTOR</h1> </br>
     <?php 
     
    
@@ -101,10 +101,10 @@
 Postulaciones del usuario
 <table border="1" width="700" align="center">
 <tr>
-<td>Especialidad</td>
-<td>Evaluador</td>
-<td>Resultado</td>
-<td>Respuesta del evaluador</td>
+<th>Especialidad</th>
+<th>Evaluador</th>
+<th>Resultado</th>
+<th>Respuesta del evaluador</th>
 </tr>
     <?php
 while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){

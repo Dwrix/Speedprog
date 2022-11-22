@@ -1,6 +1,6 @@
 .Tabla-solicitudes{
     width: 100%;
-	max-width: 900px;
+	max-width: 1200px;
 	display:block;
 	margin: auto;
 	border-radius: 10px;
@@ -20,8 +20,8 @@
 }
 
 
-.checkbtn{
-    margin-top: 30px;
+#checkbtn2{
+    margin-top: 25px;
 
 }
 
@@ -51,7 +51,7 @@ tr:hover {background-color: #53555481;}
 
 table{
     table-layout: fixed;
-	width: 820px;
+	width: 1100px;
     overflow-wrap: break-word;
 }
 

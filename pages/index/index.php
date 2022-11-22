@@ -271,14 +271,14 @@ if(isset($_GET['ya_tiene'])){
         <div class="slideshow">
             <ul class="slider">
                 <li>
-                    <img src="../../img/11.jpg">
+                    <img src="../../img/slider1.jpg">
                     <section class="caption">
 
                        
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/22.png">
+                    <img src="../../img/slider2.png">
                     
                     <section class="caption">
 
@@ -286,7 +286,7 @@ if(isset($_GET['ya_tiene'])){
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/33.png">
+                    <img src="../../img/slider3.png">
                     <section class="caption">
 
                         
@@ -294,7 +294,7 @@ if(isset($_GET['ya_tiene'])){
                     </section>
                 </li>
                 <li>
-                    <img src="../../img/44.png">
+                    <img src="../../img/slider4.png">
                     <section class="caption">
 
                         

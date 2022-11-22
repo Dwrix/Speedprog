@@ -34,7 +34,7 @@
           
         include_once '../estructura/listaNav.php';
         if($tipo == 2){
-            header("Location: ../index/index.php?error_mensaje=0");
+           // header("Location: ../index/index.php?error_mensaje=0");
         }
         ?>
 

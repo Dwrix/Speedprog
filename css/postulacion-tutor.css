@@ -65,9 +65,7 @@ select {
     background-color: darkgray;
 }
 
-table {
-	width: 300px;
-}
+
 
 #Volver{
 	margin-top: 30px;
@@ -79,4 +77,34 @@ table {
 }
 #Volver:hover{
     background-color: rgb(0, 0, 0);
+}
+
+tr:hover {background-color: #53555481;}
+
+table{
+    table-layout: fixed;
+	width: 500px;
+    overflow-wrap: break-word;
+}
+
+table #desc{
+	table-layout: auto;
+    overflow-wrap: break-word;
+	text-align: left;
+   
+}
+td {
+    
+    padding: 5px;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: 1px solid white;
+    border-left: 1px;
+}
+
+
+
+th{
+	
+    background-color: rgba(85, 87, 87, 0.527);
 }
