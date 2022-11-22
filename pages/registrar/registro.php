@@ -78,7 +78,7 @@
             <form id="form-registro" method="POST" action="registroCuenta.php?permiso=1">
                 <input type="text" id="rut" name="rut1" placeholder="Número identificador" required><br> 
                 <input type="text" id="nombre" name="nom1" placeholder="Ingrese nombre" required><br> 
-                <input type="date" id="date" min="1900-01-01" max="2022-01-01" name="date" placeholder="Fecha nacimiento" required><br> 
+                <input type="date" id="date" min="1900-01-01" max="2004-11-23" name="date" placeholder="Fecha nacimiento" required><br> 
                 <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br> 
                 <input type="email" id="mail" name="correo" placeholder="Ingrese Correo Electronico" required><br> 
                 <select name="pais" required>
