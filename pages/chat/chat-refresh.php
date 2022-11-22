@@ -40,18 +40,35 @@ if(isset($buscarUsuario)){
             if(isset($registroChatUsuario)){
                 while ($regChatUsuario = mysqli_fetch_row($registroChatUsuario)){
                     ?><div id="datos-chat">  <?php
+                  ?>
+                  <table border="1" width="700" align="center">
+                  <?php
+                  echo "<tr>";
                     if($regChatUsuario[3]==$idUsuario){
+                        //Este es el mensaje del usuario, el cual va a la izquierda
+                        echo "<td>";
                         echo $regUsuario1[0]." - ".$regChatUsuario[1];
                         echo "</br>";
                         echo $regChatUsuario[2];
-                        echo "</br> </br>";
+                        echo "</td>";
+                        echo "<td>";
+                        echo "espacio vacio";
+                        echo "</td>";
                     }else if($regChatUsuario[3]==$idTutor){
+                        //Este es el mensaje del tutor, el cual va a la derecha
+                        echo "<td>";
+                        echo "espacio vacio";
+                        echo "</td>";
+                        echo "<td>";
                         echo $regTut[0]." - ".$regChatUsuario[1];
                         echo "</br>";
                         echo $regChatUsuario[2];
-                        echo "</br> </br>";
+                        echo "</td>";
                     }
-                    
+                    echo "</tr>";
+                    ?> 
+                </table> 
+                <?php
                 }
                 ?> </div><?php
             } 
