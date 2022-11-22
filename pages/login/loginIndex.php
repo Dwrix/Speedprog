@@ -56,6 +56,18 @@ if(isset($_GET['mensaje_error'])){
     
 }
 
+
+
+if(isset($_SESSION['user'])){
+    include_once 'userSession.php';
+
+    $userSession = new UserSession();
+    $userSession->closeSession();
+    
+        header('location: ../login/loginIndex.php');
+    
+}
+
 ?>
 
     

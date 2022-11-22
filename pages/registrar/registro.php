@@ -46,6 +46,18 @@
         if($tipo == 2){
             //header("Location: ../login/loginIndex.php?error_mensaje=0");
         }
+
+        if(isset($_SESSION['user'])){
+            include_once '../login/userSession.php';
+        
+            $userSession = new UserSession();
+            $userSession->closeSession();
+            
+                header('Location: ../registrar/registro.php');
+            
+        }
+
+
         ?>
 
     </nav>
