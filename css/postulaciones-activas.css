@@ -45,3 +45,21 @@
 #Volver:hover{
     background-color: rgb(0, 0, 0);
 }
+
+
+
+table{
+	table-layout: fixed;
+}
+th{
+	background-color: rgba(85, 87, 87, 0.527);
+}
+td{
+	padding: 5px;
+    border-top: 1px;
+    border-right: 1px solid white;
+    
+    border-left: 1px;
+}
+
+tr:hover {background-color: #53555481;}

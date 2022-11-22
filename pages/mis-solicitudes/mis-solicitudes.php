@@ -270,15 +270,15 @@ echo "Sin determinar";
     ?>
     <table border="1" width="700" align="center">
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>
-        <td>Estado de la Solicitud</td>   
-        <td>Usuario</td>
-        <td>Tutor</td> 
-        <td>Premium</td>  
-        <td>Detalles</td>   
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>
+        <th>Estado de la Solicitud</th>   
+        <th>Usuario</th>
+        <th>Tutor</th> 
+        <th>Premium</th>  
+        <th>Detalles</th>   
     </tr>
     <?php
 
