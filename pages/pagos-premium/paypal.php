@@ -80,8 +80,8 @@ if(isset($_GET['error_mensaje'])){
     <input type="hidden" name="item_number" value="<?php echo $userId ?>">
     <input type="hidden" name="lc" value="en_US">
     <input type="hidden" name="image_url" value="https://www.speedprogasesorias.com/img/Speedprog.PNG">
-    <input type="hidden" name="return" value="http://localhost:3000/pages/pagos-premium/paypal-receptor.php"> <!-- Modificar al hosting real -->
-    <input type="hidden" name="cancel_return" value="http://localhost:3000/pages/pagos-premium/paypal-cancel-return.php"> <!-- Modificar al hosting real -->
+    <input type="hidden" name="return" value="https://www.speedprogasesorias.com/pages/pagos-premium/paypal-receptor.php"> <!-- Modificar al hosting real -->
+    <input type="hidden" name="cancel_return" value="https://www.speedprogasesorias.com/pages/pagos-premium/paypal-cancel-return.php"> <!-- Modificar al hosting real -->
     <br>
     <button class="paypal-button">
         <span class="paypal-button-title">
