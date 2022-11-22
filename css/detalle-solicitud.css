@@ -153,13 +153,15 @@
     background-color: rgb(0, 0, 0);
 }
 
-tr:hover {background-color: #53555481;}
 table{
 	table-layout: fixed;
-	
-    
+	width: 700px;
+    overflow-wrap: break-word;
 }
-
+th{
+	text-align: left;
+	background-color: rgba(85, 87, 87, 0.527);
+}
 td{
 	padding: 5px;
     border-top: 1px;
@@ -167,3 +169,5 @@ td{
     
     border-left: 1px;
 }
+
+tr:hover {background-color: #53555481;}

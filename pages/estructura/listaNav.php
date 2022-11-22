@@ -92,7 +92,7 @@ if(isset($_SESSION['user'])){
         //Aqui deberia ir la campa por defecto
             echo "<label for='check' class='checkbtn'>";   
             echo    "<a href='../notificaciones/notificaciones.php' class='campana'>";
-            echo        "<i class='fa fa-bell fa-xs'></i>";
+            echo        "<i id='checkbtn2' class='fa fa-bell fa-xs'></i>";
             echo    "</a>";
             echo "</label>";
         }

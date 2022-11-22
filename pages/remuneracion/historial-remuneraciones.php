@@ -131,13 +131,13 @@ if(isset($_GET['id_usuario'])){
 ?>
 <table border="1" width="700" align="center">
     <tr>
-        <td>ID Remuneracion</td>
-        <td>Tutor</td>
-        <td>Monto Pagado</td> 
-        <td>Fecha de Pago</td>
-        <td>Boleta</td>   
-        <td>Administrador</td>
-        <td>Metodo de Pago</td>   
+        <th>ID Remuneracion</th>
+        <th>Tutor</th>
+        <th>Monto Pagado</th> 
+        <th>Fecha de Pago</th>
+        <th>Boleta</th>   
+        <th>Administrador</th>
+        <th>Metodo de Pago</th>   
     </tr>
     <?php 
     //Seleccionar todas las remuneraciones

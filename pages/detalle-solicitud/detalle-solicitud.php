@@ -109,30 +109,31 @@
 
     <table border="1" width="700" align="center">
         <tr>
-            <td>Enunciado</td>
-            <td>Detalles</td>
+            <th>Enunciado</th>
+            <th>Detalles</th>
         </tr>
 
         <tr>
-            <td>Titulo</td>
+            <th>Titulo</th>
             <td><?php echo $reg5[1]?></td>
         </tr>
         <tr>
-            <td>Descripcion</td>
+            <th>Descripcion</th>
             <td><?php echo $reg5[2]?></td>
         </tr>
         <tr>
-            <td>Premium</td>
+            <th>Premium</th>
         <td><?php 
     if($regUsuario1[1]==0){
         echo "No";
     }else{
-        echo "Si";
+        echo "Si";?>
+        <i class="fa fa-star" style="color:#af7d31fb;"></i><?php
     }
     ?></td>
     </tr>
         <tr>
-        <td>Estado de la solicitud</td>
+        <th>Estado de la solicitud</th>
         
         <td><?php if(isset($buscarEstado)){
 echo $regEstado[0];
@@ -143,7 +144,7 @@ echo "Sin determinar";
     ?></td>
     </tr>
         <tr>
-            <td>Usuario</td>
+            <th>Usuario</th>
             <td><?php if(isset($buscarUsuario)){
 echo $regUsuario1[0];
     }else{
@@ -153,7 +154,7 @@ echo "Sin determinar";
     ?></td>
         </tr>
         <tr>
-            <td>Tutor</td>
+            <th>Tutor</th>
             <td><?php if(isset($buscarTutor)){
 echo $regTut[0];
     }else{
@@ -163,11 +164,11 @@ echo "Sin determinar";
     ?></td>
         </tr>
         <tr>
-            <td>Fecha de Ingreso</td>
+            <th>Fecha de Ingreso</th>
             <td><?php echo $reg5[3]?></td>
         </tr>
         <tr>
-            <td>Especialidad</td>
+            <th>Especialidad</th>
             <td><?php echo $reg6[0]?></td>
         </tr>
     

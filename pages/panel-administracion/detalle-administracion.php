@@ -122,43 +122,43 @@ Informacion Personal de: <?php echo $usuarioNombre?> </br>
         
 
         <tr>
-            <td>Nombre</td>
+            <th>Nombre</th>
             <td><?php echo $usuarioNombre?></td>
 
         </tr>
         <tr>
-            <td>ID Personal</td>
+            <th>ID Personal</th>
             <td><?php echo $UsuarioRut?></td>
 
         </tr>
         <tr>
-            <td>Mail</td>
+            <th>Mail</th>
             <td><?php echo $usuarioCorreo?></td>
 
         </tr>
         
         <tr>
-            <td>Fecha de Nacimiento</td>
+            <th>Fecha de Nacimiento</th>
             <td><?php echo $usuarioFecha?></td>
 
         </tr>
         <tr>
-            <td>Pais</td>
+            <th>Pais</th>
             <td><?php echo $usuarioPais?></td>
 
         </tr>
         <tr>
-            <td>Direccion</td>
+            <th>Direccion</th>
             <td><?php echo $usuarioDireccion?></td>
 
         </tr>
         <tr>
-            <td>Tipo de Usuario</td>
+            <th>Tipo de Usuario</th>
             <td><?php echo $usuarioTipoDeUsuario?></td>
 
         </tr>
         <tr>
-            <td>Usuario Premium</td>
+            <th>Usuario Premium</th>
             <td><?php
              if($usuarioPremium==0){
                 echo "No";
@@ -185,10 +185,10 @@ if(mysqli_num_rows($registroPostulacion) > 0){
 Postulaciones del usuario
 <table border="1" width="700" align="center">
 <tr>
-<td>Especialidad</td>
-<td>Evaluador</td>
-<td>Resultado</td>
-<td>Respuesta del evaluador</td>
+<th>Especialidad</th>
+<th>Evaluador</th>
+<th>Resultado</th>
+<th>Respuesta del evaluador</th>
 </tr>
     <?php
 while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
@@ -272,27 +272,27 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
         Balance de Tutor
         <table border="1" width="700" align="center">
         <tr>
-            <td>Monto Bruto</td>
+            <th>Monto Bruto</th>
             <td><?php echo "$".$usuarioBalanceMontoBruto." CLP."?></td>
         </tr>
         <tr>
-            <td>Porcentaje de Comision</td>
+            <th>Porcentaje de Comision</th>
             <td><?php echo $usuarioBalancePorcentajeComision."%"?></td>
         </tr>
         <tr>
-            <td>Comision Total</td>
+            <th>Comision Total</th>
             <td><?php echo "$".$usuarioBalanceComisionTotal." CLP."?></td>
         </tr>
         <tr>
-            <td>Balance Neto Total</td>
+            <th>Balance Neto Total</th>
             <td><?php echo "$".$usuarioBalanceNetoTotal." CLP."?></td>
         </tr>
         <tr>
-            <td>Monto total pagado al tutor</td>
+            <th>Monto total pagado al tutor</th>
             <td><?php echo "$".$usuarioBalancePagoTransferenciaTutor." CLP."?></td>
         </tr>
         <tr>
-            <td>Cuanto se le debe al tutor</td>
+            <th>Cuanto se le debe al tutor</th>
             <td><?php echo "$".$usuarioBalanceDeudaActual." CLP."?></td>
         </tr>
     </table>
@@ -316,8 +316,8 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
             
             <table border="1" width="700" align="center">
                 <tr>
-                    <td>ID Solicitud</td>
-                    <td>Calificacion</td>
+                    <th>ID Solicitud</th>
+                    <th>Calificacion</th>
         </tr> 
                 <?php
             while ($regResenas = mysqli_fetch_array($registrosResenas)){
@@ -356,10 +356,10 @@ while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){
             Postulaciones del usuario
             <table border="1" width="700" align="center">
             <tr>
-            <td>Especialidad</td>
-            <td>Evaluador</td>
-            <td>Resultado</td>
-            <td>Respuesta del evaluador</td>
+            <th>Especialidad</th>
+            <th>Evaluador</th>
+            <th>Resultado</th>
+            <th>Respuesta del evaluador</th>
             </tr>
                 <?php
             while ($regPostulacion = mysqli_fetch_array($registroPostulacion)){

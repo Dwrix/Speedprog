@@ -16,7 +16,7 @@
 <body>
 <nav class="nav-cab">
         <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
+        <label for="check" class="checkbtn" id="checkbtn2">
             <i class="fa fa-bars"></i>
         </label>
         <label class="logo">SpeedProg Asesorias</label>
