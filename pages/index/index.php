@@ -271,7 +271,7 @@ if(isset($_GET['ya_tiene'])){
         <div class="slideshow">
             <ul class="slider">
                 <li>
-                    <img src="../../img/11.png">
+                    <img src="../../img/11.jpg">
                     <section class="caption">
 
                        
