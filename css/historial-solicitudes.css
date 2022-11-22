@@ -1,6 +1,6 @@
 .Tabla-historial-solicitudes{
     width: 100%;
-  	max-width: 800px;
+  	max-width: 1100px;
 	display:block;
 	margin: auto;
 	border-radius: 10px;
@@ -44,3 +44,22 @@
 #Volver:hover{
     background-color: rgb(0, 0, 0);
 }
+
+
+table{
+	width: 100%;
+	table-layout: fixed;
+	overflow-wrap: break-word;
+}
+th{
+	background-color: rgba(85, 87, 87, 0.527);
+}
+td{
+	padding: 5px;
+    border-top: 1px;
+    border-right: 1px solid white;
+    
+    border-left: 1px;
+}
+
+tr:hover {background-color: #53555481;}

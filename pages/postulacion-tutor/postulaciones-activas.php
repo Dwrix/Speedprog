@@ -80,10 +80,10 @@ Copiar de solicitudes activas
 
     <table border="1" width="700" align="center">
     <tr>
-        <td>Fecha</td>
-        <td>Usuario</td>
-        <td>Especialidad</td>
-        <td>Detalles</td>   
+        <th>Fecha</th>
+        <th>Usuario</th>
+        <th>Especialidad</th>
+        <th>Detalles</th>   
     </tr>
     <?php 
 

@@ -57,10 +57,10 @@
 
 <table border="1" width="700" align="center">
     <tr>
-        <td>Tutor</td>
-        <td>Deuda Actual</td>
-        <td>Cuenta PayPal</td>
-        <td>Detalles</td>   
+        <th>Tutor</th>
+        <th>Deuda Actual</th>
+        <th>Cuenta PayPal</th>
+        <th>Detalles</th>   
     </tr>
     <?php 
 

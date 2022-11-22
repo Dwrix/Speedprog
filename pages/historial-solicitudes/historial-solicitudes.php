@@ -58,17 +58,17 @@ if($tipo=='2'){
     ?>
     <table border="1" width="700" align="center">
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>
-        <td>Estado de la Solicitud</td>
-        <td>Usuario</td>
-        <td>Tutor</td> 
-        <td>Premium</td>
-        <td>Calificacion</td>  
-        <td>Comentarios</td> 
-        <td>Detalles</td>
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>
+        <th>Estado de la Solicitud</th>
+        <th>Usuario</th>
+        <th>Tutor</th> 
+        <th>Premium</th>
+        <th>Calificacion</th>  
+        <th>Comentarios</th> 
+        <th>Detalles</th>
            
     </tr>
     <?php
@@ -194,19 +194,19 @@ echo "Sin determinar";
         header("Location: ../index/index.php?error_mensaje=7");
     }
     ?>
-    <table border="1" width="700" align="center">
+    <table border="1"  align="center" >
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>   
-        <td>Estado de la Solicitud</td>   
-        <td>Usuario</td>
-        <td>Tutor</td> 
-        <td>Premium</td>
-        <td>Calificacion</td>  
-        <td>Comentarios</td>  
-        <td>Detalles</td>
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>   
+        <th>Estado de la Solicitud</th>   
+        <th>Usuario</th>
+        <th>Tutor</th> 
+        <th>Premium</th>
+        <th>Calificacion</th>  
+        <th>Comentarios</th>  
+        <th>Detalles</th>
               
     </tr>
     <?php
@@ -334,17 +334,17 @@ echo "Sin determinar";
     ?>
     <table border="1" width="700" align="center">
     <tr>
-        <td style="display:none;">ID</td>
-        <td>Titulo</td>
-        <td>Especialidad</td>
-        <td>Descripcion</td>
-        <td>Estado de la Solicitud</td>   
-        <td>Usuario</td>
-        <td>Tutor</td> 
-        <td>Premium</td>
-        <td>Calificacion</td>  
-        <td>Comentarios</td> 
-        <td>Detalles</td>
+        <th style="display:none;">ID</th>
+        <th>Titulo</th>
+        <th>Especialidad</th>
+        <th>Descripcion</th>
+        <th>Estado de la Solicitud</th>   
+        <th>Usuario</th>
+        <th>Tutor</th> 
+        <th>Premium</th>
+        <th>Calificacion</th>  
+        <th>Comentarios</th> 
+        <th>Detalles</th>
               
     </tr>
     <?php

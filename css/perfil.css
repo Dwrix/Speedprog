@@ -77,7 +77,7 @@
 #Volver:hover{
     background-color: rgb(0, 0, 0);
 }
-
+tr:hover {background-color: #53555481;}
 table{
 	table-layout: fixed;
 	
