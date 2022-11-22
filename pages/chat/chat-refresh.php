@@ -41,29 +41,34 @@ if(isset($buscarUsuario)){
                 while ($regChatUsuario = mysqli_fetch_row($registroChatUsuario)){
                     ?><div id="datos-chat">  <?php
                   ?>
-                  <table border="1" width="700" align="center">
+                  <table align="center">
                   <?php
+                  
                   echo "<tr>";
                     if($regChatUsuario[3]==$idUsuario){
                         //Este es el mensaje del usuario, el cual va a la izquierda
+                        echo "<section class='chatizq'";
                         echo "<td>";
-                        echo $regUsuario1[0]." - ".$regChatUsuario[1];
+                        echo $regUsuario1[0].": ".$regChatUsuario[1];
                         echo "</br>";
                         echo $regChatUsuario[2];
                         echo "</td>";
-                        echo "<td>";
-                        echo "espacio vacio";
-                        echo "</td>";
+                        //echo "<td>";
+                       // echo "espacio vacio";
+                        //echo "</td>";
+                        echo "</section>";
                     }else if($regChatUsuario[3]==$idTutor){
                         //Este es el mensaje del tutor, el cual va a la derecha
+                        echo "<section class='chatder'";
+                        //echo "<td>";
+                        //echo "espacio vacio";
+                        //echo "</td>";
                         echo "<td>";
-                        echo "espacio vacio";
-                        echo "</td>";
-                        echo "<td>";
-                        echo $regTut[0]." - ".$regChatUsuario[1];
+                        echo $regTut[0].": ".$regChatUsuario[1];
                         echo "</br>";
                         echo $regChatUsuario[2];
                         echo "</td>";
+                        echo "</section>";
                     }
                     echo "</tr>";
                     ?> 
