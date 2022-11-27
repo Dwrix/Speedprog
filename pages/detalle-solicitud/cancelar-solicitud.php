@@ -74,7 +74,7 @@ $tipoNot = 1;
 
 
     
-    $notificacion1 = "El administrador $userName ha cancelado su solicitud $tituloSolicitud1";
+    $notificacion1 = "El usuario $userName ha cancelado su solicitud $tituloSolicitud1";
     
     //Notificacion usuario
     $sqlNotificacion = "INSERT INTO notificacion (notificacion, visto, fk_usuario_objetivo_id, tipo_notificacion_fk, fk_usuario_id, fk_administrador_id, fk_solicitud_id) 

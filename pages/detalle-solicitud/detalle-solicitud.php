@@ -174,7 +174,19 @@ echo "Sin determinar";
     
 
     </table>
-
+<form method="POST" action="media.php?permiso=1">
+            <?php 
+                echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
+                echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
+                if(isset($reg5[9])){
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='$reg5[9]'>"; //id tutor 
+                }else{
+                    echo "<input type='hidden' id='idTutor1' name='idTutor1' value='sin-tutor'>";
+                }
+                echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
+            ?>
+            <input id="BtnVerMedia" type='submit' value='Ver media'>
+            </form>
 <?php
 
 if($tipo == 3){

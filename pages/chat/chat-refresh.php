@@ -19,7 +19,7 @@ $idUsuario = $_REQUEST['idUsuario'];
 $idTutor = $_REQUEST['idTutor'];
 $idSolicitud = $_REQUEST['idSolicitud'];
 
-$sqlChatUsuario = "SELECT * FROM chat WHERE id_solicitud_fk = $idSolicitud AND id_usuario_fk = $idUsuario OR id_usuario_fk = $idTutor";
+$sqlChatUsuario = "SELECT * FROM chat WHERE id_solicitud_fk = $idSolicitud AND (id_usuario_fk = $idUsuario OR id_usuario_fk = $idTutor)";
 $registroChatUsuario = mysqli_query($conexion, $sqlChatUsuario) or die("Problemas en la seleccion:" . mysqli_error($conexion));
 
 $buscarTutor = $idTutor;

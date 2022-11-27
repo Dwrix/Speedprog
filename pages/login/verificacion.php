@@ -18,4 +18,20 @@ $userName = $res555[2];
 $tipo = $res555[8];
 $premium = $res555[11];
     
+
+        if($tipo == '5'){
+          include_once 'userSession.php';
+
+    $userSession = new UserSession();
+    $userSession->closeSession();
+            header("Location: ../index/index.php?bloqueado=1");
+        }else if($tipo == '6'){
+          include_once 'userSession.php';
+
+    $userSession = new UserSession();
+    $userSession->closeSession();
+            header("Location: ../index/index.php?eliminado=1");
+        }
+
+
 ?>
