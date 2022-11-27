@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 if(!isset($_SESSION)){
     session_start();
 };
@@ -14,6 +12,8 @@ if(isset($_SESSION['user'])){
     $userName = '';   
     $tipo = '';
 }
+
+
     
 include_once '../estructura/listaNav.php';
 

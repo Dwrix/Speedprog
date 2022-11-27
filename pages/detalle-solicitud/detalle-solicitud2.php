@@ -309,12 +309,14 @@ if($tipo == 3){
         }
         echo "<input type='hidden' id='idEspecialidad1' name='idEspecialidad1' value='$regIdEspecialidad[0]'>"; //id especialidad
         ?>
-        <input id="BtnVerMedia" type='submit' value='Ver media'>
+        <input id="BtnVerMedia" type='submit' value='Finalizar Solicitud'>
     </form>
         <?php
     }
-    ?>">
+    ?>
+      <form method="POST" action="solucion-solicitud.php?permiso=1">  
         <?php 
+  
             echo "<input type='hidden' id='idSolicitud1' name='idSolicitud1' value='$reg5[0]'>"; //id solicitud
             echo "<input type='hidden' id='idUsuario1' name='idUsuario1' value='$reg5[8]'>"; //id usuario
             if(isset($reg5[9])){
@@ -339,13 +341,13 @@ if($estadoSolicitud=='3'){//Estado 3 corresponde a en consulta, la cual es basic
     <?php
     
     
-    echo "finalizar-solicitud.php?permiso=1";
+    
 }
 ?>
 
 
         <form method="POST" action="<?php 
-    if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3'){
+    if($estadoSolicitud=='2' || $estadoSolicitud=='1' || $estadoSolicitud=='3' ){
         echo "cancelar-solicitud.php?permiso=1";
     }
     ?>">

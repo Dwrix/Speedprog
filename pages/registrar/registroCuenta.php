@@ -33,8 +33,8 @@ if($pas===$passCon){
 
     $md5pass = md5($passCon);
 
-    $sql = "INSERT INTO usuario (rut, nombre, fecha_nacimiento, direccion, password, correo, id_pais_fk, id_tipo_usuario_fk) VALUES 
-    ('$rut', '$nom', '$date', '$dir', '$md5pass', '$mail', '$idpais', '$tipousuario')";
+    $sql = "INSERT INTO usuario (rut, nombre, fecha_nacimiento, direccion, password, correo, id_pais_fk, id_tipo_usuario_fk, premium) VALUES 
+    ('$rut', '$nom', '$date', '$dir', '$md5pass', '$mail', '$idpais', '$tipousuario', 0)";
 
     if($conexion->query($sql) === TRUE){
         echo "Se registro correctamente";

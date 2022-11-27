@@ -78,9 +78,9 @@
         <th>Nombre</th>
         <th>Mail</th>
         <th>Tipo de Usuario</th>
-        <th id="ing">Ingresos</th>
-        <th id="eg">Egresos</th>
-        <th id="deu">Deuda</th>
+        <th id="ing">Ingresos CLP</th>
+        <th id="eg">Egresos CLP</th>
+        <th id="deu">Deuda CLP</th>
         <th>Detalles</th>  
     </tr>
     <?php 
@@ -167,9 +167,9 @@
 
 
     <td><?php echo $reg2[0] ?></td>
-    <td><?php echo "$".$totalIngreso." CLP" ?></td>
-    <td><?php echo "$".$egresos." CLP" ?></td>
-    <td><?php echo "$".$deudaTutor." CLP" ?></td>
+    <td><?php echo $totalIngreso?></td>
+    <td><?php echo $egresos?></td>
+    <td><?php echo $deudaTutor?></td>
     <?php 
     if($userId==$idUsuario){
         ?>
@@ -197,9 +197,9 @@
                 <td> Total Deuda </td>
 </tr>
 <tr>
-<td> <?php echo "$".$totalIngresosTodos." CLP " ?> </td>
-<td> <?php echo "$".$totalEgresosTodos." CLP " ?> </td>
-<td> <?php echo "$".$totalDeudaTodos." CLP " ?> </td>
+<td> <?php echo $totalIngresosTodos?> </td>
+<td> <?php echo $totalEgresosTodos?> </td>
+<td> <?php echo $totalDeudaTodos?> </td>
 </tr>
 </table>
     <br><br>
